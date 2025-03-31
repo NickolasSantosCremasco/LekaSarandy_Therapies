@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,7 @@
                 <ul class="navbar-nav mx-auto ">
                     <li class="nav-item"><a class="nav-link text-black" href="#">Início</a></li>
                     <li class="nav-item"><a class="nav-link text-black" href="#">Minha Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link text-black" href="#">Sobre Mim</a></li>
                     <li class="nav-item"><a class="nav-link text-black" href="#">Contato</a></li>
                 </ul>
                 <div class="d-flex">
@@ -48,7 +49,7 @@
     <!-- Hero Section -->
     <header class="hero d-flex align-items-center text-center">
         <div class="container">
-            <h1 class="text-light">Bem-vindo ao seu refúgio de Terapia</h1>
+            <h1 class="text-light fw-normal">Bem-vindo ao seu refúgio de Terapia</h1>
             <p class="text-light">Realize a pesquisa abaixo e descubra mais sobre o seu tipo de personalidade!
             </p>
             <button class="btn bg-warning bg-gradient btn-lg mt-3" id="btnHeroSection">
@@ -94,7 +95,7 @@
                                 <div class="bg-warning rounded-circle p-2 me-3">
                                     <span class="text-white fs-4">M</span>
                                 </div>
-                                <h5 class="mb-0">Maites</h5>
+                                <h5 class="mb-0">Joana</h5>
                             </div>
                             <p class="card-text">"Os desafios terapêuticos podem promover mudanças significativas em
                                 nossas vidas. Na terapia, encontrei as ferramentas para trabalhar meus problemas no
@@ -112,7 +113,7 @@
                                 <div class="bg-warning rounded-circle p-2 me-3">
                                     <span class="text-white fs-4">A</span>
                                 </div>
-                                <h5 class="mb-0">Arpaut</h5>
+                                <h5 class="mb-0">Ariana</h5>
                             </div>
                             <p class="card-text">"Acredito que enfrentar nossos desafios emocionais é fundamental para
                                 construir uma vida mais autêntica e sustentável."</p>
@@ -132,7 +133,7 @@
                                     <p class="fs-5">"A jornada terapêutica proporcionou um engajamento acessível e
                                         transformador com minhas emoções. Encontrei soluções dedicadas que nenhum outro
                                         método havia me oferecido."</p>
-                                    <p class="mb-0">- Layla, paciente desde 2023</p>
+                                    <p class="mb-0">- Luana, paciente desde 2023</p>
                                 </div>
                                 <div class="col-md-4 text-center">
                                     <img src="assets/wellness-icon.png" alt="Ícone wellness" class="img-fluid"
@@ -146,6 +147,124 @@
         </div>
     </section>
 
+    <!-- Serviços -->
+    <section class="container-fluid bg-black py-5 text-white">
+        <div class="container">
+            <!-- Título principal -->
+            <div class="text-center mb-5">
+                <h1 class="display-4 mb-3" id="tituloServicos">Propósito da terapia</h1>
+                <div class="divider mx-auto" style="width: 100px; height: 3px; background: #7a2a3a;"></div>
+            </div>
+
+            <!-- Grid de serviços -->
+            <div class="row g-4">
+                <!-- Serviço 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 bg-dark border-0">
+                        <div class="card-body text-center p-4">
+                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Regroup Toy</h3>
+                            <p class="mb-0" style="color: white;">Likewise you are comfortable also apart from being
+                                served remotely every
+                                second together next.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 bg-dark border-0">
+                        <div class="card-body text-center p-4">
+                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Widerdike & Pions</h3>
+                            <p class="mb-0" style="color: white;">Likewise you are comfortable for short time being
+                                owners serving every
+                                second together each.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 bg-dark border-0">
+                        <div class="card-body text-center p-4">
+                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Leverhour</h3>
+                            <p class="mb-0" style="color: white;">Likewise hearts a smaller size, but doesn't need to
+                                come in money every
+                                second again or even.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Serviço 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 bg-dark border-0">
+                        <div class="card-body text-center p-4">
+                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Of Harp</h3>
+                            <p class="mb-0" style="color:white ;">Likewise you are comfortable on a hard workhole that
+                                can bring
+                                your brand in
+                                a good way.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mim -->
+
+    <section class="container-fluid py-5" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Coluna de texto -->
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <h1 class="display-4 mb-4" style="color: #7a2a3a;">Um Pouco Sobre Mim</h1>
+                    <h2 class="h3 mb-4 text-muted">Quem sou eu?</h2>
+
+                    <p class="lead mb-4">
+                        Transformando vidas através de terapias integrativas, celebrando cada conquista com vibração
+                        positiva.
+                        Cada jornada é única como uma impressão digital emocional.
+                    </p>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3" style="color: #7a2a3a;">Por Que Virei Terapeuta?</h3>
+                        <p>
+                            Minha abordagem terapêutica é como um filtro que destila as complexidades da mente,
+                            transformando desafios em componentes de crescimento pessoal. Acredito no poder do
+                            individualismo consciente para curar traumas profundos.
+                        </p>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="h4 mb-3" style="color: #7a2a3a;">Counter Cultures</h3>
+                        <p>
+                            Encorajo meus pacientes a enfrentarem medos sem julgamento. Quando a mente parece
+                            insensível às mudanças, ofereço um espaço seguro para explorar toda a gama de
+                            emoções no conforto do nosso santuário terapêutico.
+                        </p>
+                    </div>
+
+                    <div class="bg-light p-4 rounded">
+                        <p class="mb-0 font-italic">"Fiona"</p>
+                    </div>
+                </div>
+
+                <!-- Coluna de imagem -->
+                <div class="col-lg-5">
+                    <div class="position-relative d-block">
+                        <img src="https://tse1.mm.bing.net/th?id=OIP.X8aBnaZbAhu8Yt8YCY6psQHaD3&pid=Api"
+                            style="height: 450px; width: 500px;" alt="Terapeuta" class="img-fluid rounded shadow-lg"
+                            style="border: 8px solid white;">
+                        <div class="position-absolute bottom-0 start-0 bg-white p-3 shadow-sm"
+                            style="transform: translate(-20%, 20%);">
+                            <h5 class="mb-0" style="color: #7a2a3a;">10+ Anos</h5>
+                            <small>de experiência</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Rodapé -->
     <footer class="bg-dark text-light text-center p-3" id="Footer">
         <p>&copy; 2025 Terapia Zen. Todos os direitos reservados.</p>
