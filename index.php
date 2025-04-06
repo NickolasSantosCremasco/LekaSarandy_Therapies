@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--SEO-->
+    <meta name="description"
+        content="Terapia personalizada e transformadora com base em conexão autêntica, equilíbrio emocional e autoconhecimento.">
+    <meta name="keywords"
+        content="terapia, autoconhecimento, saúde mental, psicológico, transformação emocional, terapia online">
+
+    <!--CSS-->
     <link rel="stylesheet" href="./src/bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./src/css/home.css">
     <link rel="stylesheet" href="./src/css/global.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 
     <!-- Fontes do Site -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
     <link rel="shortcut icon" href="./src/img/logoEmpresa.png" type="image/x-icon">
     <title>Leka Sarandi</title>
+
 </head>
 
 <body>
@@ -23,22 +36,23 @@
         <div class="container">
             <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;" href="#">
 
-                <img src="./src/img/logoEmpresa.png" style="width: 60px;" alt="logo">
+                <img loading="lazy" src="./src/img/logoEmpresa.png" style="width: 60px;" alt="logo">
 
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
+
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto ">
-                    <li class="nav-item"><a class="nav-link text-black" href="#">Início</a></li>
+                    <li class="nav-item"><a class="nav-link text-black" href="./index.php">Início</a></li>
                     <li class="nav-item"><a class="nav-link text-black" href="#">Minha Empresa</a></li>
                     <li class="nav-item"><a class="nav-link text-black" href="#">Sobre Mim</a></li>
                     <li class="nav-item"><a class="nav-link text-black" href="#">Contato</a></li>
                 </ul>
                 <div class="d-flex">
-                    <button class="btn btn-warning ms-auto p-2 px-3">
+                    <button class="btn btn-warning ms-auto p-2 px-3" onclick="location.href='./src/pages/login.php'">
                         Login
                     </button>
                 </div>
@@ -50,10 +64,13 @@
     <header class="hero d-flex align-items-center text-center">
         <div class="container">
             <h1 class="text-light fw-normal">Bem-vindo ao seu refúgio de Terapia</h1>
-            <p class="text-light">Realize a pesquisa abaixo e descubra mais sobre o seu tipo de personalidade!
+            <p class="text-light">Descubra quem você realmente é. Sua transformação começa com um clique.
             </p>
             <button class="btn bg-warning bg-gradient btn-lg mt-3" id="btnHeroSection">
-                <a href="#" class="text-black">Faça a Pesquisa</a>
+                <a href="src/pages/pesquisa.php" class="text-black position-relative" style="bottom: 3px;">Faça a
+                    Pesquisa</a>
+                <i class="bi bi-arrow-right-circle-fill"></i>
+
             </button>
         </div>
     </header>
@@ -68,78 +85,121 @@
                     <p class="lead">Históricos reais de transformação e cura</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <!-- Depoimento 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-warning rounded-circle p-2 me-3">
-                                    <span class="text-white fs-4">L</span>
+
+            <!--Swiper  -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Depoimento 1 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100 border-0 shadow-sm mx-3">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-warning rounded-circle p-2 me-3">
+                                        <span class="text-white fs-4">L</span>
+                                    </div>
+                                    <h5 class="mb-0">Lucas</h5>
                                 </div>
-                                <h5 class="mb-0">Lucas</h5>
+                                <p class="card-text">"Acredito que os desafios emocionais e a experiência
+                                    terapêutica
+                                    são
+                                    componentes essenciais para o desenvolvimento de uma mente saudável."</p>
+                                <p>"Minha estratégia de vida agora é guiada pela necessidade de um ambiente
+                                    mental
+                                    mais
+                                    equilibrado."</p>
                             </div>
-                            <p class="card-text">"Acredito que os desafios emocionais e a experiência terapêutica são
-                                componentes essenciais para o desenvolvimento de uma mente saudável."</p>
-                            <p>"Minha estratégia de vida agora é guiada pela necessidade de um ambiente mental mais
-                                equilibrado."</p>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 2 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100 border-0 shadow-sm mx-3">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-warning rounded-circle p-2 me-3">
+                                        <span class="text-white fs-4">M</span>
+                                    </div>
+                                    <h5 class="mb-0">Joana</h5>
+                                </div>
+                                <p class="card-text">"Os desafios terapêuticos podem promover mudanças
+                                    significativas em
+                                    nossas vidas. Na terapia, encontrei as ferramentas para trabalhar meus
+                                    problemas
+                                    no
+                                    nível mais profundo."</p>
+                                <p>"Minha jornada agora é guiada pela busca de um diálogo interno mais
+                                    saudável."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Depoimento 3 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100 border-0 shadow-sm mx-3">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-warning rounded-circle p-2 me-3">
+                                        <span class="text-white fs-4">A</span>
+                                    </div>
+                                    <h5 class="mb-0">Ariana</h5>
+                                </div>
+                                <p class="card-text">"Acredito que enfrentar nossos desafios emocionais é
+                                    fundamental
+                                    para
+                                    construir uma vida mais autêntica e sustentável."</p>
+                                <p>"Minha estratégia de vida agora prioriza o equilíbrio mental e emocional."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Depoimento 3 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100 border-0 shadow-sm mx-3">
+                            <div class="card-body p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-warning rounded-circle p-2 me-3">
+                                        <span class="text-white fs-4">A</span>
+                                    </div>
+                                    <h5 class="mb-0">Ariana</h5>
+                                </div>
+                                <p class="card-text">"Acredito que enfrentar nossos desafios emocionais é
+                                    fundamental
+                                    para
+                                    construir uma vida mais autêntica e sustentável."</p>
+                                <p>"Minha estratégia de vida agora prioriza o equilíbrio mental e emocional."
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Depoimento 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-warning rounded-circle p-2 me-3">
-                                    <span class="text-white fs-4">M</span>
-                                </div>
-                                <h5 class="mb-0">Joana</h5>
-                            </div>
-                            <p class="card-text">"Os desafios terapêuticos podem promover mudanças significativas em
-                                nossas vidas. Na terapia, encontrei as ferramentas para trabalhar meus problemas no
-                                nível mais profundo."</p>
-                            <p>"Minha jornada agora é guiada pela busca de um diálogo interno mais saudável."</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Controles do Swiper -->
+                <div class="swiper-pagination mt-5"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
 
-                <!-- Depoimento 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-warning rounded-circle p-2 me-3">
-                                    <span class="text-white fs-4">A</span>
-                                </div>
-                                <h5 class="mb-0">Ariana</h5>
-                            </div>
-                            <p class="card-text">"Acredito que enfrentar nossos desafios emocionais é fundamental para
-                                construir uma vida mais autêntica e sustentável."</p>
-                            <p>"Minha estratégia de vida agora prioriza o equilíbrio mental e emocional."</p>
+            </div>
+        </div>
+        <!-- Depoimento (destaque) -->
+        <div class="container-lg mt-4">
+            <div class="card border-0  text-white"
+                style="background: linear-gradient(135deg, #5e2129 0%, #7a2a3a 50%, #9b1b30 100%);">
+                <div class="card-body p-5">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3>"Luana"</h3>
+                            <p class="fs-5">"A jornada terapêutica proporcionou um engajamento acessível
+                                e
+                                transformador com minhas emoções. Encontrei soluções dedicadas que
+                                nenhum
+                                outro
+                                método havia me oferecido."</p>
+                            <p class="mb-0">- Luana, paciente desde 2023</p>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Depoimento (destaque) -->
-                <div class="col-12 mt-4">
-                    <div class="card border-0  text-white"
-                        style="background: linear-gradient(135deg, #5e2129 0%, #7a2a3a 50%, #9b1b30 100%);">
-                        <div class="card-body p-5">
-                            <div class="row align-items-center">
-                                <div class="col-md-8">
-                                    <h3>"Luana"</h3>
-                                    <p class="fs-5">"A jornada terapêutica proporcionou um engajamento acessível e
-                                        transformador com minhas emoções. Encontrei soluções dedicadas que nenhum outro
-                                        método havia me oferecido."</p>
-                                    <p class="mb-0">- Luana, paciente desde 2023</p>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <img src="assets/wellness-icon.png" alt="Ícone wellness" class="img-fluid"
-                                        style="max-height: 150px;">
-                                </div>
-                            </div>
+                        <div class="col-md-4 text-center">
+                            <img src="./src/img/fundoRoxo.png" alt="Ícone wellness" class="img-fluid"
+                                style="max-height: 150px;">
                         </div>
                     </div>
                 </div>
@@ -152,7 +212,8 @@
         <div class="container">
             <!-- Título principal -->
             <div class="text-center mb-5">
-                <h1 class="display-4 mb-3" id="tituloServicos">Propósito da terapia</h1>
+                <h1 class="display-4 mb-1" id="tituloServicos">Propósito da terapia</h1>
+                <p class="lead ">Nosso compromisso com sua jornada de autodescoberta</p>
                 <div class="divider mx-auto" style="width: 100px; height: 3px; background: #7a2a3a;"></div>
             </div>
 
@@ -162,10 +223,10 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 bg-dark border-0">
                         <div class="card-body text-center p-4">
-                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Regroup Toy</h3>
-                            <p class="mb-0" style="color: white;">Likewise you are comfortable also apart from being
-                                served remotely every
-                                second together next.</p>
+                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Conexão Autêntica</h3>
+                            <p class="mb-0" style="color: white;">Assim como você se sente confortável sendo você mesmo,
+                                a terapia oferece um espaço seguro para explorar sua essência sem julgamentos, mesmo
+                                quando realizado remotamente</p>
                         </div>
                     </div>
                 </div>
@@ -174,10 +235,10 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 bg-dark border-0">
                         <div class="card-body text-center p-4">
-                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Widerdike & Pions</h3>
-                            <p class="mb-0" style="color: white;">Likewise you are comfortable for short time being
-                                owners serving every
-                                second together each.</p>
+                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Empoderamento</h3>
+                            <p class="mb-0" style="color: white;">Assim como você merece ser protagonista da sua vida, a
+                                terapia fortalece sua capacidade de fazer escolhas alinhadas com seu verdadeiro eu,
+                                momento a momento.</p>
                         </div>
                     </div>
                 </div>
@@ -186,10 +247,10 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 bg-dark border-0">
                         <div class="card-body text-center p-4">
-                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Leverhour</h3>
-                            <p class="mb-0" style="color: white;">Likewise hearts a smaller size, but doesn't need to
-                                come in money every
-                                second again or even.</p>
+                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Essencialidade</h3>
+                            <p class="mb-0" style="color: white;">Assim como o coração sabe seu tamanho essencial, a
+                                terapia ajuda a reconhecer que cura não depende de recursos externos, mas da conexão
+                                interna.</p>
                         </div>
                     </div>
                 </div>
@@ -198,16 +259,14 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="card h-100 bg-dark border-0">
                         <div class="card-body text-center p-4">
-                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Of Harp</h3>
-                            <p class="mb-0" style="color:white ;">Likewise you are comfortable on a hard workhole that
-                                can bring
-                                your brand in
-                                a good way.</p>
+                            <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Transformação</h3>
+                            <p class="mb-0" style="color:white ;">Assim como você pode transformar desafios em
+                                crescimento, a terapia oferece ferramentas para reconstruir sua narrativa de forma
+                                positiva e fortalecida.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Sobre Mim -->
@@ -244,9 +303,6 @@
                         </p>
                     </div>
 
-                    <div class="bg-light p-4 rounded">
-                        <p class="mb-0 font-italic">"Fiona"</p>
-                    </div>
                 </div>
 
                 <!-- Coluna de imagem -->
@@ -255,7 +311,7 @@
                         <img src="https://tse1.mm.bing.net/th?id=OIP.X8aBnaZbAhu8Yt8YCY6psQHaD3&pid=Api"
                             style="height: 450px; width: 500px;" alt="Terapeuta" class="img-fluid rounded shadow-lg"
                             style="border: 8px solid white;">
-                        <div class="position-absolute bottom-0 start-0 bg-white p-3 shadow-sm"
+                        <div class="position-absolute bottom-0 start-0 bg-white p-3 shadow"
                             style="transform: translate(-20%, 20%);">
                             <h5 class="mb-0" style="color: #7a2a3a;">10+ Anos</h5>
                             <small>de experiência</small>
@@ -265,11 +321,56 @@
             </div>
         </div>
     </section>
+    <!--Planos de Terapia-->
+    <section>
+        <p>opa</p>
+    </section>
+
+    <!--FAQ-->
+    <section>
+        <p>FAQ</p>
+    </section>
     <!-- Rodapé -->
     <footer class="bg-dark text-light text-center p-3" id="Footer">
         <p>&copy; 2025 Terapia Zen. Todos os direitos reservados.</p>
     </footer>
 </body>
-<script src="./src/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="./src/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>7
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="./src/js/home.js"></script>
+
+
+<script>
+if (typeof Swiper !== 'undefined') {
+    const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        spaceBetween: 30,
+        grabCursor: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView: 1,
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            }
+        }
+    });
+} else {
+    console.error('Erro: Swiper não foi carregado corretamente')
+}
+</script>
 
 </html>
