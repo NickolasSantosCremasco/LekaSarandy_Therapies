@@ -188,7 +188,7 @@
                 <div class="card-body p-5">
                     <div class="row align-items-center">
                         <div class="col-md-8">
-                            <h3>"Luana"</h3>
+                            <h3>Luana</h3>
                             <p class="fs-5">"A jornada terapêutica proporcionou um engajamento acessível
                                 e
                                 transformador com minhas emoções. Encontrei soluções dedicadas que
@@ -198,7 +198,7 @@
                             <p class="mb-0">- Luana, paciente desde 2023</p>
                         </div>
                         <div class="col-md-4 text-center">
-                            <img src="./src/img/fundoRoxo.png" alt="Ícone wellness" class="img-fluid"
+                            <img src="./src/img/fundoRoxo.png" alt="Ícone wellness" class="img-fluid rounded-4 shadow"
                                 style="max-height: 150px;">
                         </div>
                     </div>
@@ -295,7 +295,7 @@
                     </div>
 
                     <div class="mb-5">
-                        <h3 class="h4 mb-3" style="color: #7a2a3a;">Counter Cultures</h3>
+                        <h3 class="h4 mb-3" style="color: #7a2a3a;">Meu Objetivo</h3>
                         <p>
                             Encorajo meus pacientes a enfrentarem medos sem julgamento. Quando a mente parece
                             insensível às mudanças, ofereço um espaço seguro para explorar toda a gama de
@@ -322,20 +322,104 @@
         </div>
     </section>
     <!--Planos de Terapia-->
-    <section>
-        <p>opa</p>
-    </section>
+    <!-- Planos de Terapia -->
+    <section class="py-5" style="background-color: #f8f9fa;">
+        <div class="container">
+            <!-- Título -->
+            <div class="text-center mb-5">
+                <div class="divider mx-auto mb-3" style="width: 100px; height: 3px; background: #7a2a3a;"></div>
+                <h1 class="display-4 mb-3">Nossas Terapias</h1>
+                <p class="lead">Escolha o plano que melhor se adapta à sua jornada de autoconhecimento</p>
+            </div>
 
+            <!-- Cards -->
+            <div class="row g-4 justify-content-center">
+                <!-- Card 1: Sabotadores -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://image.freepik.com/foto-gratis/mirada-mujer-sentada-preocupada-escalera_53876-46177.jpg"
+                            class="card-img-top" alt="Mulher em sessão de terapia"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title text-warning mb-3">Terapia de Sabotadores</h3>
+                            <p class="card-text mb-4">Identifique e transforme os padrões inconscientes que limitam seu
+                                potencial e bem-estar emocional.</p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>6 sessões
+                                    individuais</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Diagnóstico
+                                    completo</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Exercícios
+                                    práticos</li>
+                            </ul>
+                            <a href="#" class="btn btn-warning w-100 py-2">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Individual (Destaque) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-lg border-warning border-3">
+                        <div class="position-absolute top-0 start-50 translate-middle mt-3">
+                            <span class="badge bg-danger py-2 px-3">Mais procurado</span>
+                        </div>
+                        <img src="https://image.freepik.com/foto-gratis/terapeuta-hablando-paciente_23-2149060079.jpg"
+                            class="card-img-top" alt="Sessão individual de terapia"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title text-warning mb-3">Sessão Individual</h3>
+                            <p class="card-text mb-4">Acompanhamento personalizado para seu desenvolvimento emocional e
+                                autoconhecimento profundo.</p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>1 hora por
+                                    sessão</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Plano
+                                    personalizado</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Flexibilidade
+                                    de horários</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Suporte entre
+                                    sessões</li>
+                            </ul>
+                            <a href="#" class="btn btn-warning w-100 py-2">Agendar agora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Grupal -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                        <img src="https://image.freepik.com/foto-gratis/grupo-personas-tomando-notas_23-2149097985.jpg"
+                            class="card-img-top" alt="Grupo em sessão de terapia"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h3 class="card-title text-warning mb-3">Sessão Grupal</h3>
+                            <p class="card-text mb-4">Experiência transformadora compartilhada em grupo para crescimento
+                                coletivo e apoio mútuo.</p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>8 encontros
+                                    mensais</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Temas
+                                    específicos</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Dinâmicas
+                                    interativas</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-warning w-100 py-2">Conhecer grupos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!--FAQ-->
     <section>
         <p>FAQ</p>
     </section>
     <!-- Rodapé -->
     <footer class="bg-dark text-light text-center p-3" id="Footer">
-        <p>&copy; 2025 Terapia Zen. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Leka Sarandi. Todos os direitos reservados.</p>
     </footer>
 </body>
-<script src="./src/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>7
+<script src="./src/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -366,6 +450,11 @@ if (typeof Swiper !== 'undefined') {
             992: {
                 slidesPerView: 3,
             }
+        },
+        autoplay: {
+            delay: 3000, // Tempo em milissegundos (3 segundos)
+            disableOnInteraction: false, // Continua após interação do usuário
+            pauseOnMouseEnter: true // Pausa quando o mouse está sobre o slider
         }
     });
 } else {
