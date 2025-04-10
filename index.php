@@ -32,24 +32,31 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar fixed-top shadow-lg navbar-expand-lg navbar-dark bg-white" id="Navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="Navbar">
         <div class="container">
-            <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;" href="#">
+            <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;"
+                href="./index.php">
 
                 <img loading="lazy" src="./src/img/logoEmpresa.png" style="width: 60px;" alt="logo">
 
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
                 <span class="navbar-toggler-icon"></span>
 
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto ">
-                    <li class="nav-item"><a class="nav-link text-black" href="./index.php">Início</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="#">Minha Empresa</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="#">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="#">Contato</a></li>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
+                            style="font-weight: 400;">Início</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
+                            style="font-weight: 400;">Minha Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
+                            style="font-weight: 400;">Sobre Mim</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
+                            style="font-weight: 400;">Contato</a></li>
                 </ul>
                 <div class="d-flex">
                     <button class="btn btn-warning ms-auto p-2 px-3" onclick="location.href='./src/pages/login.php'">
@@ -341,7 +348,7 @@
                             class="card-img-top" alt="Mulher em sessão de terapia"
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h3 class="card-title text-warning mb-3">Terapia de Sabotadores</h3>
+                            <h3 class="card-title mb-3" style="color: #7a2a3a;">Terapia de Sabotadores</h3>
                             <p class="card-text mb-4">Identifique e transforme os padrões inconscientes que limitam seu
                                 potencial e bem-estar emocional.</p>
                             <ul class="list-unstyled text-start mb-4">
@@ -352,7 +359,7 @@
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Exercícios
                                     práticos</li>
                             </ul>
-                            <a href="#" class="btn btn-warning w-100 py-2">Saiba mais</a>
+                            <a href="#" class="btn btn-warning   w-100 py-2">Saiba mais</a>
                         </div>
                     </div>
                 </div>
@@ -367,7 +374,7 @@
                             class="card-img-top" alt="Sessão individual de terapia"
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h3 class="card-title text-warning mb-3">Sessão Individual</h3>
+                            <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão Individual</h3>
                             <p class="card-text mb-4">Acompanhamento personalizado para seu desenvolvimento emocional e
                                 autoconhecimento profundo.</p>
                             <ul class="list-unstyled text-start mb-4">
@@ -388,11 +395,11 @@
                 <!-- Card 3: Grupal -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                        <img src="https://image.freepik.com/foto-gratis/grupo-personas-tomando-notas_23-2149097985.jpg"
-                            class="card-img-top" alt="Grupo em sessão de terapia"
+                        <img src="https://images.pexels.com/photos/5890690/pexels-photo-5890690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                            class="card-img-top " alt="Grupo em sessão de terapia"
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h3 class="card-title text-warning mb-3">Sessão Grupal</h3>
+                            <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão Grupal</h3>
                             <p class="card-text mb-4">Experiência transformadora compartilhada em grupo para crescimento
                                 coletivo e apoio mútuo.</p>
                             <ul class="list-unstyled text-start mb-4">
@@ -410,14 +417,162 @@
             </div>
         </div>
     </section>
+
+    <section class="secondary-services-section container">
+        <!-- Título da Seção -->
+        <h3 class="section-subtitle text-center mb-4 display-4">Outros Serviços Complementares</h3>
+
+        <div class="row align-items-start g-4">
+            <!-- Bloco de Explicação (Esquerda) -->
+            <div class="col-md-6">
+                <div class="explanation-block bg-light p-4 rounded shadow-sm">
+                    <h4 class="text-secondary">Conheça Nossas Opções Adicionais</h4>
+                    <p>
+                        Além das terapias em destaque, oferecemos serviços complementares para necessidades específicas.
+                        Essas modalidades são ideais para quem busca apoio pontual ou temas especializados, com menor
+                        comprometimento de tempo.
+                    </p>
+                    <div class="highlight-box mt-3 p-3 rounded border-start border-3 border-secondary bg-white">
+                        <span>Dica:</span> Todos os serviços podem ser agendados separadamente.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards Secundários (Direita) -->
+            <div class="col-md-6">
+                <div class="row g-3">
+                    <!-- Card 1 -->
+                    <div class="col-6">
+                        <div class="service-card secondary h-100 p-3 rounded shadow-sm">
+                            <div class="card-icon">📋</div>
+                            <h5>Orientação Profissional</h5>
+                            <p>Análise de carreira e planejamento</p>
+                            <span class="duration">Sessões avulsas</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-6">
+                        <div class="service-card secondary h-100 p-3 rounded shadow-sm">
+                            <div class="card-icon">👥</div>
+                            <h5>Workshops Temáticos</h5>
+                            <p>Comunicação e inteligência emocional</p>
+                            <span class="duration">Eventos mensais</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-12">
+                        <div class="service-card secondary h-100 p-3 rounded shadow-sm">
+                            <div class="card-icon">📚</div>
+                            <h5>Recursos Digitais</h5>
+                            <p>E-books e cursos online</p>
+                            <span class="duration">Acesso 24h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
     <!--FAQ-->
-    <section>
-        <p>FAQ</p>
+    <section class="container my-5" id="faq">
+        <h3 class="text-center mb-4 display-4">Perguntas Frequentes</h3>
+
+        <div class="accordion" id="faqAccordion">
+            <!-- Pergunta 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Como funciona o agendamento das sessões?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        O agendamento pode ser feito diretamente pela nossa plataforma ou por contato via WhatsApp. Você
+                        escolhe o melhor horário disponível.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pergunta 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Quais formas de pagamento são aceitas?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Aceitamos Pix, cartão de crédito, boleto e também planos de pagamento recorrente para pacotes de
+                        sessões.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pergunta 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Preciso ter alguma experiência anterior para participar?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Não. Todos os nossos serviços são pensados para iniciantes e adaptados conforme o seu nível de
+                        conhecimento e necessidade.
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- Rodapé -->
-    <footer class="bg-dark text-light text-center p-3" id="Footer">
-        <p>&copy; 2025 Leka Sarandi. Todos os direitos reservados.</p>
+    <footer class="bg-dark text-light pt-5 pb-3" id="Footer">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- Logo / Nome -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase">Leka Sarandi</h5>
+                    <p class="text-muted small">
+                        Cuidando da sua saúde emocional com empatia e profissionalismo.
+                    </p>
+                </div>
+
+                <!-- Links úteis -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-uppercase">Navegação</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#servicos" class="text-light text-decoration-none">Serviços</a></li>
+                        <li><a href="#sobre" class="text-light text-decoration-none">Sobre</a></li>
+                        <li><a href="#faq" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#contato" class="text-light text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato / Redes Sociais -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-uppercase">Fale Conosco</h6>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> contato@lekasarandi.com</p>
+                    <p class="mb-3"><i class="bi bi-phone"></i> (11) 99999-9999</p>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-2">
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-whatsapp fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary" />
+            <p class="text-center small mb-0">&copy; 2025 Leka Sarandi. Todos os direitos reservados.</p>
+        </div>
     </footer>
+
 </body>
 <script src="./src/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
 
@@ -427,6 +582,7 @@
 
 <script src="./src/js/home.js"></script>
 
+<script src="./src/js/global.js"></script>
 
 <script>
 if (typeof Swiper !== 'undefined') {
