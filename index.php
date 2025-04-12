@@ -477,7 +477,7 @@
 
     <!--FAQ-->
     <section class="container my-5" id="faq">
-        <h3 class="text-center mb-4 display-4">Perguntas Frequentes</h3>
+        <h3 class="text-center mb-4 display-6">Perguntas Frequentes</h3>
 
         <div class="accordion" id="faqAccordion">
             <!-- Pergunta 1 -->
