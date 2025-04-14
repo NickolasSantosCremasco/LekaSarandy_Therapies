@@ -1,0 +1,139 @@
+.contact-section {
+    background: #f9f7f5; /* Tom suave que remete a calma */
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .contact-header h2 {
+    color: #3a4a58; /* Azul-terroso suave */
+    font-size: 2.2em;
+    margin-bottom: 15px;
+  }
+  
+  .contact-header p {
+    color: #666;
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .contact-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .contact-form {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    color: #3a4a58;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    background: #fff;
+    transition: border 0.3s;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #8aa8bd;
+    outline: none;
+  }
+  
+  .submit-button {
+    background: #8aa8bd; /* Azul suave */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .submit-button:hover {
+    background: #6d8da3;
+  }
+  
+  .contact-info {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    min-width: 250px;
+  }
+  
+  .info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .info-icon {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #8aa8bd;
+  }
+  
+  .info-card h4 {
+    color: #3a4a58;
+    margin-bottom: 10px;
+  }
+  
+  .info-card p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 0.95em;
+  }
+  
+  .contact-link {
+    color: #8aa8bd;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9em;
+    border-bottom: 1px dashed #8aa8bd;
+    padding-bottom: 2px;
+    transition: color 0.3s;
+  }
+  
+  .contact-link:hover {
+    color: #6d8da3;
+  }

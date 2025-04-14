@@ -8,7 +8,7 @@
     <meta name="description"
         content="Terapia personalizada e transformadora com base em conexão autêntica, equilíbrio emocional e autoconhecimento.">
     <meta name="keywords"
-        content="terapia, autoconhecimento, saúde mental, psicológico, transformação emocional, terapia online">
+        content="terapia, autoconhecimento, saúde mental, psicológico, transformação emocional, terapia online, leka sarandi">
 
     <!--CSS-->
     <link rel="stylesheet" href="./src/bootstrap-5.3.3-dist/css/bootstrap.min.css">
@@ -55,7 +55,7 @@
                             style="font-weight: 400;">Minha Empresa</a></li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
                             style="font-weight: 400;">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./src/pages/contato.php"
                             style="font-weight: 400;">Contato</a></li>
                 </ul>
                 <div class="d-flex">
@@ -550,7 +550,7 @@
                     <ul class="list-unstyled">
                         <li><a href="#servicos" class="text-light text-decoration-none">Serviços</a></li>
                         <li><a href="#sobre" class="text-light text-decoration-none">Sobre</a></li>
-                        <li><a href="#faq" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#faq" class="text-light text-decoration-none">Minha Empresa</a></li>
                         <li><a href="#contato" class="text-light text-decoration-none">Contato</a></li>
                     </ul>
                 </div>
@@ -559,7 +559,7 @@
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Fale Conosco</h6>
                     <p class="mb-1"><i class="bi bi-envelope"></i> contato@lekasarandi.com</p>
-                    <p class="mb-3"><i class="bi bi-phone"></i> (11) 99999-9999</p>
+                    <p class="mb-3"><i class="bi bi-phone"></i> (21) 99999-9999</p>
                     <div class="d-flex justify-content-center justify-content-md-start gap-2">
                         <a href="#" class="text-light"><i class="bi bi-instagram fs-5"></i></a>
                         <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>

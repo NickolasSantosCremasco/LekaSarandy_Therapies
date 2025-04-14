@@ -10,8 +10,16 @@ a:hover {
     position: relative;
 }
 
-.bg-holder {
+.login {
     background-image: url('../img/terapia.jpeg');
+}
+
+.cadastro {
+    background-image: url('../img/cadastrar.webp');
+}
+
+.bg-holder {
+
     position: absolute;
     width:100%;
     min-height: 100vh;

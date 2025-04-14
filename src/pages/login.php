@@ -15,7 +15,7 @@
     <div class="row vh-100 g-0">
         <!--Lado Esquerdo-->
         <div class="col-lg-6 position-relative d-none d-lg-block">
-            <div class="bg-holder">
+            <div class="bg-holder login">
             </div>
         </div>
 
