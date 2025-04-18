@@ -8,10 +8,44 @@
     <link rel="shortcut icon" href="../img/logoEmpresa.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/login.css">
-    <title>Leka Sarandi | Login</title>
+    <title>Alessandra Sarandi | Login</title>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="Navbar">
+        <div class="container">
+            <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;"
+                href="./index.php">
+
+                <img loading="lazy" src="./src/img/logoEmpresa.png" style="width: 60px;" alt="logo">
+
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php"
+                            style="font-weight: 400;">Início</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php"
+                            style="font-weight: 400;">Minha Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php"
+                            style="font-weight: 400;">Sobre Mim</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../pages/contato.php"
+                            style="font-weight: 400;">Contato</a></li>
+                </ul>
+                <div class="d-flex">
+                    <button class="btn btn-warning ms-auto p-2 px-3" onclick="location.href='login.php'">
+                        Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="row vh-100 g-0">
         <!--Lado Esquerdo-->
         <div class="col-lg-6 position-relative d-none d-lg-block">

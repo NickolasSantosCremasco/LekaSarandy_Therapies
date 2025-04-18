@@ -48,7 +48,7 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active" href="./index.php"
                             style="font-weight: 400;">Início</a>
                     </li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"

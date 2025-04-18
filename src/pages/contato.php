@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--CSS-->
+    <title>Alessandra Sarandi | Contato</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/contato.css">
@@ -12,13 +14,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="../img/logoEmpresa.png" type="image/x-icon">
 
-    <!-- Fontes do Site -->
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <title>Leka Sarandi | Contato</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -27,27 +32,23 @@
         <div class="container">
             <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;"
                 href="./index.php">
-
                 <img loading="lazy" src="../img/logoEmpresa.png" style="width: 60px;" alt="logo">
-
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
                 <span class="navbar-toggler-icon"></span>
-
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php"
-                            style="font-weight: 400;">Início</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
-                            style="font-weight: 400;">Minha Empresa</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
-                            style="font-weight: 400;">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./src/pages/contato.php"
-                            style="font-weight: 400;">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
+                            href="../../index.php">Início</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php">Minha
+                            Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php">Sobre
+                            Mim</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active"
+                            href="./src/pages/contato.php">Contato</a></li>
                 </ul>
                 <div class="d-flex">
                     <button class="btn btn-warning ms-auto p-2 px-3" onclick="location.href='./src/pages/login.php'">
@@ -59,63 +60,192 @@
     </nav>
 
     <!-- Seção Contato -->
-    <section class="contact-section">
-        <div class="contact-container">
-            <!-- Título e Descrição -->
-            <div class="contact-header">
-                <h2>Entre em Contato</h2>
-                <p>
-                    Estou aqui para ajudar você a dar o primeiro passo em sua jornada de autoconhecimento.
-                    Envie sua mensagem ou agende uma conversa inicial sem compromisso.
-                </p>
-            </div>
-
-            <!-- Conteúdo Dividido (Formulário + Informações) -->
-            <div class="contact-content">
-                <!-- Formulário -->
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" placeholder="Seu nome completo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" placeholder="seu@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" rows="5"
-                                placeholder="Conte-me sobre suas expectativas ou dúvidas..."></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Enviar Mensagem</button>
-                    </form>
-                </div>
-
-                <!-- Informações de Contato -->
-                <div class="contact-info">
-                    <div class="info-card">
-                        <div class="info-icon">📱</div>
-                        <h4>WhatsApp</h4>
-                        <p>(XX) XXXX-XXXX</p>
-                        <a href="#" class="contact-link">Enviar mensagem</a>
+    <section class="py-5" style="background-color: var(--bege);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <!-- Cabeçalho com efeito visual calmante -->
+                    <div class="text-center mb-5" data-aos="fade-up">
+                        <h2 class="display-5 fw-bold mb-3" style="color: var(--vinho);">Entre em Contato</h2>
+                        <div class="divider mx-auto mb-4"
+                            style="width: 80px; height: 3px; background-color: var(--vinho-suave);"></div>
+                        <p class="lead" style="max-width: 700px; margin: 0 auto;">
+                            Estou aqui para ajudar você a dar o primeiro passo em sua jornada de autoconhecimento.
+                            Envie sua mensagem ou agende uma conversa inicial sem compromisso.
+                        </p>
                     </div>
-                    <div class="info-card">
-                        <div class="info-icon">📧</div>
-                        <h4>E-mail</h4>
-                        <p>contato@terapeuta.com</p>
-                        <a href="#" class="contact-link">Enviar e-mail</a>
+
+                    <!-- Cartão principal com formulário e informações -->
+                    <div class="card border-0 shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="row g-0">
+                            <!-- Formulário -->
+                            <div class="col-lg-7 p-4 p-md-5" style="background-color: white;">
+                                <h3 class="mb-4" style="color: var(--vinho);">Envie sua mensagem</h3>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Nome</label>
+                                        <input type="text" class="form-control" id="name"
+                                            placeholder="Seu nome completo"
+                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-mail</label>
+                                        <input type="email" class="form-control" id="email" placeholder="seu@email.com"
+                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Telefone (opcional)</label>
+                                        <input type="tel" class="form-control" id="phone" placeholder="(XX) XXXXX-XXXX"
+                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="message" class="form-label">Como posso te ajudar?</label>
+                                        <textarea class="form-control" id="message" rows="4"
+                                            placeholder="Conte-me sobre suas expectativas ou dúvidas..."
+                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn w-100 py-3"
+                                        style="background-color: var(--vinho); color: white; font-weight: 500;">Enviar
+                                        Mensagem</button>
+                                </form>
+                            </div>
+
+                            <!-- Informações de contato -->
+                            <div class="col-lg-5 d-flex flex-column"
+                                style="background-color: var(--vinho); color: white;">
+                                <div class="p-4 p-md-5 my-auto">
+                                    <h3 class="mb-4">Outras formas de contato</h3>
+
+                                    <!-- Item WhatsApp -->
+                                    <div class="d-flex mb-4">
+                                        <div class="me-4">
+                                            <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                                style="width: 50px; height: 50px; background-color: rgba(255,255,255,0.2);">
+                                                <i class="bi bi-whatsapp fs-4"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">WhatsApp</h5>
+                                            <p class="mb-1">(XX) XXXX-XXXX</p>
+                                            <a href="#" class="text-white text-decoration-underline small">Enviar
+                                                mensagem direta</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item E-mail -->
+                                    <div class="d-flex mb-4">
+                                        <div class="me-4">
+                                            <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                                style="width: 50px; height: 50px; background-color: rgba(255,255,255,0.2);">
+                                                <i class="bi bi-envelope fs-4"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">E-mail</h5>
+                                            <p class="mb-1">contato@terapeuta.com</p>
+                                            <a href="#" class="text-white text-decoration-underline small">Enviar
+                                                e-mail</a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item Localização -->
+                                    <div class="d-flex">
+                                        <div class="me-4">
+                                            <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                                style="width: 50px; height: 50px; background-color: rgba(255,255,255,0.2);">
+                                                <i class="bi bi-geo-alt fs-4"></i>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Atendimento</h5>
+                                            <p class="mb-1">Online ou Presencial (Rio de Janeiro/RJ)</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Rodapé do card -->
+                                <div class="mt-auto p-3 text-center" style="background-color: rgba(0,0,0,0.1);">
+                                    <p class="mb-0 small">"O primeiro passo para a cura é a coragem de pedir ajuda."</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="info-card">
-                        <div class="info-icon">📍</div>
-                        <h4>Atendimento</h4>
-                        <p>Online ou Presencial (São Paulo/SP)</p>
-                        <a href="#" class="contact-link">Ver mapa</a>
+
+                    <!-- Seção de Agendamento -->
+                    <div class="card border-0 shadow-sm mt-4"
+                        style="background-color: var(--vinho-claro); color: white;" data-aos="fade-up"
+                        data-aos-delay="150">
+                        <div class="card-body p-4 p-md-5 text-center">
+                            <div class="row align-items-center">
+                                <div class="col-md-8 mb-3 mb-md-0 text-md-start">
+                                    <h4 class="mb-2">Pronto para começar sua jornada?</h4>
+                                    <p class="mb-0">Agende uma sessão inicial gratuita de 30 minutos para conversarmos.
+                                    </p>
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-light w-100 py-2"
+                                        style="color: var(--vinho); font-weight: 500;">Agendar Sessão</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-5 pb-3" id="Footer">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- Logo / Nome -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase">Alessandra Sarandi</h5>
+                    <p class="text-muted small">
+                        Cuidando da sua saúde emocional com empatia e profissionalismo.
+                    </p>
+                </div>
+
+                <!-- Links úteis -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-uppercase">Navegação</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#servicos" class="text-light text-decoration-none">Serviços</a></li>
+                        <li class="mb-2"><a href="#sobre" class="text-light text-decoration-none">Sobre</a></li>
+                        <li class="mb-2"><a href="#faq" class="text-light text-decoration-none">Minha Empresa</a></li>
+                        <li><a href="#contato" class="text-light text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato / Redes Sociais -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-uppercase">Fale Conosco</h6>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> contato@alessandrasarandi.com</p>
+                    <p class="mb-3"><i class="bi bi-phone"></i> (XX) XXXX-XXXX</p>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-whatsapp fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-secondary" />
+            <p class="text-center small mb-0">&copy; 2025 Alessandra Sarandi. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+    </script>
 </body>
 
 </html>
