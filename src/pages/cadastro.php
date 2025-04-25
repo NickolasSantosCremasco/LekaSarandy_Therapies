@@ -1,3 +1,39 @@
+<?php
+require_once '../database/auth.php';
+require_once '../database/config.php';
+
+//processa o formulário de cadastro
+$erro = null;
+$sucesso = null;
+
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //Filtra e valida os inputs
+    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $senha = $_POST['senha'] ?? '';
+    $confirmar_senha = $_POST['confirmar_senha'] ?? '';
+
+    //validações
+    if(empty($nome) ||empty($email) || empty($senha)) {
+        $erro = "Todos os campos são obrigatórios!";
+    } elseif($senha !== $confirmar_senha) {
+        $erro = "As senhas não coincidem!";
+    } elseif (strlen($senha) < 6) {
+        $erro = "A senha deve ter pelo menos 6 caracteres";
+    } else {
+        //Tenta registrar o usuário
+        $resultado = registrarUsuario($nome, $email, $senha);
+        
+        if($resultado['sucesso']) {
+            $sucesso = $resultado['message'];
+            //Redireciona após 3 segundos
+            header('refresh:3;url=login.php');
+        } else {
+            $erro = $resultado['message'];
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -54,8 +90,8 @@
             <div class="row align-items-center justify-content-center h-100 g-0 px-4 px-sm-0">
                 <div class="col col-sm-6 col-lg-7 col-xl-6">
                     <!--logo-->
-                    <a href="" class="d-flex justify-content-center mb-4">
-                        <img src="../img/logoEmpresa.png" width="60" class="img-fluid" alt="">
+                    <a href="../../index.php" class="d-flex justify-content-center mb-4">
+                        <img src="../img/logoEmpresa.png" width="60" class="img-fluid" alt="Logo">
                     </a>
 
                     <div class="text-center mb-5">
@@ -63,35 +99,49 @@
                         <p class="text-secondary">Crie sua conta para melhor experiência</p>
                     </div>
 
-                    <!--Login Rede Social-->
-
-                    <!--Divisor-->
-                    <div class="position-relative">
-                        <hr class="text-secondary divider">
-                        <div class="divider-content-center"></div>
+                    <!-- Mensagens -->
+                    <?php if($erro): ?>
+                    <div class="alert alert-danger">
+                        <?= htmlspecialchars($erro) ?>
                     </div>
+                    <?php endif; ?>
+
+                    <?php if($sucesso): ?>
+                    <div class="alert alert-success">
+                        <?= htmlspecialchars($sucesso) ?>
+                    </div>
+                    <?php endif; ?>
+
 
                     <!--Formulário-->
-                    <form action="" method="post">
+                    <form action="cadastro.php" method="post">
                         <div class="input-group mb-3">
                             <span class="input-group-text">
                                 <i class="bi bi-person-fill"></i>
                             </span>
-                            <input type="text" class="form-control form-control-lg fs-6" placeholder="Nome" required>
+                            <input type="text" name="nome" id="nome" class="form-control form-control-lg fs-6"
+                                placeholder="Nome" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-person-fill"></i>
+                            </span>
+                            <input type="email" name="email" id="email" class="form-control form-control-lg fs-6"
+                                placeholder="email" required>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">
                                 <i class="bi bi-lock-fill"></i>
                             </span>
-                            <input type="password" class="form-control form-control-lg fs-6" placeholder="Senha"
-                                required>
+                            <input type="password" name="senha" id="senha" class="form-control form-control-lg fs-6"
+                                placeholder="Senha (min: 6 caracteres)" required>
                         </div>
 
                         <div class="input-group mb-3 d-flex justify-content-between">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="formCheck">
                                 <label for="formCheck" class="form-check-label text-secondary">
-                                    <small> Remember Me</small>
+                                    <small>Lembre-me</small>
                                 </label>
                             </div>
 

@@ -35,9 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/login.css">
     <title>Alessandra Sarandi | Login</title>
-    <style>
 
-    </style>
 </head>
 
 <body>
@@ -102,42 +100,29 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="alert alert-danger mb-4"><?=htmlspecialchars($erro)?></div>
                     <?php endif; ?>
 
-                    <!--Login Rede Social-->
-                    <button class="btn btn-outline-secondary btn-outline-custom w-100 mb-3">
-                        <i class="bi bi-google text-danger me-1 fs-6"></i>
-                        Login com Google
-                    </button>
-                    <button class="btn btn-outline-secondary btn-outline-custom w-100">
-                        <i class="bi bi-facebook text-primary me-1 fs-6"></i>
-                        Login com Facebook
-                    </button>
-                    <!--Divisor-->
-                    <div class="position-relative">
-                        <hr class="text-secondary divider">
-                        <div class="divider-content-center">Ou</div>
-                    </div>
+
 
                     <!--Formulário-->
-                    <form action="login.php" method="post">
+                    <form action="login.php" method="post" class="mb-4">
                         <div class="input-group mb-3">
                             <span class="input-group-text">
                                 <i class="bi bi-person-fill"></i>
                             </span>
-                            <input type="text" name="email" class="form-control form-control-lg fs-6"
+                            <input type="text" name="email" id="email" class="form-control form-control-lg fs-6"
                                 placeholder="Email" required>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">
                                 <i class="bi bi-lock-fill"></i>
                             </span>
-                            <input type="password" name="senha" class="form-control form-control-lg fs-6"
+                            <input type="password" name="senha" id="senha" class="form-control form-control-lg fs-6"
                                 placeholder="Senha" required>
                         </div>
 
                         <div class="input-group mb-3 d-flex justify-content-between">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="lembrar" name="lembrar">
-                                <label for="formCheck" class="form-check-label text-secondary">
+                                <label for="lembrar" class="form-check-label text-secondary">
                                     <small> Lembrar de mim</small>
                                 </label>
                             </div>
