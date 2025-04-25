@@ -1,3 +1,29 @@
+<?php
+require_once '../database/auth.php';
+
+// Redireciona se já estiver logado
+
+if(estaLogado()) {
+    header('Location: ' .($_SESSION['redirect_url'] ?? 'index.php'));
+    exit();
+}
+
+//processa o formulário
+$erro = null;
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    $senha = $_POST['senha'] ?? '';
+    
+    if(logarUsuario($email, $senha)) {
+        $redirect = $_SESSION['redirect_url'] ?? 'index.php';
+        unset($_SESSION['redirect_url']);
+        header("Location: $redirect");
+        exit();
+    } else {
+        $erro = 'Credenciais inválidas. Por favor, tente novamente.';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -9,15 +35,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/login.css">
     <title>Alessandra Sarandi | Login</title>
+    <style>
+
+    </style>
 </head>
 
 <body>
+    <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="Navbar">
         <div class="container">
             <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;"
                 href="./index.php">
 
-                <img loading="lazy" src="./src/img/logoEmpresa.png" style="width: 60px;" alt="logo">
+                <img loading="lazy" src="../img/logoEmpresa.png" style="width: 60px;" alt="logo">
 
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -67,6 +97,11 @@
                         <p class="text-secondary">Tenha acesso a sua conta</p>
                     </div>
 
+                    <!-- Exibe Erros -->
+                    <?php if($erro): ?>
+                    <div class="alert alert-danger mb-4"><?=htmlspecialchars($erro)?></div>
+                    <?php endif; ?>
+
                     <!--Login Rede Social-->
                     <button class="btn btn-outline-secondary btn-outline-custom w-100 mb-3">
                         <i class="bi bi-google text-danger me-1 fs-6"></i>
@@ -83,31 +118,32 @@
                     </div>
 
                     <!--Formulário-->
-                    <form action="" method="post">
+                    <form action="login.php" method="post">
                         <div class="input-group mb-3">
                             <span class="input-group-text">
                                 <i class="bi bi-person-fill"></i>
                             </span>
-                            <input type="text" class="form-control form-control-lg fs-6" placeholder="Nome" required>
+                            <input type="text" name="email" class="form-control form-control-lg fs-6"
+                                placeholder="Email" required>
                         </div>
                         <div class="input-group mb-3">
                             <span class="input-group-text">
                                 <i class="bi bi-lock-fill"></i>
                             </span>
-                            <input type="password" class="form-control form-control-lg fs-6" placeholder="Senha"
-                                required>
+                            <input type="password" name="senha" class="form-control form-control-lg fs-6"
+                                placeholder="Senha" required>
                         </div>
 
                         <div class="input-group mb-3 d-flex justify-content-between">
                             <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="formCheck">
+                                <input type="checkbox" class="form-check-input" id="lembrar" name="lembrar">
                                 <label for="formCheck" class="form-check-label text-secondary">
-                                    <small> Remember Me</small>
+                                    <small> Lembrar de mim</small>
                                 </label>
                             </div>
                             <div>
                                 <small>
-                                    <a href="#">
+                                    <a href="../pages/recuperarSenha.php">
                                         Esqueceu a Senha?
                                     </a>
                                 </small>

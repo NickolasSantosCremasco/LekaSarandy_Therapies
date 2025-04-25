@@ -2,6 +2,36 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+:root {
+  --vinho: #6d2c46;
+  --vinho-claro: #8d3d5b;
+  --vinho-suave: #a35875;
+  --bege: #f8f1e9;
+  --cinza-claro: #f5f5f5;
+}
+  
+
+.navbar {
+  background-color: white !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: var(--vinho) !important;
+  font-weight: 500;
+}
+
+.btn-warning {
+  background-color: var(--vinho);
+  color: white;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-warning:hover {
+  background-color: var(--vinho-claro);
+  color: white;
+}
 /* ---HeroSection*/
 
 .hero {
@@ -31,8 +61,6 @@ header div h1 {
 
 }
 
-/* Sessão de Depoimentos*/
-
 /* Estilos mínimos para o Swiper */
 .swiper {
     width: 100%;
@@ -43,24 +71,6 @@ header div h1 {
     height: auto;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-    color: #7a2a3a;
-    background: rgba(255, 255, 255, 0.9);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-    font-size: 1.2rem;
-}
-
-.swiper-pagination-bullet {
-    background: #7a2a3a;
-}
-
 /* Sessão de Serviços*/
 
 #tituloServicos {
@@ -69,83 +79,9 @@ header div h1 {
 
 /* Serviços Complementares*/
 
-.secondary-services-section {
-    margin-top: 40px;
-    padding: 20px 0;
-    border-top: 1px solid #eee;
-  }
   
-  .services-container {
-    display: flex;
-    gap: 30px;
-  }
-  
-  .explanation-block {
-    flex: 1;
-    padding: 15px;
-  }
-  
-  .explanation-block h4 {
-    color: #555;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .explanation-block p {
-    color: #666;
-    font-size: 0.95em;
-    line-height: 1.5;
-  }
-  
-  .highlight-box {
-    background: #f8f8f8;
-    border-left: 3px solid #ccc;
-    padding: 10px;
-    margin-top: 15px;
-    font-size: 0.9em;
-    color: #555;
-  }
-  
-  .secondary-cards {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-  
-  .service-card.secondary {
-    background: white;
-    border: 1px solid #e0e0e0;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s;
-  }
-  
-  .service-card.secondary:hover {
+  .cards:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
   }
   
-  .card-icon {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-  }
-  
-  .service-card.secondary h5 {
-    color: #666;
-    font-size: 1em;
-    margin: 5px 0;
-  }
-  
-  .service-card.secondary p {
-    color: #777;
-    font-size: 0.85em;
-  }
-  
-  .duration {
-    display: block;
-    font-size: 0.75em;
-    color: #999;
-    margin-top: 8px;
-  }

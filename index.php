@@ -8,7 +8,7 @@
     <meta name="description"
         content="Terapia personalizada e transformadora com base em conexão autêntica, equilíbrio emocional e autoconhecimento.">
     <meta name="keywords"
-        content="terapia, autoconhecimento, saúde mental, psicológico, transformação emocional, terapia online, leka sarandi">
+        content="terapia, autoconhecimento, saúde mental, psicológico, transformação emocional, terapia online, leka sarandi, Alessandra Sarandi">
 
     <!--CSS-->
     <link rel="stylesheet" href="./src/bootstrap-5.3.3-dist/css/bootstrap.min.css">
@@ -26,7 +26,7 @@
 
 
     <link rel="shortcut icon" href="./src/img/logoEmpresa.png" type="image/x-icon">
-    <title>Leka Sarandi</title>
+    <title>Alessandra Sarandi</title>
 
 </head>
 
@@ -51,9 +51,9 @@
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active" href="./index.php"
                             style="font-weight: 400;">Início</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#"
                             style="font-weight: 400;">Minha Empresa</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php"
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#"
                             style="font-weight: 400;">Sobre Mim</a></li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./src/pages/contato.php"
                             style="font-weight: 400;">Contato</a></li>
@@ -418,56 +418,117 @@
         </div>
     </section>
 
-    <section class="secondary-services-section container">
+    <section class="secondary-services-section container py-5">
         <!-- Título da Seção -->
-        <h3 class="section-subtitle text-center mb-4 display-4">Outros Serviços Complementares</h3>
+        <div class="text-center mb-5">
+            <span class="badge mb-3 rounded-pill px-3 py-2"
+                style="color:#6d2c46; background-color: rgba(109,44,70,0.1);">Serviços
+                Adicionais</span>
+            <h2 class="section-title text-center mb-3 display-5 fw-bold " style="color: #6d2c46;">Cuidados
+                Complementares para
+                a Sua Jornada
+            </h2>
+            <p class="section-subtitle text-muted mx-auto" style="max-width: 700px;">Explore nossas opções adicionais
+                criadas para apoiar seu crescimento em diferentes formatos e intensidades
+            </p>
+        </div>
 
-        <div class="row align-items-start g-4">
+
+        <div class=" row align-items-stretch g-4">
             <!-- Bloco de Explicação (Esquerda) -->
-            <div class="col-md-6">
-                <div class="explanation-block bg-light p-4 rounded shadow-sm">
-                    <h4 class="text-secondary">Conheça Nossas Opções Adicionais</h4>
-                    <p>
-                        Além das terapias em destaque, oferecemos serviços complementares para necessidades específicas.
-                        Essas modalidades são ideais para quem busca apoio pontual ou temas especializados, com menor
-                        comprometimento de tempo.
-                    </p>
-                    <div class="highlight-box mt-3 p-3 rounded border-start border-3 border-secondary bg-white">
-                        <span>Dica:</span> Todos os serviços podem ser agendados separadamente.
+            <div class="col-lg-5">
+                <div class="h-100 p-4 p-lg-5 rounded-3"
+                    style="background-color: #f8f1e9; border-left: 4px solid #6d2c46;">
+                    <div class="explanation-block bg-light p-4 rounded shadow-sm">
+                        <h3 class="h4 mb-4" style="color: #6d2c46;">Conheça Nossas Opções Adicionais</h3>
+                        <p class="mb-4">
+                            Além das terapias em destaque, oferecemos serviços complementares para necessidades
+                            específicas.
+                            Essas modalidades são ideais para quem busca apoio pontual ou temas especializados, com
+                            menor
+                            comprometimento de tempo.
+                        </p>
+                        <div class="p-3 rounded"
+                            style="background-color: rgba(109, 44, 70, 0.1); border-left: 3px solid #6d2c46;">
+                            <i class="bi bi-lightbulb me-2" style="color: #6d2c46;"></i>
+                            <strong>Dica Profissional:</strong> Combine esses Serviços com sua terapia regular para
+                            resultados mais profundos. Além de que irá receber um desconto de 20% no valor final
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button class="btn px-4" style="border:1px solid #6d2c46; color: #6d2c46;"
+                            onclick="location.href = './src/pages/pesquisa.php'">
+                            <i class="bi bi-question-circle me-2"></i>Como escolher?
+                        </button>
+
                     </div>
                 </div>
             </div>
 
             <!-- Cards Secundários (Direita) -->
-            <div class="col-md-6">
-                <div class="row g-3">
+            <div class="col-lg-7">
+                <div class="row g-4">
                     <!-- Card 1 -->
-                    <div class="col-6">
-                        <div class="service-card secondary h-100 p-3 rounded shadow-sm">
-                            <div class="card-icon">📋</div>
-                            <h5>Orientação Profissional</h5>
-                            <p>Análise de carreira e planejamento</p>
-                            <span class="duration">Sessões avulsas</span>
+                    <div class="col-md-6 cards">
+                        <div class="h-100 p-4 rounded-3 shadow-sm border-0 position-relative overflow-hidden"
+                            style="background-color: white;">
+                            <div class="position-absolute top-0 end-0 p-3 opacity-10">
+                                <i class="bi bi-instagram fs-1 text-wine" style="color: #6d2c46;"></i>
+                            </div>
+                            <div class="card-icon mb-3 text-wine">
+                                <i class="bi bi-camera-reels-fill fs-1" style="color: #6d2c46;"></i>
+                            </div>
+                            <h4 class=" h5 text-wine mb-3">Lives Terapêuticas</h4>
+                            <p class="mb-4">Transmissões ao vivo semanais abordando temas essenciais para seu
+                                desenvolvimento emocional e autoconhecimento.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-wine-light text-wine rounded-pill px-3">Toda Quinta</span>
+                                <a href="#" class="text-wine text-decoration-none small">Saiba mais <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="col-6">
-                        <div class="service-card secondary h-100 p-3 rounded shadow-sm">
-                            <div class="card-icon">👥</div>
-                            <h5>Workshops Temáticos</h5>
-                            <p>Comunicação e inteligência emocional</p>
-                            <span class="duration">Eventos mensais</span>
+                    <div class="col-md-6 cards">
+                        <div class="h-100 p-4 rounded-3 shadow-sm border-0 position-relative overflow-hidden"
+                            style="background-color: white;">
+                            <div class="position-absolute top-0 end-0 p-3 opacity-10">
+                                <i class="bi bi-magic fs-1" style="color: #6d2c46;"></i>
+                            </div>
+                            <div class="card-icon mb-3" style="color: #6d2c46;">
+                                <i class="bi bi-moon-stars-fill fs-1"></i>
+                            </div>
+                            <h4 class="h5 text-wine mb-3">Hipnose Clínica</h4>
+                            <p class="mb-4">Técnica especializada para acessar e transformar crenças limitantes
+                                armazenadas no subconsciente.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-wine-light text-wine rounded-pill px-3">Sessões</span>
+                                <a href="#" class="text-wine text-decoration-none small">Saiba mais <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="col-12">
-                        <div class="service-card secondary h-100 p-3 rounded shadow-sm">
-                            <div class="card-icon">📚</div>
-                            <h5>Recursos Digitais</h5>
-                            <p>E-books e cursos online</p>
-                            <span class="duration">Acesso 24h</span>
+                    <div class="col-12 cards">
+                        <div class="p-4 rounded-3 shadow-sm border-0 position-relative overflow-hidden"
+                            style="background-color: #6d2c46; color: white;">
+                            <div class="position-absolute top-0 end-0 p-3 opacity-25">
+                                <i class="bi bi-journal-bookmark-fill fs-1"></i>
+                            </div>
+                            <div class="card-icon mb-3">
+                                <i class="bibi-journal-text fs-1 "></i>
+                            </div>
+                            <h4 class="h5 mb-3">Recursos Digitais Exclusivos</h4>
+                            <p class="mb-4">Acesso a e-books, cursos online e materiais de apoio para continuar seu
+                                desenvolvimento fora das sessões</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-white rounded-pill px-3" style="color: #6d2c46;">Acesso
+                                    Imediato</span>
+                                <a href="" class="text-white text-decoration-none small">Explorar <i
+                                        class="bi bi-arrow-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -538,7 +599,7 @@
             <div class="row text-center text-md-start">
                 <!-- Logo / Nome -->
                 <div class="col-md-4 mb-4">
-                    <h5 class="text-uppercase">Leka Sarandi</h5>
+                    <h5 class="text-uppercase">Alessandra Sarandi</h5>
                     <p class="text-muted small">
                         Cuidando da sua saúde emocional com empatia e profissionalismo.
                     </p>
@@ -561,15 +622,16 @@
                     <p class="mb-1"><i class="bi bi-envelope"></i> contato@lekasarandi.com</p>
                     <p class="mb-3"><i class="bi bi-phone"></i> (21) 99999-9999</p>
                     <div class="d-flex justify-content-center justify-content-md-start gap-2">
-                        <a href="#" class="text-light"><i class="bi bi-instagram fs-5"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-whatsapp fs-5"></i></a>
+                        <a href="https://www.instagram.com/lekasarandy/" target="_blank" class="text-light"><i
+                                class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" target="_blank" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#" target="_blank" class="text-light"><i class="bi bi-whatsapp fs-5"></i></a>
                     </div>
                 </div>
             </div>
 
             <hr class="border-secondary" />
-            <p class="text-center small mb-0">&copy; 2025 Leka Sarandi. Todos os direitos reservados.</p>
+            <p class="text-center small mb-0">&copy; 2025 Alessandra Sarandi. Todos os direitos reservados.</p>
         </div>
     </footer>
 

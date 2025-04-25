@@ -51,7 +51,7 @@
                             href="./src/pages/contato.php">Contato</a></li>
                 </ul>
                 <div class="d-flex">
-                    <button class="btn btn-warning ms-auto p-2 px-3" onclick="location.href='./src/pages/login.php'">
+                    <button class="btn btn-warning ms-auto p-2 px-3" onclick="location.href='../pages/login.php'">
                         Login
                     </button>
                 </div>

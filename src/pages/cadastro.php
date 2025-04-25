@@ -8,7 +8,9 @@
     <link rel="shortcut icon" href="../img/logoEmpresa.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/login.css">
-    <title>Leka Sarandi | Cadastro</title>
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <title>Alessandra Sarandi | Cadastro</title>
 </head>
 
 <body>
@@ -17,7 +19,7 @@
             <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;"
                 href="./index.php">
 
-                <img loading="lazy" src="./src/img/logoEmpresa.png" style="width: 60px;" alt="logo">
+                <img loading="lazy" src="../img/logoEmpresa.png" style="width: 60px;" alt="logo">
 
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
