@@ -20,21 +20,26 @@
 
 <body class="bg-light">
     <!-- Navbar -->
-    <nav class="navbar fixed-top shadow-lg navbar-expand-lg navbar-dark bg-white" id="Navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="Navbar">
         <div class="container">
-            <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;" href="#">
+            <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;"
+                href="../../index.php">
                 <img src="../img/logoEmpresa.png" style="width: 60px;" alt="logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link text-black" href="../../index.php">Início</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="#">Minha Empresa</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="#">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link text-black" href="../pages/contato.php">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative text-black px-3 py-2 active"
+                            href="../../index.php">Início</a></li>
+                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2" href="#">Minha
+                            Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2" href="#">Sobre
+                            Mim</a></li>
+                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
+                            href="../pages/contato.php">Contato</a></li>
                 </ul>
                 <div class="d-flex">
                     <button class="btn btn-warning ms-auto p-2 px-3">

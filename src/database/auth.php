@@ -5,6 +5,19 @@ require_once 'config.php';
 function registrarUsuario($nome, $email, $senha) {
     global $pdo;
 
+    //verifica se tem algum campo vazio
+    if (empty($nome) || empty($email) || empty($senha) ) {
+        return ['sucesso' => false, 'message' => 'Todos os campos são obrigatórios.'];
+    };
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return ['sucesso' => false, 'message' => 'Email inválido!'];
+    }
+
+    if (strlen($senha) < 6) {
+        return ['sucesso' => false, 'message' => 'A senha deve ter no mínimo 6 caractéres.'];   
+    }
+    
     //Verifica se o email já existe
     $sql = 'SELECT id FROM usuarios WHERE email = :email';
     $stmt = $pdo-> prepare($sql);
@@ -36,8 +49,6 @@ function registrarUsuario($nome, $email, $senha) {
         return['sucesso' => false, 'message' => 'Erro no banco de dados: ' . $e->getMessage()];
     }
     
-
-   
 }
 
 //Função para logar usuário
@@ -73,19 +84,28 @@ function estaLogado() {
     return isset($_SESSION['usuario']) && (time() - ($_SESSION['ultimo_acesso'] ?? 0)) < 3600; //1h de sessão
 }
 
-//Função para redirecionar usuários não logados
+//Atualiza o tempo de acesso ativo
+function renovarSessao() {
+    if (isset($_SESSION['usuario'])) {
+        $_SESSION['ultimo_acesso'] = time();
+    }
+}
 
+//Função para redirecionar usuários não logados
 function verificarLogin($redirect = 'login.php') {
     if(!estaLogado()) {
         $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
-        header('Location: login.php');
+        header("Location: $redirect");
         exit();
-    }  
+    }  else {
+        renovarSessao();
+    }
 }
 
 //Deslogar usuário
 function logout() {
     $_SESSION = array();
+    
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();
         setcookie(session_name(), '', time() - 42000,

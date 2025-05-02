@@ -8,7 +8,7 @@ $sucesso = null;
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     //Filtra e valida os inputs
-    $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+    $nome = htmlspecialchars(trim($_POST['nome']));
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
     $senha = $_POST['senha'] ?? '';
     $confirmar_senha = $_POST['confirmar_senha'] ?? '';
@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         if($resultado['sucesso']) {
             $sucesso = $resultado['message'];
             //Redireciona após 3 segundos
-            header('refresh:3;url=login.php');
+            echo '<script>setTimout(function(){window.location.href = "login.php";}, 3000);</script>';
         } else {
             $erro = $resultado['message'];
         }
@@ -135,6 +135,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </span>
                             <input type="password" name="senha" id="senha" class="form-control form-control-lg fs-6"
                                 placeholder="Senha (min: 6 caracteres)" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-lock-fill"></i>
+                            </span>
+                            <input type="password" name="confirmar_senha" id="confirmar_senha"
+                                class="form-control form-control-lg fs-6" placeholder="Confirmar Senha" required>
                         </div>
 
                         <div class="input-group mb-3 d-flex justify-content-between">

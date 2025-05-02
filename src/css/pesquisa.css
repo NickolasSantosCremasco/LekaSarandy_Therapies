@@ -11,4 +11,26 @@ body {
     background-color: var(--bege);
     color: #333;
     padding-top: 80px;
-}
+}   
+  
+  .navbar {
+    background-color: white !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-link {
+    color: var(--vinho) !important;
+    font-weight: 500;
+  }
+  
+  .btn-warning {
+    background-color: var(--vinho);
+    color: white;
+    border: none;
+    transition: all 0.3s;
+  }
+  
+  .btn-warning:hover {
+    background-color: var(--vinho-claro);
+    color: white;
+  }
