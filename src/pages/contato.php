@@ -1,3 +1,7 @@
+<?php
+    require_once '../database/config.php';
+    require_once '../database/auth.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -20,10 +24,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <style>
-
-    </style>
 </head>
 
 <body>
@@ -51,9 +51,19 @@
                             href="./src/pages/contato.php">Contato</a></li>
                 </ul>
                 <div class="d-flex">
+                    <?php if(estaLogado()) : ?>
+                    <!-- Mostra a imagem do usuário logado -->
+                    <div class="d-flex align-items-center flex-column gap-2">
+                        <img src="./src/img/user.png" class="border" alt="Usuário"
+                            style="width: 40px; height: 40px; border-radius: 50%;">
+                        <span
+                            class="fw-bold"><?php echo ucfirst(explode(' ', $_SESSION['usuario']['nome'])[0]) ?></span>
+                    </div>
+                    <?php else : ?>
                     <button class="btn btn-warning ms-auto p-2 px-3" onclick="location.href='../pages/login.php'">
                         Login
                     </button>
+                    <?php endif ?>
                 </div>
             </div>
         </div>

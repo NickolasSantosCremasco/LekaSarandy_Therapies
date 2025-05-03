@@ -59,7 +59,7 @@ body {
   
   /* Efeito hover na logo */
   .navbar-brand:hover img {
-  transform: rotate(-5deg) scale(1.05);
+  transform: scale(1.05);
   }
   
   /* Efeito hover no botão */
@@ -68,5 +68,13 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(122, 42, 58, 0.2) !important;
   }
+
+  /*Perfil*/
+a.perfil:hover {
+transform: scale(1.1);
+transition: all .4s;
+
+}
+
 /* ---Rodapé--- */
 

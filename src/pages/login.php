@@ -1,12 +1,6 @@
 <?php
+require_once '../database/config.php';
 require_once '../database/auth.php';
-
-// Redireciona se já estiver logado
-
-if(estaLogado()) {
-    header('Location: ' .($_SESSION['redirect_url'] ?? 'index.php'));
-    exit();
-}
 
 //processa o formulário
 $erro = null;
@@ -55,13 +49,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <li class="nav-item"><a class="nav-link position-relative text-black px-3 py-2 active"
                             href="../../index.php">Início</a></li>
                     <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2" href="#">Minha
-                            Empresa</a></li>
+                            Empresa</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2" href="#">Sobre
                             Mim</a></li>
                     <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
                             href="../pages/contato.php">Contato</a></li>
                 </ul>
                 <div class="d-flex">
+
                     <button class="btn btn-warning ms-auto p-2 px-3">
                         Login
                     </button>
@@ -98,7 +94,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
                     <!--Formulário-->
-                    <form action="login.php" method="post" class="mb-4">
+                    <form action="../pages/login.php" method="post" class="mb-4">
                         <div class="input-group mb-3">
                             <span class="input-group-text">
                                 <i class="bi bi-person-fill"></i>

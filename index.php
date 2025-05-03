@@ -1,3 +1,7 @@
+<?php
+    require_once 'src/database/config.php';
+    require_once 'src/database/auth.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -66,9 +70,21 @@
                             style="font-weight: 400;">Contato</a></li>
                 </ul>
                 <div class="d-flex">
+                    <?php if(estaLogado()) : ?>
+                    <!-- Mostra a imagem do usuário logado -->
+                    <div class="d-flex align-items-center flex-column gap-2">
+                        <a href="src/pages/perfil.php" class="perfil">
+                            <img src="https://icon-library.com/images/generic-user-icon/generic-user-icon-9.jpg"
+                                class="border" alt="Usuário" style="width: 60px; height: 60px; border-radius: 50%;">
+                        </a>
+                        <span
+                            class="fw-bold"><?php echo ucfirst(explode(' ', $_SESSION['usuario']['nome'])[0]) ?></span>
+                    </div>
+                    <?php else : ?>
                     <button class="btn btn-warning ms-auto p-2 px-3" onclick="location.href='./src/pages/login.php'">
                         Login
                     </button>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
@@ -238,7 +254,8 @@
                     <div class="card h-100 bg-dark border-0">
                         <div class="card-body text-center p-4">
                             <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Conexão Autêntica</h3>
-                            <p class="mb-0" style="color: white;">Assim como você se sente confortável sendo você mesmo,
+                            <p class="mb-0" style="color: white;">Assim como você se sente confortável sendo você
+                                mesmo,
                                 a terapia oferece um espaço seguro para explorar sua essência sem julgamentos, mesmo
                                 quando realizado remotamente</p>
                         </div>
@@ -250,7 +267,8 @@
                     <div class="card h-100 bg-dark border-0">
                         <div class="card-body text-center p-4">
                             <h3 class="h4 mb-3 text-warning" style="color: #7a2a3a;">Empoderamento</h3>
-                            <p class="mb-0" style="color: white;">Assim como você merece ser protagonista da sua vida, a
+                            <p class="mb-0" style="color: white;">Assim como você merece ser protagonista da sua
+                                vida, a
                                 terapia fortalece sua capacidade de fazer escolhas alinhadas com seu verdadeiro eu,
                                 momento a momento.</p>
                         </div>
@@ -356,7 +374,8 @@
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body text-center">
                             <h3 class="card-title mb-3" style="color: #7a2a3a;">Terapia de Sabotadores</h3>
-                            <p class="card-text mb-4">Identifique e transforme os padrões inconscientes que limitam seu
+                            <p class="card-text mb-4">Identifique e transforme os padrões inconscientes que limitam
+                                seu
                                 potencial e bem-estar emocional.</p>
                             <ul class="list-unstyled text-start mb-4">
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>6 sessões
@@ -382,7 +401,8 @@
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body text-center">
                             <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão Individual</h3>
-                            <p class="card-text mb-4">Acompanhamento personalizado para seu desenvolvimento emocional e
+                            <p class="card-text mb-4">Acompanhamento personalizado para seu desenvolvimento
+                                emocional e
                                 autoconhecimento profundo.</p>
                             <ul class="list-unstyled text-start mb-4">
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>1 hora por
@@ -391,7 +411,8 @@
                                     personalizado</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Flexibilidade
                                     de horários</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Suporte entre
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Suporte
+                                    entre
                                     sessões</li>
                             </ul>
                             <a href="#" class="btn btn-warning w-100 py-2">Agendar agora</a>
@@ -407,10 +428,12 @@
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body text-center">
                             <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão Grupal</h3>
-                            <p class="card-text mb-4">Experiência transformadora compartilhada em grupo para crescimento
+                            <p class="card-text mb-4">Experiência transformadora compartilhada em grupo para
+                                crescimento
                                 coletivo e apoio mútuo.</p>
                             <ul class="list-unstyled text-start mb-4">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>8 encontros
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>8
+                                    encontros
                                     mensais</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Temas
                                     específicos</li>
@@ -435,7 +458,8 @@
                 Complementares para
                 a Sua Jornada
             </h2>
-            <p class="section-subtitle text-muted mx-auto" style="max-width: 700px;">Explore nossas opções adicionais
+            <p class="section-subtitle text-muted mx-auto" style="max-width: 700px;">Explore nossas opções
+                adicionais
                 criadas para apoiar seu crescimento em diferentes formatos e intensidades
             </p>
         </div>
@@ -559,7 +583,8 @@
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        O agendamento pode ser feito diretamente pela nossa plataforma ou por contato via WhatsApp. Você
+                        O agendamento pode ser feito diretamente pela nossa plataforma ou por contato via WhatsApp.
+                        Você
                         escolhe o melhor horário disponível.
                     </div>
                 </div>
@@ -576,7 +601,8 @@
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Aceitamos Pix, cartão de crédito, boleto e também planos de pagamento recorrente para pacotes de
+                        Aceitamos Pix, cartão de crédito, boleto e também planos de pagamento recorrente para
+                        pacotes de
                         sessões.
                     </div>
                 </div>
@@ -593,7 +619,8 @@
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                     data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Não. Todos os nossos serviços são pensados para iniciantes e adaptados conforme o seu nível de
+                        Não. Todos os nossos serviços são pensados para iniciantes e adaptados conforme o seu nível
+                        de
                         conhecimento e necessidade.
                     </div>
                 </div>

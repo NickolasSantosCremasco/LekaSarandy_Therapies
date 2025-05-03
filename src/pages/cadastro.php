@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         if($resultado['sucesso']) {
             $sucesso = $resultado['message'];
             //Redireciona após 3 segundos
-            echo '<script>setTimout(function(){window.location.href = "login.php";}, 3000);</script>';
+            echo '<script>setTimout(function(){window.location.href = "index.php";}, 3000);</script>';
         } else {
             $erro = $resultado['message'];
         }

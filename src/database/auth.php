@@ -92,8 +92,8 @@ function renovarSessao() {
 }
 
 //Função para redirecionar usuários não logados
-function verificarLogin($redirect = 'login.php') {
-    if(!estaLogado()) {
+function verificarLogin($redirect = '../../index.php') {
+    if(!estaLogado()) { 
         $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
         header("Location: $redirect");
         exit();
