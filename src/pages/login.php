@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = $_POST['senha'] ?? '';
     
     if(logarUsuario($email, $senha)) {
-        $redirect = $_SESSION['redirect_url'] ?? 'index.php';
+        $redirect = $_SESSION['redirect_url'] ?? '../../index.php';
         unset($_SESSION['redirect_url']);
         header("Location: $redirect");
         exit();

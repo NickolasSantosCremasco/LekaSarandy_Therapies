@@ -54,8 +54,8 @@
                     <?php if(estaLogado()) : ?>
                     <!-- Mostra a imagem do usuário logado -->
                     <div class="d-flex align-items-center flex-column gap-2">
-                        <img src="./src/img/user.png" class="border" alt="Usuário"
-                            style="width: 40px; height: 40px; border-radius: 50%;">
+                        <img src="https://icon-library.com/images/generic-user-icon/generic-user-icon-9.jpg"
+                            class="border" alt="Usuário" style="width: 60px; height: 60px; border-radius: 50%;">
                         <span
                             class="fw-bold"><?php echo ucfirst(explode(' ', $_SESSION['usuario']['nome'])[0]) ?></span>
                     </div>
