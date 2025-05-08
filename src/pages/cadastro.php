@@ -46,7 +46,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/cadastro.css">
     <link rel="stylesheet" href="../css/global.css">
-    <title>Alessandra Sarandi | Cadastro</title>
+    <title>Leka Sarandy | Cadastro</title>
 </head>
 
 <body>

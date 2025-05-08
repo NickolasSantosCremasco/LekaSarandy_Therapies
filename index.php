@@ -12,7 +12,7 @@
     <meta name="description"
         content="Terapia personalizada e transformadora com base em conexão autêntica, equilíbrio emocional e autoconhecimento.">
     <meta name="keywords"
-        content="terapia, autoconhecimento, saúde mental, psicológico, transformação emocional, terapia online, leka sarandi, Alessandra Sarandi">
+        content="terapia, autoconhecimento, saúde mental, psicológico, transformação emocional, terapia online, leka sarandi, Alexandra Sarandy">
 
     <!--CSS-->
     <link rel="stylesheet" href="./src/bootstrap-5.3.3-dist/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link rel="shortcut icon" href="./src/img/logoEmpresa.png" type="image/x-icon">
-    <title>Alessandra Sarandi</title>
+    <title>Leka Sarandy</title>
 
 </head>
 
@@ -59,15 +59,15 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active" href="./index.php"
-                            style="font-weight: 400;">Início</a>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active"
+                            href="./index.php">Início</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#"
-                            style="font-weight: 400;">Minha Empresa</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#"
-                            style="font-weight: 400;">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./src/pages/contato.php"
-                            style="font-weight: 400;">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#minhaEmpresa">Minha
+                            Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#sobreMim">Sobre Mim</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
+                            href="./src/pages/contato.php">Contato</a></li>
                 </ul>
                 <div class="d-flex">
                     <?php if(estaLogado()) : ?>
@@ -238,7 +238,7 @@
     </section>
 
     <!-- Serviços -->
-    <section class="container-fluid bg-black py-5 text-white">
+    <section class="container-fluid bg-black py-5 text-white" id="minhaEmpresa">
         <div class="container">
             <!-- Título principal -->
             <div class="text-center mb-5">
@@ -303,7 +303,7 @@
 
     <!-- Sobre Mim -->
 
-    <section class="container-fluid py-5" style="background: #f8f9fa;">
+    <section class="container-fluid py-5" style="background: #f8f9fa;" id="sobreMim">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Coluna de texto -->
@@ -340,8 +340,7 @@
                 <!-- Coluna de imagem -->
                 <div class="col-lg-5">
                     <div class="position-relative d-block">
-                        <img src="https://tse1.mm.bing.net/th?id=OIP.X8aBnaZbAhu8Yt8YCY6psQHaD3&pid=Api"
-                            style="height: 450px; width: 500px;" alt="Terapeuta" class="img-fluid rounded shadow-lg"
+                        <img src="src/img/LekaSarandy.webp" alt="Terapeuta" class="img-fluid rounded shadow-lg"
                             style="border: 8px solid white;">
                         <div class="position-absolute bottom-0 start-0 bg-white p-3 shadow"
                             style="transform: translate(-20%, 20%);">
@@ -633,7 +632,7 @@
             <div class="row text-center text-md-start">
                 <!-- Logo / Nome -->
                 <div class="col-md-4 mb-4">
-                    <h5 class="text-uppercase">Alessandra Sarandi</h5>
+                    <h5 class="text-uppercase">Leka Sarandy</h5>
                     <p class="text-muted small">
                         Cuidando da sua saúde emocional com empatia e profissionalismo.
                     </p>
@@ -654,7 +653,7 @@
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Fale Conosco</h6>
                     <p class="mb-1"><i class="bi bi-envelope"></i> contato@lekasarandi.com</p>
-                    <p class="mb-3"><i class="bi bi-phone"></i> (21) 99999-9999</p>
+
                     <div class="d-flex justify-content-center justify-content-md-start gap-2">
                         <a href="https://www.instagram.com/lekasarandy/" target="_blank" class="text-light"><i
                                 class="bi bi-instagram fs-5"></i></a>
@@ -665,7 +664,7 @@
             </div>
 
             <hr class="border-secondary" />
-            <p class="text-center small mb-0">&copy; 2025 Alessandra Sarandi. Todos os direitos reservados.</p>
+            <p class="text-center small mb-0">&copy; 2025 Leka Sarandy. Todos os direitos reservados.</p>
         </div>
     </footer>
 

@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alessandra Sarandi | Contato</title>
+    <title>Leka Sarandy | Contato</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
@@ -43,9 +43,9 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
                             href="../../index.php">Início</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php">Minha
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php">Minha
                             Empresa</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="./index.php">Sobre
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php">Sobre
                             Mim</a></li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active"
                             href="./src/pages/contato.php">Contato</a></li>
@@ -136,9 +136,10 @@
                                         </div>
                                         <div>
                                             <h5 class="mb-1">WhatsApp</h5>
-                                            <p class="mb-1">(XX) XXXX-XXXX</p>
-                                            <a href="#" class="text-white text-decoration-underline small">Enviar
-                                                mensagem direta</a>
+                                            <p class="mb-1">Participe Do Grupo Dedicado</p>
+                                            <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank"
+                                                class="text-white text-decoration-underline small">Link para o
+                                                Grupo</a>
                                         </div>
                                     </div>
 
@@ -152,7 +153,7 @@
                                         </div>
                                         <div>
                                             <h5 class="mb-1">E-mail</h5>
-                                            <p class="mb-1">contato@terapeuta.com</p>
+                                            <p class="mb-1">infolekaeducativa@gmail.com</p>
                                             <a href="#" class="text-white text-decoration-underline small">Enviar
                                                 e-mail</a>
                                         </div>
@@ -168,7 +169,7 @@
                                         </div>
                                         <div>
                                             <h5 class="mb-1">Atendimento</h5>
-                                            <p class="mb-1">Online ou Presencial (Rio de Janeiro/RJ)</p>
+                                            <p class="mb-1">Online (via Zoom ou Google Meet)</p>
 
                                         </div>
                                     </div>
@@ -211,7 +212,7 @@
             <div class="row text-center text-md-start">
                 <!-- Logo / Nome -->
                 <div class="col-md-4 mb-4">
-                    <h5 class="text-uppercase">Alessandra Sarandi</h5>
+                    <h5 class="text-uppercase">Leka Sarandy</h5>
                     <p class="text-muted small">
                         Cuidando da sua saúde emocional com empatia e profissionalismo.
                     </p>
@@ -231,8 +232,8 @@
                 <!-- Contato / Redes Sociais -->
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Fale Conosco</h6>
-                    <p class="mb-1"><i class="bi bi-envelope"></i> contato@alessandrasarandi.com</p>
-                    <p class="mb-3"><i class="bi bi-phone"></i> (XX) XXXX-XXXX</p>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> contato@LekaSarandy.com</p>
+
                     <div class="d-flex justify-content-center justify-content-md-start gap-3">
                         <a href="#" class="text-light"><i class="bi bi-instagram fs-5"></i></a>
                         <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
@@ -242,7 +243,7 @@
             </div>
 
             <hr class="border-secondary" />
-            <p class="text-center small mb-0">&copy; 2025 Alessandra Sarandi. Todos os direitos reservados.</p>
+            <p class="text-center small mb-0">&copy; 2025 Leka Sarandy. Todos os direitos reservados.</p>
         </div>
     </footer>
 
