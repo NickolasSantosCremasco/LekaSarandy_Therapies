@@ -212,8 +212,9 @@
             <div class="row text-center text-md-start">
                 <!-- Logo / Nome -->
                 <div class="col-md-4 mb-4">
+                    <img src="../img/logoEmpresa.png" class="mb-4" style="width: 50px; height: 50px; " alt="logo">
                     <h5 class="text-uppercase">Leka Sarandy</h5>
-                    <p class="text-muted small">
+                    <p class="text-white small">
                         Cuidando da sua saúde emocional com empatia e profissionalismo.
                     </p>
                 </div>
@@ -232,12 +233,15 @@
                 <!-- Contato / Redes Sociais -->
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Fale Conosco</h6>
-                    <p class="mb-1"><i class="bi bi-envelope"></i> contato@LekaSarandy.com</p>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> infolekaeducativa@gmail.com
+                    </p>
 
                     <div class="d-flex justify-content-center justify-content-md-start gap-3">
-                        <a href="#" class="text-light"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="https://www.instagram.com/lekasarandy/" target="_blank" class="text-light"><i
+                                class="bi bi-instagram fs-5"></i></a>
                         <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-whatsapp fs-5"></i></a>
+                        <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank" class="text-light"><i
+                                class="bi bi-whatsapp fs-5"></i></a>
                     </div>
                 </div>
             </div>

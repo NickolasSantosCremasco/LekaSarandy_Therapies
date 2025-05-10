@@ -53,6 +53,7 @@
     }
     
     .therapeutic-bg {
+        height: 100vh;
         background: linear-gradient(135deg, var(--bege) 0%, var(--cinza-claro) 100%);
     }
     

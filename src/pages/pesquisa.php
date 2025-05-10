@@ -125,7 +125,7 @@ require_once '../database/config.php';
     </section>
 
     <!--Resultado-->
-    <section class="container my-5 py-5" id="sessaoResultado">
+    <section class="container my-5 py-5 d-none" id="sessaoResultado">
         <div class="question-container text-center">
             <h2 class="search-title mb-4">Seu Perfil Terapêutico</h2>
             <div class="mb-4">
@@ -162,8 +162,7 @@ require_once '../database/config.php';
             <button class="btn-outline-primary mt-3" id="refazerTeste">Refazer Teste</button>
         </div>
     </section>
-    <script src="../js/pesquisa.js">
-    </script>
+    <script src="../js/pesquisa.js"></script>
     <script src="./src/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>

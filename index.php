@@ -529,7 +529,7 @@
                             <div class="card-icon mb-3" style="color: #6d2c46;">
                                 <i class="bi bi-moon-stars-fill fs-1"></i>
                             </div>
-                            <h4 class="h5 text-wine mb-3">Hipnose Clínica</h4>
+                            <h4 class="h5 text-wine mb-3">Hipnose Online</h4>
                             <p class="mb-4">Técnica especializada para acessar e transformar crenças limitantes
                                 armazenadas no subconsciente.</p>
                             <div class="d-flex justify-content-between align-items-center">
@@ -624,6 +624,30 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Pergunta 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                        Quais tipos de questões vocês atendem nas terapias?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Nossas terapias são focadas no desenvolvimento pessoal e emocional, trabalhando principalmente
+                        com:
+                        <ul>
+                            <li>Identificação e transformação de crenças limitantes</li>
+                            <li>Padrões de autossabotagem</li>
+                            <li>Gerenciamento de emoções</li>
+                            <li>Fortalecimento da autoestima e autoconfiança</li>
+                            <li>Desenvolvimento de inteligência emocional</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <!-- Rodapé -->
@@ -632,8 +656,9 @@
             <div class="row text-center text-md-start">
                 <!-- Logo / Nome -->
                 <div class="col-md-4 mb-4">
+                    <img src="src/img/logoEmpresa.png" class="mb-4" style="width: 50px; height: 50px; " alt="logo">
                     <h5 class="text-uppercase">Leka Sarandy</h5>
-                    <p class="text-muted small">
+                    <p class=" small text-white">
                         Cuidando da sua saúde emocional com empatia e profissionalismo.
                     </p>
                 </div>
@@ -652,13 +677,14 @@
                 <!-- Contato / Redes Sociais -->
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Fale Conosco</h6>
-                    <p class="mb-1"><i class="bi bi-envelope"></i> contato@lekasarandi.com</p>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> infolekaeducativa@gmail.com</p>
 
                     <div class="d-flex justify-content-center justify-content-md-start gap-2">
                         <a href="https://www.instagram.com/lekasarandy/" target="_blank" class="text-light"><i
                                 class="bi bi-instagram fs-5"></i></a>
                         <a href="#" target="_blank" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
-                        <a href="#" target="_blank" class="text-light"><i class="bi bi-whatsapp fs-5"></i></a>
+                        <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank" class="text-light"><i
+                                class="bi bi-whatsapp fs-5"></i></a>
                     </div>
                 </div>
             </div>
