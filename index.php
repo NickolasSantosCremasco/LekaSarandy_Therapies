@@ -34,6 +34,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!--Swiper-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <link rel="shortcut icon" href="./src/img/logoEmpresa.png" type="image/x-icon">
@@ -62,8 +64,8 @@
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active"
                             href="./index.php">Início</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#minhaEmpresa">Minha
-                            Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
+                            href="#minhaEmpresa">Propósito</a></li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#sobreMim">Sobre Mim</a>
                     </li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
@@ -667,10 +669,10 @@
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Navegação</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#servicos" class="text-light text-decoration-none">Serviços</a></li>
-                        <li><a href="#sobre" class="text-light text-decoration-none">Sobre</a></li>
-                        <li><a href="#faq" class="text-light text-decoration-none">Minha Empresa</a></li>
-                        <li><a href="#contato" class="text-light text-decoration-none">Contato</a></li>
+                        <li><a href="./index.php" class="text-light text-decoration-none">Inicial</a></li>
+                        <li><a href="#minhaEmpresa" class="text-light text-decoration-none">Propósito</a></li>
+                        <li><a href="#sobreMim" class="text-light text-decoration-none">Sobre Mim</a></li>
+                        <li><a href="src/pages/contato.php" class="text-light text-decoration-none">Contato</a></li>
                     </ul>
                 </div>
 
