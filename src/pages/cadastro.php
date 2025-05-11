@@ -46,6 +46,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/cadastro.css">
     <link rel="stylesheet" href="../css/global.css">
+
+
+    <!--Montserrat-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <title>Leka Sarandy | Cadastro</title>
 </head>
 
@@ -70,7 +78,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                             style="font-weight: 400;">Início</a>
                     </li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php"
-                            style="font-weight: 400;">Minha Empresa</a></li>
+                            style="font-weight: 400;">Propósito</a></li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php"
                             style="font-weight: 400;">Sobre Mim</a></li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../pages/contato.php"

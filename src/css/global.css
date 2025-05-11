@@ -5,6 +5,9 @@
   --bege: #f8f1e9;
   --cinza-claro: #f5f5f5;
 }
+* {
+  text-decoration: none;
+}
 
 body {
   font-family: 'Montserrat', sans-serif;

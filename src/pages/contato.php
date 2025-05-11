@@ -43,8 +43,9 @@
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
                             href="../../index.php">Início</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php">Minha
-                            Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
+                            href="../../index.php">Propósito</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php">Sobre
                             Mim</a></li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active"
@@ -223,10 +224,12 @@
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Navegação</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#servicos" class="text-light text-decoration-none">Serviços</a></li>
-                        <li class="mb-2"><a href="#sobre" class="text-light text-decoration-none">Sobre</a></li>
-                        <li class="mb-2"><a href="#faq" class="text-light text-decoration-none">Minha Empresa</a></li>
-                        <li><a href="#contato" class="text-light text-decoration-none">Contato</a></li>
+                        <li class="mb-2"><a href="#servicos" class="text-light text-decoration-none">Inicial</a></li>
+                        <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Propósito</a>
+                        </li>
+                        <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Sobre Mim</a>
+                        </li>
+                        <li><a href="./contato.php" class="text-light text-decoration-none">Contato</a></li>
                     </ul>
                 </div>
 

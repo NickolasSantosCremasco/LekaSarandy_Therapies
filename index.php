@@ -127,18 +127,18 @@
                             <div class="card-body p-4">
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="bg-warning rounded-circle p-2 me-3">
-                                        <span class="text-white fs-4">L</span>
+                                        <span class="text-white fs-4">M</span>
                                     </div>
-                                    <h5 class="mb-0">Lucas</h5>
+                                    <h5 class="mb-0">Mariana</h5>
                                 </div>
-                                <p class="card-text">"Acredito que os desafios emocionais e a experiência
-                                    terapêutica
-                                    são
-                                    componentes essenciais para o desenvolvimento de uma mente saudável."</p>
-                                <p>"Minha estratégia de vida agora é guiada pela necessidade de um ambiente
-                                    mental
-                                    mais
-                                    equilibrado."</p>
+                                <p class="card-text">"Leka querida!!! Quero mais uma vez agradecer a super sessão que
+                                    tivemos!!!
+                                    Foi realmente LIBERTADORA!!! Já me sinto totalmente diferente com relação a mim e
+                                    as minhas antigas dificuldades"</p>
+                                <p>"Realmente foi mágico! A sua condução de sessão e capacidade de interpretação foram
+                                    fundamentais e
+                                    sei que fizeram a diferença!!!"
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -153,14 +153,14 @@
                                     </div>
                                     <h5 class="mb-0">Joana</h5>
                                 </div>
-                                <p class="card-text">"Os desafios terapêuticos podem promover mudanças
-                                    significativas em
-                                    nossas vidas. Na terapia, encontrei as ferramentas para trabalhar meus
-                                    problemas
-                                    no
-                                    nível mais profundo."</p>
-                                <p>"Minha jornada agora é guiada pela busca de um diálogo interno mais
-                                    saudável."
+                                <p class="card-text">"Geeenteee!!! Vim logo aqui contar para vocês minha experiência com
+                                    a Leka, que pessoa iluminada, tenho certeza que Deus a colocou no meu caminho para
+                                    ajudar."</p>
+                                <p>"Conduziu toda a sessão e detectou uma crença que eu jamais iria detectar sozinha com
+                                    tanta
+                                    paciência, naturalidade e muito rápido rs, sou pura gratidão!!! Além de tudo foi uma
+                                    aula!!! Muito obrigada mesmo.
+                                    "
                                 </p>
                             </div>
                         </div>
@@ -171,15 +171,18 @@
                             <div class="card-body p-4">
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="bg-warning rounded-circle p-2 me-3">
-                                        <span class="text-white fs-4">A</span>
+                                        <span class="text-white fs-4">V</span>
                                     </div>
-                                    <h5 class="mb-0">Ariana</h5>
+                                    <h5 class="mb-0">Vera</h5>
                                 </div>
-                                <p class="card-text">"Acredito que enfrentar nossos desafios emocionais é
-                                    fundamental
-                                    para
-                                    construir uma vida mais autêntica e sustentável."</p>
-                                <p>"Minha estratégia de vida agora prioriza o equilíbrio mental e emocional."
+                                <p class="card-text">"Quero deixar registrado aqui a minha gratidão a Leka por todo o
+                                    aprendizado e novos conhecimentos no curso Destrave Crenças Tecnológicas que me fez
+                                    sair do ponto zero para já conseguir criar meus primeiros projetos"</p>
+                                <p>"O curso me trouxe o empoderamento para me reinventar e continuar vendendo online
+                                    aprendendo as ferramentas necessárias para meu negócio!! Minha gratidão a minha
+                                    mestra tecnológica
+
+                                    e terapeuta"
                                 </p>
                             </div>
                         </div>
@@ -191,15 +194,17 @@
                             <div class="card-body p-4">
                                 <div class="d-flex align-items-center mb-3">
                                     <div class="bg-warning rounded-circle p-2 me-3">
-                                        <span class="text-white fs-4">A</span>
+                                        <span class="text-white fs-4">R</span>
                                     </div>
-                                    <h5 class="mb-0">Ariana</h5>
+                                    <h5 class="mb-0">Raquel</h5>
                                 </div>
-                                <p class="card-text">"Acredito que enfrentar nossos desafios emocionais é
-                                    fundamental
-                                    para
-                                    construir uma vida mais autêntica e sustentável."</p>
-                                <p>"Minha estratégia de vida agora prioriza o equilíbrio mental e emocional."
+                                <p class="card-text">"Oi, vim agradecer a Leka por ter se disponibilizado com amor
+                                    alegria, desprendimento e competência em ensinar e destravar a Tecnologia. Foi
+                                    incrível pois não sabia utilizar alguns programas que me ajudariam a desenvolver
+                                    melhor meu trabalho"</p>
+                                <p>"Hoje já utilizei vários programas dos quais ela me ensinou e já tenho alavancado
+                                    meus
+                                    projetos. Só tenho a agradecer a ti Leka. Muito Grata"
                                 </p>
                             </div>
                         </div>
@@ -425,7 +430,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden">
                         <img src="https://images.pexels.com/photos/5890690/pexels-photo-5890690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            class="card-img-top " alt="Grupo em sessão de terapia"
+                            class="card-img-top" alt="Grupo em sessão de terapia"
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body text-center">
                             <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão Grupal</h3>

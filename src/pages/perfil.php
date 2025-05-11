@@ -24,7 +24,7 @@ require_once '../database/config.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
+
 
 <body>
     <!-- Navbar -->
@@ -343,22 +343,49 @@ require_once '../database/config.php';
     </div>
 
     <!-- Footer -->
-    <footer class="bg-light py-4 mt-5">
-        <div class="container text-center">
-            <img src="../img/logoEmpresa.png" alt="Leka Sarandy" width="80" class="mb-3">
-            <p class="mb-2">Cuidando do seu bem-estar emocional e energético</p>
-            <div class="d-flex justify-content-center gap-3 mb-3">
-                <a href="#" class="text-decoration-none text-vinho">
-                    <i class="fab fa-instagram fa-lg"></i>
-                </a>
-                <a href="#" class="text-decoration-none text-vinho">
-                    <i class="fab fa-facebook fa-lg"></i>
-                </a>
-                <a href="#" class="text-decoration-none text-vinho">
-                    <i class="fab fa-whatsapp fa-lg"></i>
-                </a>
+    <footer class="bg-dark text-light pt-5 pb-3" id="Footer">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- Logo / Nome -->
+                <div class="col-md-4 mb-4">
+                    <img src="../img/logoEmpresa.png" class="mb-4" style="width: 50px; height: 50px; " alt="logo">
+                    <h5 class="text-uppercase">Leka Sarandy</h5>
+                    <p class="text-white small">
+                        Cuidando da sua saúde emocional com empatia e profissionalismo.
+                    </p>
+                </div>
+
+                <!-- Links úteis -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-uppercase">Navegação</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#servicos" class="text-light text-decoration-none">Inicial</a></li>
+                        <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Propósito</a>
+                        </li>
+                        <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Sobre Mim</a>
+                        </li>
+                        <li><a href="./contato.php" class="text-light text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato / Redes Sociais -->
+                <div class="col-md-4 mb-4">
+                    <h6 class="text-uppercase">Fale Conosco</h6>
+                    <p class="mb-1"><i class="bi bi-envelope"></i> infolekaeducativa@gmail.com
+                    </p>
+
+                    <div class="d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://www.instagram.com/lekasarandy/" target="_blank" class="text-light"><i
+                                class="bi bi-instagram fs-5"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank" class="text-light"><i
+                                class="bi bi-whatsapp fs-5"></i></a>
+                    </div>
+                </div>
             </div>
-            <p class="small text-muted mb-0">© 2023 Leka Sarandy. Todos os direitos reservados.</p>
+
+            <hr class="border-secondary" />
+            <p class="text-center small mb-0">&copy; 2025 Leka Sarandy. Todos os direitos reservados.</p>
         </div>
     </footer>
 
