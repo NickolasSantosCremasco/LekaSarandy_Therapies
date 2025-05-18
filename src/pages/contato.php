@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="Navbar">
         <div class="container">
             <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;"
-                href="./index.php">
+                href="../../index.php">
                 <img loading="lazy" src="../img/logoEmpresa.png" style="width: 60px;" alt="logo">
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -128,7 +128,7 @@
                                     <h3 class="mb-4">Outras formas de contato</h3>
 
                                     <!-- Item WhatsApp -->
-                                    <div class="d-flex mb-4">
+                                    <div class="d-flex mb-4 ">
                                         <div class="me-4">
                                             <div class="rounded-circle d-flex align-items-center justify-content-center"
                                                 style="width: 50px; height: 50px; background-color: rgba(255,255,255,0.2);">
@@ -141,22 +141,6 @@
                                             <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank"
                                                 class="text-white text-decoration-underline small">Link para o
                                                 Grupo</a>
-                                        </div>
-                                    </div>
-
-                                    <!-- Item E-mail -->
-                                    <div class="d-flex mb-4">
-                                        <div class="me-4">
-                                            <div class="rounded-circle d-flex align-items-center justify-content-center"
-                                                style="width: 50px; height: 50px; background-color: rgba(255,255,255,0.2);">
-                                                <i class="bi bi-envelope fs-4"></i>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h5 class="mb-1">E-mail</h5>
-                                            <p class="mb-1">infolekaeducativa@gmail.com</p>
-                                            <a href="#" class="text-white text-decoration-underline small">Enviar
-                                                e-mail</a>
                                         </div>
                                     </div>
 

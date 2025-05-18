@@ -1,6 +1,7 @@
 <?php
 require_once '../database/auth.php';
 require_once '../database/config.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -42,9 +43,11 @@ require_once '../database/config.php';
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link position-relative text-black px-3 py-2 active"
                             href="../../index.php">Início</a></li>
-                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2" href="#">Minha
+                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
+                            href="../../index.php">Minha
                             Empresa</a></li>
-                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2" href="#">Sobre
+                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
+                            href="../../index.php">Sobre
                             Mim</a></li>
                     <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
                             href="../pages/contato.php">Contato</a></li>
@@ -73,8 +76,12 @@ require_once '../database/config.php';
         <div class="container text-center">
             <img src="https://icon-library.com/images/generic-user-icon/generic-user-icon-9.jpg" alt="Foto do perfil"
                 class="profile-pic rounded-circle mb-3">
-            <h2 class="mb-1">Maria Silva</h2>
-            <p class="mb-0">Membro desde Janeiro 2023</p>
+            <h2 class="mb-1"><span
+                    class="fw-bold"><?php echo ucfirst(explode(' ', $_SESSION['usuario']['nome'])[0]) ?></span></h2>
+            <p class="mb-0">Membro desde
+                <?php echo ucfirst(explode(' ', $_SESSION['usuario']['data_criacao'])[0]) ?>
+            </p>
+
         </div>
     </div>
 
@@ -88,14 +95,16 @@ require_once '../database/config.php';
                             <i class="fas fa-user-circle me-2"></i>Minhas Informações
                         </h5>
 
-                        <form>
+                        <form method="$_POST" action="../database/update.php">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome Completo</label>
-                                <input type="text" class="form-control" id="nome" value="Maria Silva">
+                                <input type="text" class="form-control" id="nome" name="nome"
+                                    value="<?php echo htmlspecialchars($usuario['nome'] ?? '');?>" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="email" value="maria@exemplo.com">
+                                <input type="email" class="form-control" id="email" name="email"
+                                    value="<?php echo htmlspecialchars($usuario['email'] ?? '');?>" required>
                             </div>
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-vinho">

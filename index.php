@@ -429,9 +429,8 @@
                 <!-- Card 3: Grupal -->
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 border-0 shadow-sm overflow-hidden">
-                        <img src="https://images.pexels.com/photos/5890690/pexels-photo-5890690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                            class="card-img-top" alt="Grupo em sessão de terapia"
-                            style="height: 200px; object-fit: cover;">
+                        <img src="src/img/sessaoGrupal.png" class="card-img-top" alt="Grupo em sessão de terapia"
+                            style="height: 200px; object-fit: cover; object-position: top;">
                         <div class="card-body text-center">
                             <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão Grupal</h3>
                             <p class="card-text mb-4">Experiência transformadora compartilhada em grupo para

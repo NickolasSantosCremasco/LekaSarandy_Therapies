@@ -22,24 +22,26 @@ document.addEventListener('DOMContentLoaded', function() {
         {
             text: "Como você geralmente reage a situações estressantes?",
             options: [
-                "Busco isolamento para processar meus pensamentos",
-                "Procuro conversar com alguém de confiança",
-                "Tento encontrar uma solução prática imediatamente",
-                "Uso atividades criativas para me acalmar"
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Frequentemente",
+                "Sempre"
             ],
-            scores: [1, 2, 3, 4] // Pontuação para cada opção
+            scores: [1, 2, 3, 4, 5] // Pontuação para cada opção
         },
         {
             text: "Em um grupo de pessoas, você geralmente:",
-            options: [
-                "Observo antes de me envolver",
-                "Naturalmente assumo um papel de liderança",
-                "Me esforço para manter a harmonia",
-                "Sou o centro das atenções"
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Frequentemente",
+                "Sempre"
             ],
-            scores: [1, 2, 3, 4]
+            scores: [1, 2, 3, 4, 5]
         },
-        // Adicione mais perguntas aqui...
+        
     ];
 
     // Variáveis de Estado
@@ -163,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Calcular resultado final
     function calculateResult(score) {
         // Defina seus critérios de pontuação aqui
-        const maxScore = questions.length * 4; // Pontuação máxima possível
+        const maxScore = questions.length * 5; // Pontuação máxima possível
         
         // Exemplo de lógica de resultados (ajuste conforme necessário)
         if (score <= maxScore * 0.25) {

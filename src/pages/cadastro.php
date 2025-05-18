@@ -165,7 +165,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </form>
                     <div class="text-center">
                         <small>Já possui uma conta?
-                            <a href="./login.php" class=" fw-bold">Entrar</a>
+                            <a href="./login.php" class=" fw-bold">Cadastre-se</a>
                         </small>
 
                     </div>
