@@ -1,12 +1,11 @@
 <?php
-session_start();
 require_once '../database/config.php'; // Arquivo com a conexão PDO
-
+require_once '../database/auth.php';
 // Verifica se o usuário está logado
-if (!isset($_SESSION['usuario']['id'])) {
+ if(!estaLogado()) {
     header('Location: login.php');
-    exit();
-}
+    exit;
+ }
 
 $mensagem = '';
 $usuario_id = $_SESSION['usuario']['id'];
@@ -29,13 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         try {
             //atualiza banco de dados
-            $sql = 'UPDATE usuarios SET nome = ?, email = ?, WHERE id = ?';
+            $sql = 'UPDATE usuarios SET nome = ?, email = ? WHERE id = ?';
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([$nome, $email, $usuario]);
+            $stmt->execute([$nome, $email, $usuario_id]);
 
             //Atualiza sessão
-            $_SESSION['usuarios']['nome'] = $nome;
-            $_SESSION['usuarios']['email'] = $email;
+            $_SESSION['usuario']['nome'] = $nome;
+            $_SESSION['usuario']['email'] = $email;
 
             $mensagem = '<div class="alert alert-success">Dados Atualizados com sucesso!</div>';
 
@@ -48,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }catch (PDOException $e){
             if ($e->getCode () == 23000) {
                 $mensagem = '<div class="alert alert-danger">Este e-mail já está cadastrado!</div>';
+                
             } else {
                 $mensagem = '<div class="alert alert-danger">Erro ao atualizar' . $e->getMessage() . '</div>';
             }

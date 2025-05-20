@@ -1,7 +1,10 @@
 <?php
 require_once '../database/auth.php';
 require_once '../database/config.php';
-
+if (!estaLogado()) {
+    header('Location: login.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,6 +29,49 @@ require_once '../database/config.php';
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+</head>
+
+<!-- Modal para Agendar Consulta -->
+<div class="modal fade" id="modalAgendarConsulta" tabindex="-1" aria-labelledby="modalAgendarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalAgendarLabel"><i class="fas fa-plus me-2"></i>Agendar Consulta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formAgendamento">
+                    <div class="mb-3">
+                        <label for="tipoTerapia" class="form-label">Tipo de Terapia</label>
+                        <select class="form-select" id="tipoTerapia" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="Terapia Energética">Terapia Energética</option>
+                            <option value="Massagem Terapêutica">Massagem Terapêutica</option>
+                            <option value="Auriculoterapia">Auriculoterapia</option>
+                            <option value="Reiki">Reiki</option>
+                            <!-- Adicione mais conforme necessário -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dataHora" class="form-label">Data e Hora</label>
+                        <input type="datetime-local" class="form-control" id="dataHora" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="local" class="form-label">Local</label>
+                        <select class="form-select" id="local" required>
+                            <option value="">Selecione</option>
+                            <option value="Online (Google Meet)">Online (Google Meet)</option>
+                            <option value="Studio Leka Sarandy">Studio Leka Sarandy</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-vinho w-100">
+                        <i class="fas fa-check me-1"></i> Confirmar Agendamento
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <body>
     <!-- Navbar -->
@@ -79,7 +125,12 @@ require_once '../database/config.php';
             <h2 class="mb-1"><span
                     class="fw-bold"><?php echo ucfirst(explode(' ', $_SESSION['usuario']['nome'])[0]) ?></span></h2>
             <p class="mb-0">Membro desde
-                <?php echo ucfirst(explode(' ', $_SESSION['usuario']['data_criacao'])[0]) ?>
+                <?php  
+                    setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'portuguese');
+                    date_default_timezone_set('America/Sao_Paulo');
+                    $data = new DateTime($_SESSION['usuario']['data_criacao']);
+                    echo strftime('%d de %B de %Y', $data->getTimestamp());
+                ?>
             </p>
 
         </div>
@@ -95,7 +146,7 @@ require_once '../database/config.php';
                             <i class="fas fa-user-circle me-2"></i>Minhas Informações
                         </h5>
 
-                        <form method="$_POST" action="../database/update.php">
+                        <form method="POST" action="../database/update.php">
                             <div class="mb-3">
                                 <label for="nome" class="form-label">Nome Completo</label>
                                 <input type="text" class="form-control" id="nome" name="nome"
@@ -116,18 +167,20 @@ require_once '../database/config.php';
                         <hr class="my-4">
 
                         <h6 class="mb-3">Alterar Senha</h6>
-                        <form>
+                        <form method="post" action="../database/mudarSenha.php">
                             <div class="mb-3">
                                 <label for="senha-atual" class="form-label">Senha Atual</label>
-                                <input type="password" class="form-control" id="senha-atual">
+                                <input type="password" class="form-control" name="senha_atual" id="senha-atual"
+                                    required>
                             </div>
                             <div class="mb-3">
                                 <label for="nova-senha" class="form-label">Nova Senha</label>
-                                <input type="password" class="form-control" id="nova-senha">
+                                <input type="password" class="form-control" name="nova_senha" id="nova-senha" required>
                             </div>
                             <div class="mb-3">
                                 <label for="confirma-senha" class="form-label">Confirmar Nova Senha</label>
-                                <input type="password" class="form-control" id="confirma-senha">
+                                <input type="password" class="form-control" name="confirmar_senha" id="confirma-senha"
+                                    required>
                             </div>
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-outline-vinho">
@@ -229,7 +282,7 @@ require_once '../database/config.php';
                                 </div>
 
                                 <div class="text-center mt-4">
-                                    <button class="btn btn-vinho">
+                                    <button class="btn btn-vinho" onclick="agendarConsulta();">
                                         <i class="fas fa-plus me-2"></i>Agendar Nova Consulta
                                     </button>
                                 </div>
@@ -401,14 +454,10 @@ require_once '../database/config.php';
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-    // Adicione aqui qualquer interação JavaScript necessária
-    document.addEventListener('DOMContentLoaded', function() {
-        // Exemplo: Atualizar foto de perfil
-        const profilePic = document.querySelector('.profile-pic');
-        profilePic.addEventListener('click', function() {
-            alert('Funcionalidade de alterar foto será implementada em breve!');
-        });
-    });
+    function agendarConsulta() {
+        const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
+        modal.show();
+    }
     </script>
 </body>
 

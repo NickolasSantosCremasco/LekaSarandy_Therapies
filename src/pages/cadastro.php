@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         if($resultado['sucesso']) {
             $sucesso = $resultado['message'];
             //Redireciona após 3 segundos
-            echo '<script>setTimout(function(){window.location.href = "index.php";}, 3000);</script>';
+            echo '<script>setTimout(function(){window.location.href = "../../index.php";}, 3000);</script>';
         } else {
             $erro = $resultado['message'];
         }
@@ -61,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="Navbar">
         <div class="container">
             <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;"
-                href="./index.php">
+                href="../../index.php">
 
                 <img loading="lazy" src="../img/logoEmpresa.png" style="width: 60px;" alt="logo">
 
@@ -161,11 +161,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
 
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg w-100">Entrar</button>
+                        <button type="submit" class="btn btn-primary btn-lg w-100">Cadastre-se</button>
                     </form>
                     <div class="text-center">
                         <small>Já possui uma conta?
-                            <a href="./login.php" class=" fw-bold">Cadastre-se</a>
+                            <a href="./login.php" class=" fw-bold">Entre</a>
                         </small>
 
                     </div>
