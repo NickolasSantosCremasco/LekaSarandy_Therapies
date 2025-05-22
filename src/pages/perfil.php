@@ -5,6 +5,12 @@ if (!estaLogado()) {
     header('Location: login.php');
     exit;
 }
+
+$usuario_id = $_SESSION['usuario']['id'];
+$stmt = $pdo->prepare('SELECT * FROM consultas WHERE usuario_id = :usuario_id ORDER BY data_hora ASC');
+
+$consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,31 +43,31 @@ if (!estaLogado()) {
         <div class="modal-content rounded-4">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalAgendarLabel"><i class="fas fa-plus me-2"></i>Agendar Consulta</h5>
+
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div class="modal-body">
-                <form id="formAgendamento">
+                <form id="formAgendamento" method="post" action="../database/consultas.php">
                     <div class="mb-3">
                         <label for="tipoTerapia" class="form-label">Tipo de Terapia</label>
-                        <select class="form-select" id="tipoTerapia" required>
+                        <select class="form-select" name="tipoTerapia" id="tipoTerapia" required>
                             <option value="">Selecione uma opção</option>
-                            <option value="Terapia Energética">Terapia Energética</option>
-                            <option value="Massagem Terapêutica">Massagem Terapêutica</option>
-                            <option value="Auriculoterapia">Auriculoterapia</option>
-                            <option value="Reiki">Reiki</option>
+                            <option value="Terapia Energética">Terapia Grupal</option>
+                            <option value="Massagem Terapêutica">Hipnose Terapêutica</option>
+                            <option value="Auriculoterapia">Sentimentos Sabotadores</option>
                             <!-- Adicione mais conforme necessário -->
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="dataHora" class="form-label">Data e Hora</label>
-                        <input type="datetime-local" class="form-control" id="dataHora" required>
+                        <input type="datetime-local" class="form-control" name="dataHora" id="dataHora" required>
                     </div>
                     <div class="mb-3">
                         <label for="local" class="form-label">Local</label>
-                        <select class="form-select" id="local" required>
+                        <select class="form-select" name="local" id="local" required>
                             <option value="">Selecione</option>
                             <option value="Online (Google Meet)">Online (Google Meet)</option>
-                            <option value="Studio Leka Sarandy">Studio Leka Sarandy</option>
+                            <option value="Studio Leka Sarandy">Online (Zoom)</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-vinho w-100">
@@ -225,49 +231,28 @@ if (!estaLogado()) {
                                     <i class="far fa-calendar-check me-2"></i>Próximas Consultas
                                 </h5>
 
-                                <!-- Consulta 1 -->
+                                <!--Consultas Marcadas-->
+                                <?php foreach($consultas as $consulta): ?>
                                 <div class="card appointment-card mb-3">
                                     <div class="card-body">
                                         <div class="d-flex justify-content-between">
                                             <div>
-                                                <h6 class="mb-1">Terapia Energética</h6>
+                                                <h6 class="mb-1">
+                                                    <?= htmlspecialchars($consulta['tipo_terapia']) ?>
+                                                </h6>
                                                 <p class="mb-1 text-muted">
-                                                    <i class="far fa-clock me-2"></i>15 de Outubro, 14:00
+                                                    <i class="far fa-clock me-2"></i>
+                                                    <?=date('d \d\e F, H:i', strtotime($consulta[$data_hora]))?>
                                                 </p>
                                                 <p class="mb-0 text-muted">
-                                                    <i class="fas fa-map-marker-alt me-2"></i>Online (Google Meet)
+                                                    <i class="fas fa-map-marker-alt me-2"></i>
+                                                    <?= htmlspecialchars($consulta['local']) ?>
                                                 </p>
                                             </div>
                                             <div class="text-end">
-                                                <span class="badge bg-success">Confirmada</span>
-                                                <div class="mt-2">
-                                                    <button class="btn btn-sm btn-outline-vinho">
-                                                        <i class="fas fa-video me-1"></i> Acessar
-                                                    </button>
-                                                    <button class="btn btn-sm btn-outline-secondary">
-                                                        <i class="fas fa-edit me-1"></i> Remarcar
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Consulta 2 -->
-                                <div class="card appointment-card mb-3">
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between">
-                                            <div>
-                                                <h6 class="mb-1">Massagem Terapêutica</h6>
-                                                <p class="mb-1 text-muted">
-                                                    <i class="far fa-clock me-2"></i>22 de Outubro, 10:00
-                                                </p>
-                                                <p class="mb-0 text-muted">
-                                                    <i class="fas fa-map-marker-alt me-2"></i>Studio Leka Sarandy
-                                                </p>
-                                            </div>
-                                            <div class="text-end">
-                                                <span class="badge bg-warning text-dark">Agendada</span>
+                                                <span class="badge bg-warning text-dark">
+                                                    <?= $consulta['status'] ?? 'Agendando' ?>
+                                                </span>
                                                 <div class="mt-2">
                                                     <button class="btn btn-sm btn-outline-secondary">
                                                         <i class="fas fa-edit me-1"></i> Remarcar
@@ -280,6 +265,7 @@ if (!estaLogado()) {
                                         </div>
                                     </div>
                                 </div>
+                                <?php endforeach;?>
 
                                 <div class="text-center mt-4">
                                     <button class="btn btn-vinho" onclick="agendarConsulta();">
