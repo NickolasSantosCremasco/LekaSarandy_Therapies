@@ -10,9 +10,9 @@ require_once '../database/auth.php';
 
 $mensagem = '';
 $usuario_id = $_SESSION['usuario']['id'];
-$tipoTerapia = $_POST['tipoTerapia'];
-$dataHora = $_POST['dataHora'];
-$local = $_POST['local'];
+$tipoTerapia = filter_input(INPUT_POST, 'tipoTerapia', FILTER_SANITIZE_STRING);
+$dataHora = filter_input(INPUT_POST, 'dataHora', FILTER_SANITIZE_STRING);
+$local = filter_input(INPUT_POST, 'local', FILTER_SANITIZE_STRING);
 
 //Validação Básica
  if (empty($tipoTerapia) || empty($dataHora) || empty($local)) {
@@ -27,6 +27,7 @@ $local = $_POST['local'];
         ':tipo_terapia' => $tipoTerapia,
         ':data_hora' => $dataHora,
         ':local' => $local,
+   
     ]);
 
     $mensagem = '<div class = "alert alert-success">O seu agendamento foi realizado com sucesso! Espere a confirmação da terapeuta.</div>';

@@ -1,6 +1,8 @@
 <?php
 require_once '../database/auth.php';
 require_once '../database/config.php';
+
+
 if (!estaLogado()) {
     header('Location: login.php');
     exit;
@@ -8,9 +10,19 @@ if (!estaLogado()) {
 
 $usuario_id = $_SESSION['usuario']['id'];
 $stmt = $pdo->prepare('SELECT * FROM consultas WHERE usuario_id = :usuario_id ORDER BY data_hora ASC');
+$stmt->execute([':usuario_id' => $usuario_id]);
 
 $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+
+$nivel = $_SESSION['usuario']['nivel'];
+$usuarios = [];
+
+if ($nivel == 2) {
+    //Admin: pega todos os usuarios
+    $stmtUsuarios = $pdo->query('SELECT id, nome FROM usuarios ORDER BY nome ASC');
+    $usuarios = $stmtUsuarios->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -138,6 +150,9 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     echo strftime('%d de %B de %Y', $data->getTimestamp());
                 ?>
             </p>
+            <a href="../database/logout.php" class="btn btn-danger mt-3">
+                <i class="fas fa-sign-out-alt me-2"></i>Sair da Conta
+            </a>
 
         </div>
     </div>
@@ -242,7 +257,7 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 </h6>
                                                 <p class="mb-1 text-muted">
                                                     <i class="far fa-clock me-2"></i>
-                                                    <?=date('d \d\e F, H:i', strtotime($consulta[$data_hora]))?>
+                                                    <?=date('d \d\e F, H:i', strtotime($consulta['data_hora']))?>
                                                 </p>
                                                 <p class="mb-0 text-muted">
                                                     <i class="fas fa-map-marker-alt me-2"></i>
@@ -253,6 +268,8 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                 <span class="badge bg-warning text-dark">
                                                     <?= $consulta['status'] ?? 'Agendando' ?>
                                                 </span>
+                                                <!--Admin pode Remarcar ou cancelar a consulta-->
+                                                <?php if ($nivel == 2):?>
                                                 <div class="mt-2">
                                                     <button class="btn btn-sm btn-outline-secondary">
                                                         <i class="fas fa-edit me-1"></i> Remarcar
@@ -261,17 +278,38 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                                         <i class="fas fa-times me-1"></i> Cancelar
                                                     </button>
                                                 </div>
+                                                <!--Usuário pode Confirmar ou Cancelar a Consulta-->
+                                                <?php else:?>
+                                                <div class="mt-2">
+                                                    <button class="btn btn-sm btn-outline-primary">
+                                                        <i class="fas fa-edit me-1"></i> Confirmar
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-danger">
+                                                        <i class="fas fa-times me-1"></i> Cancelar
+                                                    </button>
+                                                </div>
+                                                <?php endif;?>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <?php endforeach;?>
-
+                                <?php if ($nivel == 2):?>
                                 <div class="text-center mt-4">
                                     <button class="btn btn-vinho" onclick="agendarConsulta();">
-                                        <i class="fas fa-plus me-2"></i>Agendar Nova Consulta
+                                        <i class="fas fa-plus me-2"></i>Agendar Consulta
                                     </button>
                                 </div>
+                                <?php else:?>
+                                <div class="text-center mt-4">
+                                    <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q">
+                                        <button class="btn btn-vinho">
+                                            <i class="fas fa-plus me-2"></i>Entrar em Contato e Agendar
+                                            Consulta
+                                        </button>
+                                    </a>
+                                </div>
+                                <?php endif;?>
                             </div>
                         </div>
                     </div>
@@ -281,7 +319,8 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <div class="card profile-card">
                             <div class="card-body">
                                 <h5 class="card-title mb-4">
-                                    <i class="fas fa-history me-2"></i>Histórico de Consultas
+                                    <i class="fas fa-history me-2"></i>Histórico de
+                                    Consultas
                                 </h5>
 
                                 <div class="table-responsive">
@@ -298,20 +337,24 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                             <tr>
                                                 <td>01/10/2023</td>
                                                 <td>Reiki</td>
-                                                <td><span class="badge bg-success">Concluída</span></td>
+                                                <td><span class="badge bg-success">Concluída</span>
+                                                </td>
                                                 <td>
                                                     <button class="btn btn-sm btn-outline-vinho">
-                                                        <i class="fas fa-file-alt"></i> Detalhes
+                                                        <i class="fas fa-file-alt"></i>
+                                                        Detalhes
                                                     </button>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>15/09/2023</td>
                                                 <td>Aromaterapia</td>
-                                                <td><span class="badge bg-success">Concluída</span></td>
+                                                <td><span class="badge bg-success">Concluída</span>
+                                                </td>
                                                 <td>
                                                     <button class="btn btn-sm btn-outline-vinho">
-                                                        <i class="fas fa-file-alt"></i> Detalhes
+                                                        <i class="fas fa-file-alt"></i>
+                                                        Detalhes
                                                     </button>
                                                 </td>
                                             </tr>
@@ -378,7 +421,8 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                                     <div class="d-grid gap-2">
                                         <button type="submit" class="btn btn-vinho">
-                                            <i class="fas fa-save me-2"></i>Salvar Preferências
+                                            <i class="fas fa-save me-2"></i>Salvar
+                                            Preferências
                                         </button>
                                     </div>
                                 </form>
@@ -407,10 +451,12 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Navegação</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#servicos" class="text-light text-decoration-none">Inicial</a></li>
+                        <li class="mb-2"><a href="#servicos" class="text-light text-decoration-none">Inicial</a>
+                        </li>
                         <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Propósito</a>
                         </li>
-                        <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Sobre Mim</a>
+                        <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Sobre
+                                Mim</a>
                         </li>
                         <li><a href="./contato.php" class="text-light text-decoration-none">Contato</a></li>
                     </ul>
@@ -419,7 +465,8 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Contato / Redes Sociais -->
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Fale Conosco</h6>
-                    <p class="mb-1"><i class="bi bi-envelope"></i> infolekaeducativa@gmail.com
+                    <p class="mb-1"><i class="bi bi-envelope"></i>
+                        infolekaeducativa@gmail.com
                     </p>
 
                     <div class="d-flex justify-content-center justify-content-md-start gap-3">
@@ -433,12 +480,14 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
 
             <hr class="border-secondary" />
-            <p class="text-center small mb-0">&copy; 2025 Leka Sarandy. Todos os direitos reservados.</p>
+            <p class="text-center small mb-0">&copy; 2025 Leka Sarandy. Todos os direitos
+                reservados.</p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    </script>
     <script>
     function agendarConsulta() {
         const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
