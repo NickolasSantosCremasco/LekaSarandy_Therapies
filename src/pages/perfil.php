@@ -16,13 +16,16 @@ $consultas = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 $nivel = $_SESSION['usuario']['nivel'];
-$usuarios = [];
+
 
 if ($nivel == 2) {
     //Admin: pega todos os usuarios
-    $stmtUsuarios = $pdo->query('SELECT id, nome FROM usuarios ORDER BY nome ASC');
+    $stmtUsuarios = $pdo->query('SELECT id, nome, email FROM usuarios ORDER BY nome ASC');
     $usuarios = $stmtUsuarios->fetchAll(PDO::FETCH_ASSOC);
+
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -59,7 +62,7 @@ if ($nivel == 2) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div class="modal-body">
-                <form id="formAgendamento" method="post" action="../database/consultas.php">
+                <form id="formAgendamento" method="post" action="../database/criarConsultas.php">
                     <div class="mb-3">
                         <label for="tipoTerapia" class="form-label">Tipo de Terapia</label>
                         <select class="form-select" name="tipoTerapia" id="tipoTerapia" required>
@@ -242,11 +245,44 @@ if ($nivel == 2) {
                     <div class="tab-pane fade show active" id="agendamentos" role="tabpanel">
                         <div class="card profile-card mb-3">
                             <div class="card-body">
+                                <?php if($nivel == 2):?>
+                                <h5 class="card-title mb-4">
+                                    <i class="far fa-calendar-check me-2"></i>Agende a Consulta de um Usuário
+                                </h5>
+                                <?php else:?>
                                 <h5 class="card-title mb-4">
                                     <i class="far fa-calendar-check me-2"></i>Próximas Consultas
                                 </h5>
+                                <?php endif?>
+                                <?php if($nivel == 2):?>
+                                <!-- Listagem de Usuários -->
+                                <div class="mb-4">
+                                    <div class="row g-3">
+                                        <?php foreach ($usuarios as $usuario): ?>
+                                        <div class="col-md-6 col-lg-4">
+                                            <div class="card h-100 shadow-sm border-0 hover-shadow transition rounded-3 bg-light text-dark btn-usuario"
+                                                data-id="<?= $usuario['id'] ?>">
+                                                <div class="card-body d-flex align-items-center">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <i class="fas fa-user-circle fa-2x text-vinho"></i>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 fw-bold">
+                                                            <?= htmlspecialchars($usuario['nome']) ?>
+                                                        </h6>
+                                                        <span class="badge bg-secondary text-white">ID
+                                                            <?= $usuario['id'] ?></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                    <div id="consultasUsuario" class="d-none"></div>
+                                </div>
 
-                                <!--Consultas Marcadas-->
+
+                                <?php else:?>
                                 <?php foreach($consultas as $consulta): ?>
                                 <div class="card appointment-card mb-3">
                                     <div class="card-body">
@@ -294,6 +330,10 @@ if ($nivel == 2) {
                                     </div>
                                 </div>
                                 <?php endforeach;?>
+
+                                <?php endif;?>
+                                <!--Consultas Marcadas do Usuário-->
+
                                 <?php if ($nivel == 2):?>
                                 <div class="text-center mt-4">
                                     <button class="btn btn-vinho" onclick="agendarConsulta();">
