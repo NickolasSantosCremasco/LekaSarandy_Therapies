@@ -222,7 +222,12 @@ if ($nivel == 2) {
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="agendamentos-tab" data-bs-toggle="pill"
                             data-bs-target="#agendamentos" type="button">
+                            <?php if($nivel == 2):?>
+                            <i class="far fa-calendar-check me-2"></i>Painel do Admin
+                            <?php else:?>
                             <i class="far fa-calendar-check me-2"></i>Minhas Consultas
+                            <?php endif;?>
+
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -261,7 +266,7 @@ if ($nivel == 2) {
                                         <?php foreach ($usuarios as $usuario): ?>
                                         <div class="col-md-6 col-lg-4">
                                             <div class="card h-100 shadow-sm border-0 hover-shadow transition rounded-3 bg-light text-dark btn-usuario"
-                                                data-id="<?= $usuario['id'] ?>">
+                                                style="cursor: pointer;" data-id="<?= $usuario['id'] ?>">
                                                 <div class="card-body d-flex align-items-center">
                                                     <div class="flex-shrink-0 me-3">
                                                         <i class="fas fa-user-circle fa-2x text-vinho"></i>
@@ -529,6 +534,38 @@ if ($nivel == 2) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
     </script>
     <script>
+    document.querySelectorAll('.btn-usuario').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const userId = this.getAttribute('data-id');
+            fetch(`../database/getConsultas.php?id=${userId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('consultasUsuario');
+                    let html = '';
+
+                    if (data.length > 0) {
+                        html += `<div class="alert alert-info">Veja as Consultas a seguir!</div>`;
+                        html += `<h5>Consultas do Usuário</h5><ul class="list-group">`;
+                        data.forEach(consulta => {
+                            html += `<li class="list-group-item">
+                            <strong>Data:</strong> ${consulta.data_hora}<br>
+                            <strong>Tipo de Terapia:</strong> ${consulta.tipo_terapia}<br>
+                            <strong>Local:</strong> ${consulta.local}<br>
+                        </li>`;
+                        });
+                        html += `</ul>`;
+                    } else {
+                        html =
+                            '<div class="alert alert-warning">Nenhuma Consulta Encontrada!</div>';
+                    }
+
+                    container.innerHTML = html;
+                    container.classList.remove('d-none');
+                });
+        });
+    });
+
+
     function agendarConsulta() {
         const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
         modal.show();
