@@ -20,7 +20,7 @@ $nivel = $_SESSION['usuario']['nivel'];
 
 if ($nivel == 2) {
     //Admin: pega todos os usuarios
-    $stmtUsuarios = $pdo->query('SELECT id, nome, email FROM usuarios ORDER BY nome ASC');
+    $stmtUsuarios = $pdo->query('SELECT id, nome, email, nivel FROM usuarios ORDER BY nome ASC');
     $usuarios = $stmtUsuarios->fetchAll(PDO::FETCH_ASSOC);
 
 }
@@ -85,6 +85,7 @@ if ($nivel == 2) {
                             <option value="Studio Leka Sarandy">Online (Zoom)</option>
                         </select>
                     </div>
+                    <input type="hidden" name="usuario_id" id="usuarioSelecionadoId">
                     <button type="submit" class="btn btn-vinho w-100">
                         <i class="fas fa-check me-1"></i> Confirmar Agendamento
                     </button>
@@ -262,8 +263,9 @@ if ($nivel == 2) {
                                 <?php if($nivel == 2):?>
                                 <!-- Listagem de Usuários -->
                                 <div class="mb-4">
-                                    <div class="row g-3">
+                                    <div class="row g-3 usuarios">
                                         <?php foreach ($usuarios as $usuario): ?>
+                                        <?php if($usuario['nivel'] != 2):?>
                                         <div class="col-md-6 col-lg-4">
                                             <div class="card h-100 shadow-sm border-0 hover-shadow transition rounded-3 bg-light text-dark btn-usuario"
                                                 style="cursor: pointer;" data-id="<?= $usuario['id'] ?>">
@@ -281,6 +283,7 @@ if ($nivel == 2) {
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php endif;?>
                                         <?php endforeach; ?>
                                     </div>
                                     <div id="consultasUsuario" class="d-none"></div>
@@ -342,7 +345,7 @@ if ($nivel == 2) {
                                 <?php if ($nivel == 2):?>
                                 <div class="text-center mt-4">
                                     <button class="btn btn-vinho" onclick="agendarConsulta();">
-                                        <i class="fas fa-plus me-2"></i>Agendar Consulta
+                                        <i class="fas fa-calendar-plus me-2"></i>Agendar Consulta
                                     </button>
                                 </div>
                                 <?php else:?>
@@ -536,7 +539,10 @@ if ($nivel == 2) {
     <script>
     document.querySelectorAll('.btn-usuario').forEach(btn => {
         btn.addEventListener('click', function() {
+            const usuarios = document.querySelector('.usuarios');
+            usuarios.classList.add('d-none');
             const userId = this.getAttribute('data-id');
+            document.getElementById('usuarioSelecionadoId').value = userId;
             fetch(`../database/getConsultas.php?id=${userId}`)
                 .then(response => response.json())
                 .then(data => {
@@ -544,8 +550,10 @@ if ($nivel == 2) {
                     let html = '';
 
                     if (data.length > 0) {
-                        html += `<div class="alert alert-info">Veja as Consultas a seguir!</div>`;
-                        html += `<h5>Consultas do Usuário</h5><ul class="list-group">`;
+
+                        html +=
+                            `<div class="alert alert-info">Veja as Consultas a seguir!<i class="fas fa-arrow-left float-end" style="font-size:8pt; margin-top:8px;cursor:pointer;" id="voltar">Voltar</i></div>`;
+                        html += `<ul class="list-group">`;
                         data.forEach(consulta => {
                             html += `<li class="list-group-item">
                             <strong>Data:</strong> ${consulta.data_hora}<br>
@@ -556,17 +564,39 @@ if ($nivel == 2) {
                         html += `</ul>`;
                     } else {
                         html =
-                            '<div class="alert alert-warning">Nenhuma Consulta Encontrada!</div>';
+                            '<div class="alert alert-warning" id="avisoConsulta">Nenhuma Consulta Encontrada!<i class="fas fa-arrow-left float-end" style="font-size:8pt; margin-top:8px;cursor:pointer;" id="voltar">Voltar</i></div>';
+
                     }
 
                     container.innerHTML = html;
                     container.classList.remove('d-none');
+
+                    setTimeout(() => {
+                        const voltar = document.querySelector("#voltar");
+                        if (voltar) {
+                            voltar.addEventListener('click', () => {
+                                container.classList.add('d-none');
+                                usuarios.classList.remove('d-none')
+                                container.innerHTML = ''
+                            })
+                        }
+                    }, 0);
                 });
         });
     });
 
 
     function agendarConsulta() {
+        const userId = document.getElementById('usuarioSelecionadoId').value;
+        if (!usuarioId) {
+            alert('Erro: nenhum usuário selecionado!');
+            return;
+        }
+
+        //preenche o campo escondido no modal
+        document.querySelector('#modalAgendarConsulta #usuarioSelecionadoId').value = usuarioId;
+
+        //Abre o Modal com Bootstrap 5
         const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
         modal.show();
     }

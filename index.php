@@ -379,7 +379,7 @@
                             class="card-img-top" alt="Mulher em sessão de terapia"
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h3 class="card-title mb-3" style="color: #7a2a3a;">Terapia de Sabotadores</h3>
+                            <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão de Sabotadores</h3>
                             <p class="card-text mb-4">Identifique e transforme os padrões inconscientes que limitam
                                 seu
                                 potencial e bem-estar emocional.</p>
@@ -406,7 +406,7 @@
                             class="card-img-top" alt="Sessão individual de terapia"
                             style="height: 200px; object-fit: cover;">
                         <div class="card-body text-center">
-                            <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão Individual</h3>
+                            <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão de Valores Pessoais</h3>
                             <p class="card-text mb-4">Acompanhamento personalizado para seu desenvolvimento
                                 emocional e
                                 autoconhecimento profundo.</p>
