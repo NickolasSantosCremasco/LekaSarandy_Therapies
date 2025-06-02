@@ -12,7 +12,7 @@ require_once '../database/auth.php';
    die('Apenas adminstradores podem agendar para outros usuários.');
  };
 
-$mensagem = '';
+
 $usuario_id = filter_input(INPUT_POST, 'usuario_id', FILTER_VALIDATE_INT);
 $tipoTerapia = htmlspecialchars($_POST['tipoTerapia']);
 $dataHora = htmlspecialchars($_POST['dataHora']);
@@ -23,7 +23,7 @@ $local = htmlspecialchars($_POST['local']);
     die('Todos os campos são obrigatórios.');
  }
 
- if ($usuario_id) {
+ if (!isset($usuario_id)) {
    die('ID do usuário inválido ou não fornecido.');
  }
  //Conecta ao banco e insere os dados
@@ -37,13 +37,11 @@ $local = htmlspecialchars($_POST['local']);
    
     ]);
 
-    $mensagem = '<div class = "alert alert-success">O seu agendamento foi realizado com sucesso! Espere a confirmação da terapeuta.</div>';
     header('Location: ../pages/perfil.php');
     exit;
 
  } catch (PDOException $e) {
-    echo 'Erro ao agendar consulta: ' . $e->getMessage();
-    $mensagem = '<div class = "alert alert-danger">Erro ao agendar consulta.</div>';   
+    echo 'Erro ao agendar consulta: ' . $e->getMessage(); 
  }
 
 

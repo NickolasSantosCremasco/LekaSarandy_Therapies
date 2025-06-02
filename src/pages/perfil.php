@@ -277,8 +277,6 @@ if ($nivel == 2) {
                                                         <h6 class="mb-1 fw-bold">
                                                             <?= htmlspecialchars($usuario['nome']) ?>
                                                         </h6>
-                                                        <span class="badge bg-secondary text-white">ID
-                                                            <?= $usuario['id'] ?></span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -587,18 +585,13 @@ if ($nivel == 2) {
 
 
     function agendarConsulta() {
-        const userId = document.getElementById('usuarioSelecionadoId').value;
-        if (!usuarioId) {
-            alert('Erro: nenhum usuário selecionado!');
-            return;
-        }
+        document.querySelectorAll('.btn-usuario').forEach(btn => {
+            const usuarioId = btn.dataset.id;
+            document.getElementById('usuarioSelecionadoId').value = usuarioId;
+            const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
+            modal.show();
 
-        //preenche o campo escondido no modal
-        document.querySelector('#modalAgendarConsulta #usuarioSelecionadoId').value = usuarioId;
-
-        //Abre o Modal com Bootstrap 5
-        const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
-        modal.show();
+        });
     }
     </script>
 </body>
