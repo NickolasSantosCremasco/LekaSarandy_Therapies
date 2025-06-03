@@ -323,11 +323,15 @@ if ($nivel == 2) {
                                                 <!--Usuário pode Confirmar ou Cancelar a Consulta-->
                                                 <?php else:?>
                                                 <div class="mt-2">
-                                                    <button class="btn btn-sm btn-outline-primary">
-                                                        <i class="fas fa-edit me-1"></i> Confirmar
+                                                    <button class="btn btn-sm btn-outline-primary"
+                                                        onclick="atualizarStatus(<?= $consulta['id']?>, 'confirmada')">
+                                                        <i class="fas fa-edit me-1"></i>
+                                                        Confirmar
                                                     </button>
-                                                    <button class="btn btn-sm btn-outline-danger">
-                                                        <i class="fas fa-times me-1"></i> Cancelar
+                                                    <button class="btn btn-sm btn-outline-danger"
+                                                        onclick="atualizarStatus(<?= $consulta['id']?>, 'cancelada')">
+                                                        <i class="fas fa-times me-1"></i>
+                                                        Cancelar
                                                     </button>
                                                 </div>
                                                 <?php endif;?>
@@ -341,14 +345,15 @@ if ($nivel == 2) {
                                 <!--Consultas Marcadas do Usuário-->
 
                                 <?php if ($nivel == 2):?>
-                                <div class="text-center mt-4">
+                                <div class=" text-center mt-4">
                                     <button class="btn btn-vinho" onclick="agendarConsulta();">
-                                        <i class="fas fa-calendar-plus me-2"></i>Agendar Consulta
+                                        <i class="fas fa-calendar-plus me-2"></i>Agendar
+                                        Consulta
                                     </button>
                                 </div>
                                 <?php else:?>
                                 <div class="text-center mt-4">
-                                    <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q">
+                                    <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank">
                                         <button class="btn btn-vinho">
                                             <i class="fas fa-plus me-2"></i>Entrar em Contato e Agendar
                                             Consulta
@@ -497,14 +502,15 @@ if ($nivel == 2) {
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Navegação</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#servicos" class="text-light text-decoration-none">Inicial</a>
+                        <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Inicial</a>
                         </li>
                         <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Propósito</a>
                         </li>
                         <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Sobre
                                 Mim</a>
                         </li>
-                        <li><a href="./contato.php" class="text-light text-decoration-none">Contato</a></li>
+                        <li><a href="./contato.php" class="text-light text-decoration-none">Contato</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -557,6 +563,7 @@ if ($nivel == 2) {
                             <strong>Data:</strong> ${consulta.data_hora}<br>
                             <strong>Tipo de Terapia:</strong> ${consulta.tipo_terapia}<br>
                             <strong>Local:</strong> ${consulta.local}<br>
+                            <strong>Status:</strong> ${consulta.status}
                         </li>`;
                         });
                         html += `</ul>`;
@@ -592,6 +599,29 @@ if ($nivel == 2) {
             modal.show();
 
         });
+    }
+
+    function atualizarStatus(id, status) {
+        fetch('../database/atualizarStatus.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `id=${id}&status=${status}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.sucesso) {
+                    alert('Status atualizado com sucesso!');
+                    location.reload(); //Atualiza Página
+                } else {
+                    alert('Erro: ' + (data.erro || 'Desconhecido'));
+                }
+            })
+            .catch(error => {
+                console.error('Erro na requisição:', error);
+                alert("Erro na requisição: " + error)
+            })
     }
     </script>
 </body>
