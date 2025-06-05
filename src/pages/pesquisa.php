@@ -129,39 +129,43 @@ require_once '../database/config.php';
     <!--Resultado-->
     <section class="container my-5 py-5 d-none" id="sessaoResultado">
         <div class="question-container text-center">
-            <h2 class="search-title mb-4">Seu Perfil Terapêutico</h2>
-            <div class="mb-4">
-                <img src="" alt="Resultado" class="border border-3 rounded-5" style="width: 15px;">
-            </div>
-            <h3 id="profileTitle" class="mb-3">O cuidador Harmonioso</h3>
-            <p class="profilDescription" class="mb-4">Você é uma pessoa que valoriza e harmoniza o bem-estar emocional
-            </p>
+            <div class="col-md-6 px-5 d-flex flex-column justify-content-center">
 
-            <div class="row mt-5">
-                <div class="col-md--6 mb-4">
-                    <h4 class="mb-3">Terapias Recomendadas</h4>
-                    <ul class="text-start" id="terapiasRecomendadas" style="list-style-type: none;">
-                        <li class="mb-2">
-                            <i class="fas fa-spa me-2"></i>Aromateripia
-                        </li>
-                        <li class="mb-2">
-                            <i class="fas fa-spa me-2"></i>Massagem Terapêutica
-                        </li>
-                        <li class="mb-2">
-                            <i class="fas fa-spa me-2"></i>Terapia com Cristais
-                        </li>
-                    </ul>
+                <h2 class="search-title mb-4">Seu Perfil Terapêutico</h2>
+                <h3 id="profileTitle" class="mb-3">O cuidador Harmonioso</h3>
+                <p class="profilDescription" class="mb-4">Você é uma pessoa que valoriza e harmoniza o bem-estar
+                    emocional
+                </p>
+
+                <div class="row mt-5">
+                    <div class="col-md--6 mb-4">
+                        <h4 class="mb-3">Terapias Recomendadas</h4>
+                        <ul class="text-start" id="terapiasRecomendadas" style="list-style-type: none;">
+                            <li class="mb-2">
+                                <i class="fas fa-spa me-2"></i>Aromateripia
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-spa me-2"></i>Massagem Terapêutica
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-spa me-2"></i>Terapia com Cristais
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h4 class="mb-3">Pontos Fortes</h4>
+                        <ul class="text-start" id="pontosFortes" style="list-style-type: none; padding-left: 0;">
+                            <li class="mb-2"><i class="fas fa-heart me-2"></i> Empatia</li>
+                            <li class="mb-2"><i class="fas fa-heart me-2"></i> Intuição</li>
+                            <li class="mb-2"><i class="fas fa-heart me-2"></i> Capacidade de cura</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <h4 class="mb-3">Pontos Fortes</h4>
-                    <ul class="text-start" id="pontosFortes" style="list-style-type: none; padding-left: 0;">
-                        <li class="mb-2"><i class="fas fa-heart me-2"></i> Empatia</li>
-                        <li class="mb-2"><i class="fas fa-heart me-2"></i> Intuição</li>
-                        <li class="mb-2"><i class="fas fa-heart me-2"></i> Capacidade de cura</li>
-                    </ul>
-                </div>
+                <button class="btn-outline-primary mt-3" id="refazerTeste">Refazer Teste</button>
             </div>
-            <button class="btn-outline-primary mt-3" id="refazerTeste">Refazer Teste</button>
+        </div>
+        <div class="mb-4">
+            <img src="" alt="Resultado" class="border border-3 rounded-5" style="width: 15px;">
         </div>
     </section>
 

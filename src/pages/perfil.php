@@ -313,6 +313,11 @@ if ($nivel == 2) {
                                                 <!--Admin pode Remarcar ou cancelar a consulta-->
                                                 <?php if ($nivel == 2):?>
                                                 <div class="mt-2">
+                                                    <button class="btn btn-sm btn-outline-primary"
+                                                        onclick="atualizarStatus(<?= $consulta['id']?>, 'confirmada')">
+                                                        <i class="fas fa-edit me-1"></i>
+                                                        Marcar como Concluida
+                                                    </button>
                                                     <button class="btn btn-sm btn-outline-secondary">
                                                         <i class="fas fa-edit me-1"></i> Remarcar
                                                     </button>
@@ -346,7 +351,8 @@ if ($nivel == 2) {
 
                                 <?php if ($nivel == 2):?>
                                 <div class=" text-center mt-4">
-                                    <button class="btn btn-vinho" onclick="agendarConsulta();">
+                                    <button class="btn btn-vinho d-none" id="btnAgendarConsulta"
+                                        onclick="agendarConsulta();">
                                         <i class="fas fa-calendar-plus me-2"></i>Agendar
                                         Consulta
                                     </button>
@@ -543,6 +549,8 @@ if ($nivel == 2) {
     <script>
     document.querySelectorAll('.btn-usuario').forEach(btn => {
         btn.addEventListener('click', function() {
+            const btnAgendarConsulta = document.getElementById('btnAgendarConsulta');
+            btnAgendarConsulta.classList.remove('d-none')
             const usuarios = document.querySelector('.usuarios');
             usuarios.classList.add('d-none');
             const userId = this.getAttribute('data-id');
@@ -564,7 +572,21 @@ if ($nivel == 2) {
                             <strong>Tipo de Terapia:</strong> ${consulta.tipo_terapia}<br>
                             <strong>Local:</strong> ${consulta.local}<br>
                             <strong>Status:</strong> ${consulta.status}
-                        </li>`;
+                            <div class="mt-2">
+                                <button class="btn btn-sm btn-outline-primary"
+                                    onclick="atualizarStatus(, 'confirmada')">
+                                    <i class="fas fa-edit me-1"></i>
+                                        Marcar como Concluida
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-secondary">
+                                        <i class="fas fa-edit me-1"></i> Remarcar
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-times me-1"></i> Cancelar
+                                    </button>
+                                </div>
+                            </li>   
+                        `;
                         });
                         html += `</ul>`;
                     } else {
@@ -578,11 +600,14 @@ if ($nivel == 2) {
 
                     setTimeout(() => {
                         const voltar = document.querySelector("#voltar");
+                        const btnAgendarConsulta = document.getElementById(
+                            'btnAgendarConsulta');
                         if (voltar) {
                             voltar.addEventListener('click', () => {
                                 container.classList.add('d-none');
                                 usuarios.classList.remove('d-none')
                                 container.innerHTML = ''
+                                btnAgendarConsulta.classList.add('d-none')
                             })
                         }
                     }, 0);

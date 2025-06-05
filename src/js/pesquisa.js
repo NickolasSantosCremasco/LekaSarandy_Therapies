@@ -20,27 +20,96 @@ document.addEventListener('DOMContentLoaded', function() {
     // Perguntas da pesquisa
     const questions = [
         {
-            text: "Como você geralmente reage a situações estressantes?",
+            text: "Com que frequência sente que muitas vezes faz escolhas que vão contra o que você realmente acredita?",
             options: [
                 "Nunca",
                 "Raramente",
                 "Ás vezes",
-                "Frequentemente",
                 "Sempre"
             ],
-            scores: [1, 2, 3, 4, 5] // Pontuação para cada opção
+            scores: [0,1,2,3] // Pontuação para cada opção
         },
         {
-            text: "Em um grupo de pessoas, você geralmente:",
+            text: "Com que frequência você costuma dizer 'sim' para agradar, mesmo quando gostaria de dizer 'não'?",
               options: [
                 "Nunca",
                 "Raramente",
                 "Ás vezes",
-                "Frequentemente",
                 "Sempre"
             ],
-            scores: [1, 2, 3, 4, 5]
+            scores: [0,1,2,3]
         },
+        {
+            text: "Com que frequência você se pega vivendo no automático e não buscando o seu propósito?",
+               options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Quantas vezes você sente que esta vivendo o que os outros querem de você e não o que você quer?",
+             options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se sente culpada quando prioriza seu bem-estar?",
+               options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você sente que está se traindo ao manter um relacionamento ou trabalho?",
+               options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Você geralmente tem clareza sobre o que é inegociável para você?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se sente perdido(a) em momentos de decisão importantes?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se compara com os outros e sente que não é bom(a) o suficiente?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+      
         
     ];
 
@@ -144,6 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showResults() {
         quizSection.classList.add('d-none');
         resultSection.classList.remove('d-none');
+        resultSection.classList.add('d-flex')
 
         // Determinar o resultado com base na pontuação total
         const result = calculateResult(totalScore);
@@ -164,28 +234,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Calcular resultado final
     function calculateResult(score) {
-        // Defina seus critérios de pontuação aqui
-        const maxScore = questions.length * 5; // Pontuação máxima possível
         
         // Exemplo de lógica de resultados (ajuste conforme necessário)
-        if (score <= maxScore * 0.25) {
+        if (score <= 9) {
             return {
-                title: "O Reflexivo",
+                title: "Sessão de Clareza",
                 description: "Você tem uma natureza introspectiva e analítica, preferindo processar suas emoções internamente.",
                 therapies: ["Aromaterapia", "Meditação Guiada", "Terapia com Cristais"],
                 strengths: ["Introspecção", "Autoconhecimento", "Profundidade"]
             };
-        } else if (score <= maxScore * 0.5) {
+        } else if (score >= 10 && score <= 19) {
             return {
-                title: "O Cuidador",
-                description: "Você valoriza a harmonia e o bem-estar emocional, tanto próprio quanto dos outros.",
+                title: "Sessão de valores",
+                description: "Você tem uma desconexão com seus valores. Porém, você já nota isso e este é o primeiro passo, uma sessão de valores pode te ajudar a tomar decisões mais conscientes e viver com mais leveza.",
                 therapies: ["Massagem Terapêutica", "Reiki", "Terapia Floral"],
                 strengths: ["Empatia", "Intuição", "Capacidade de cura"]
             };
-        } else if (score <= maxScore * 0.75) {
+        } else if (score >= 20 && score <= 30) {
             return {
-                title: "O Líder",
-                description: "Você tem uma abordagem prática e direta, com talento para orientar e organizar.",
+                title: "Sessão de valores",
+                description: "Sua vida esta sendo fortemente guiada por pressões externas, crenças limitantes ou medos. No entando, notar essas adversidades é o primeiro passo para supera-las. Uma sessão de valores é essencial para resgatar sua autenticidade e voltar para o seu centro.",
                 therapies: ["Coaching", "Terapia Cognitivo-Comportamental", "Bioenergética"],
                 strengths: ["Liderança", "Determinação", "Praticidade"]
             };

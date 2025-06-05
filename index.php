@@ -99,9 +99,15 @@
             <p class="text-light">Descubra quem você realmente é. Sua transformação começa com um clique.
             </p>
             <button class="btn bg-warning bg-gradient btn-lg mt-3" id="btnHeroSection">
+                <?php if(estaLogado()) : ?>
                 <a href="src/pages/pesquisa.php" class="text-black position-relative" style="bottom: 3px;">Faça a
                     Pesquisa</a>
                 <i class="bi bi-arrow-right-circle-fill"></i>
+                <?php else :?>
+                <a href="src/pages/login.php" class="text-black position-relative" style="bottom: 3px;">Faça a
+                    Pesquisa</a>
+                <i class="bi bi-arrow-right-circle-fill"></i>
+                <?php endif;?>
 
             </button>
         </div>
