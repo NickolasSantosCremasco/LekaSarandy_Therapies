@@ -92,28 +92,32 @@
                             <!-- Formulário -->
                             <div class="col-lg-7 p-4 p-md-5" style="background-color: white;">
                                 <h3 class="mb-4" style="color: var(--vinho);">Envie sua mensagem</h3>
-                                <form>
+                                <form action="../database/enviarEmail.php" method="POST">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nome</label>
                                         <input type="text" class="form-control" id="name"
                                             placeholder="Seu nome completo"
-                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;">
+                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;"
+                                            required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">E-mail</label>
                                         <input type="email" class="form-control" id="email" placeholder="seu@email.com"
-                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;">
+                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;"
+                                            required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Telefone (opcional)</label>
                                         <input type="tel" class="form-control" id="phone" placeholder="(XX) XXXXX-XXXX"
-                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;">
+                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;"
+                                            required>
                                     </div>
                                     <div class="mb-4">
                                         <label for="message" class="form-label">Como posso te ajudar?</label>
                                         <textarea class="form-control" id="message" rows="4"
                                             placeholder="Conte-me sobre suas expectativas ou dúvidas..."
-                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;"></textarea>
+                                            style="background-color: var(--cinza-claro); border: none; padding: 12px;"
+                                            required></textarea>
                                     </div>
                                     <button type="submit" class="btn w-100 py-3"
                                         style="background-color: var(--vinho); color: white; font-weight: 500;">Enviar
@@ -180,8 +184,10 @@
                                     </p>
                                 </div>
                                 <div class="col-md-4">
-                                    <button class="btn btn-light w-100 py-2"
-                                        style="color: var(--vinho); font-weight: 500;">Agendar Sessão</button>
+                                    <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank">
+                                        <button class="btn btn-light w-100 py-2"
+                                            style="color: var(--vinho); font-weight: 500;">Agendar Sessão</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

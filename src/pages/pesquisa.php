@@ -48,9 +48,10 @@ require_once '../database/config.php';
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link position-relative text-black px-3 py-2 active"
                             href="../../index.php">Início</a></li>
-                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2" href="#">Minha
-                            Empresa</a></li>
-                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2" href="#">Sobre
+                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
+                            href="../../index.php">Propósito</a></li>
+                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
+                            href="../../index.php">Sobre
                             Mim</a></li>
                     <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
                             href="../pages/contato.php">Contato</a></li>
@@ -129,45 +130,45 @@ require_once '../database/config.php';
     <!--Resultado-->
     <section class="container my-5 py-5 d-none" id="sessaoResultado">
         <div class="question-container text-center">
-            <div class="col-md-6 px-5 d-flex flex-column justify-content-center">
-
-                <h2 class="search-title mb-4">Seu Perfil Terapêutico</h2>
-                <h3 id="profileTitle" class="mb-3">O cuidador Harmonioso</h3>
-                <p class="profilDescription" class="mb-4">Você é uma pessoa que valoriza e harmoniza o bem-estar
-                    emocional
-                </p>
-
-                <div class="row mt-5">
-                    <div class="col-md--6 mb-4">
-                        <h4 class="mb-3">Terapias Recomendadas</h4>
-                        <ul class="text-start" id="terapiasRecomendadas" style="list-style-type: none;">
-                            <li class="mb-2">
-                                <i class="fas fa-spa me-2"></i>Aromateripia
-                            </li>
-                            <li class="mb-2">
-                                <i class="fas fa-spa me-2"></i>Massagem Terapêutica
-                            </li>
-                            <li class="mb-2">
-                                <i class="fas fa-spa me-2"></i>Terapia com Cristais
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <h4 class="mb-3">Pontos Fortes</h4>
-                        <ul class="text-start" id="pontosFortes" style="list-style-type: none; padding-left: 0;">
-                            <li class="mb-2"><i class="fas fa-heart me-2"></i> Empatia</li>
-                            <li class="mb-2"><i class="fas fa-heart me-2"></i> Intuição</li>
-                            <li class="mb-2"><i class="fas fa-heart me-2"></i> Capacidade de cura</li>
-                        </ul>
-                    </div>
-                </div>
-                <button class="btn-outline-primary mt-3" id="refazerTeste">Refazer Teste</button>
+            <h2 class="search-title mb-4">Seu Perfil Terapêutico</h2>
+            <div class="mb-4">
+                <img src="../img/cadastrar.webp" alt="Resultado" class="border border-3 rounded-5"
+                    style="width: 100px;">
             </div>
+            <h3 id="profileTitle" class="mb-3">O cuidador Harmonioso</h3>
+            <p class="profilDescription" class="mb-4">Você é uma pessoa que valoriza e harmoniza o bem-estar emocional
+            </p>
+
+            <div class="row mt-5">
+                <div class="col-md--6 mb-4">
+                    <h4 class="mb-3">Terapias Recomendadas</h4>
+                    <ul class="text-start" id="terapiasRecomendadas" style="list-style-type: none;">
+                        <li class="mb-2">
+                            <i class="fas fa-spa me-2"></i>Aromateripia
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-spa me-2"></i>Massagem Terapêutica
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-spa me-2"></i>Terapia com Cristais
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h4 class="mb-3">Pontos Fortes</h4>
+                    <ul class="text-start" id="pontosFortes" style="list-style-type: none; padding-left: 0;">
+                        <li class="mb-2"><i class="fas fa-heart me-2"></i> Empatia</li>
+                        <li class="mb-2"><i class="fas fa-heart me-2"></i> Intuição</li>
+                        <li class="mb-2"><i class="fas fa-heart me-2"></i> Capacidade de cura</li>
+                    </ul>
+                </div>
+            </div>
+            <button class="btn-outline-primary mt-3" id="refazerTeste">Refazer Teste</button>
+            <button class="btn-outline-primary mt-3" id="agendarTerapia">Agendar Terapia</button>
         </div>
-        <div class="mb-4">
-            <img src="" alt="Resultado" class="border border-3 rounded-5" style="width: 15px;">
-        </div>
+
     </section>
+
 
     <!-- Footer -->
     <footer class="bg-dark text-light pt-5 pb-3" id="Footer">

@@ -169,18 +169,29 @@
         margin-top: 40px;
     }
     
-    .btn-outline-primary {
+    #refazerTerapia {
         color: var(--vinho);
         border-color: var(--vinho);
         border-radius: 30px;
         padding: 10px 25px;
     }
     
-    .btn-outline-primary:hover {
+    #refazerTerapia:hover {
         background-color: var(--vinho);
         color: white;
     }
+
+    #agendarTerapia {
+        color: var(--vinho-suave);
+        border-color: var(--vinho-claro);
+        border-radius: 30px;
+        padding: 10px 25px;
+    }
     
+    #agendarTerapia:hover {
+        background-color: var(--vinho);
+        color: white;
+    }
     .progress-container {
         width: 100%;
         margin-bottom: 30px;
