@@ -544,6 +544,7 @@ if ($nivel == 2) {
     </footer>
 
     <!-- Bootstrap JS -->
+    <script src="../js/pesquisa.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
     </script>
     <script>
@@ -573,16 +574,12 @@ if ($nivel == 2) {
                             <strong>Local:</strong> ${consulta.local}<br>
                             <strong>Status:</strong> ${consulta.status}
                             <div class="mt-2">
-                                <button class="btn btn-sm btn-outline-primary"
-                                    onclick="atualizarStatus(, 'confirmada')">
-                                    <i class="fas fa-edit me-1"></i>
-                                        Marcar como Concluida
-                                    </button>
-                                    <button class="btn btn-sm btn-outline-secondary">
+                               
+                                    <button class="btn btn-sm btn-outline-secondary"  onclick="remarcarConsulta(${consulta.id})">
                                         <i class="fas fa-edit me-1"></i> Remarcar
                                     </button>
-                                    <button class="btn btn-sm btn-outline-danger">
-                                        <i class="fas fa-times me-1"></i> Cancelar
+                                    <button class="btn btn-sm btn-outline-danger" onclick="cancelarConsulta(${consulta.id})">
+                                        <i class="fas fa-times me-1e"></i> Cancelar
                                     </button>
                                 </div>
                             </li>   
@@ -647,6 +644,27 @@ if ($nivel == 2) {
                 console.error('Erro na requisição:', error);
                 alert("Erro na requisição: " + error)
             })
+    }
+
+    function cancelarConsulta(id) {
+        if (!confirm("Tem certeza que deseja cancelar esta consulta?")) return;
+        fetch('../database/cancelarConsulta.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `id=${id}`
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.sucesso) {
+                    alert('Consulta cancelada com sucesso.');
+                    location.reload();
+                } else {
+                    alert('Erro:' + (data.erro || 'Desconhecido'));
+                }
+            })
+            .catch(err => alert('Erro na requisição: ' + err));
     }
     </script>
 </body>
