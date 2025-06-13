@@ -132,34 +132,46 @@ require_once '../database/config.php';
         <div class="question-container text-center">
             <h2 class="search-title mb-4">Seu Perfil Terapêutico</h2>
             <div class="mb-4">
-                <img src="../img/cadastrar.webp" alt="Resultado" class="border border-3 rounded-5"
-                    style="width: 100px;">
+                <img src="../img/cadastrar.webp" alt="Resultado" class=" rounded-5 shadow"
+                    style="width: 100px; height: 100px;">
             </div>
-            <h3 id="profileTitle" class="mb-3">O cuidador Harmonioso</h3>
-            <p class="profilDescription" class="mb-4">Você é uma pessoa que valoriza e harmoniza o bem-estar emocional
-            </p>
+            <h3 id="profileTitle" class="mb-3"></h3>
+            <p class="profilDescription text-muted mx-auto" class="mb-4"></p>
 
             <div class="row mt-5">
                 <div class="col-md--6 mb-4">
                     <h4 class="mb-3">Terapias Recomendadas</h4>
-                    <ul class="text-start" id="terapiasRecomendadas" style="list-style-type: none;">
-                        <li class="mb-2">
-                            <i class="fas fa-spa me-2"></i>Aromateripia
-                        </li>
-                        <li class="mb-2">
-                            <i class="fas fa-spa me-2"></i>Massagem Terapêutica
-                        </li>
-                        <li class="mb-2">
-                            <i class="fas fa-spa me-2"></i>Terapia com Cristais
-                        </li>
-                    </ul>
+                    <div class="row">
+                        <!--Card 1-->
+                        <div class="col-md-6 mb-4">
+                            <div class="card shadow h-100">
+                                <img src="" alt="terapia1" id="img1">
+                                <div class="card-body">
+                                    <h5 class="card-title"></h5>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Card 2-->
+                        <div class="col-md-6 mb-4">
+                            <div class="card shadow h-100">
+                                <img src="" alt="terapia2" id="img2">
+                                <div class="card-body">
+                                    <h5 class="card-title"></h5>
+                                    <p class="card-text"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <h4 class="mb-3">Pontos Fortes</h4>
-                    <ul class="text-start" id="pontosFortes" style="list-style-type: none; padding-left: 0;">
-                        <li class="mb-2"><i class="fas fa-heart me-2"></i> Empatia</li>
-                        <li class="mb-2"><i class="fas fa-heart me-2"></i> Intuição</li>
-                        <li class="mb-2"><i class="fas fa-heart me-2"></i> Capacidade de cura</li>
+                <!-- Pontos Fortes -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-4 text-start text-primary fw-bold">Pontos Fortes</h4>
+                    <ul class="text-start list-unstyled fs-5">
+                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Empatia</li>
+                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Intuição</li>
+                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Capacidade de cura</li>
                     </ul>
                 </div>
             </div>

@@ -14,8 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const retakeTestBtn = document.querySelector('#refazerTeste');
     const profileTitle = document.querySelector('#profileTitle');
     const profileDescription = document.querySelector('.profilDescription');
-    const terapiasRecomendadas = document.querySelector('#terapiasRecomendadas');
     const pontosFortes = document.querySelector('#pontosFortes');
+    const img1 = document.querySelector('#img1')
+    const img2 = document.querySelector('#img2')
+    const img3 = document.querySelector('#img3')
 
     // Perguntas da pesquisa
     const questions = [
@@ -223,13 +225,11 @@ document.addEventListener('DOMContentLoaded', function() {
         profileDescription.textContent = result.description;
         
         // Atualizar terapias recomendadas e pontos fortes
-        terapiasRecomendadas.innerHTML = result.therapies.map(t => `
-            <li class="mb-2"><i class="fas fa-spa me-2"></i>${t}</li>
-        `).join('');
+        img1.src = `${result.therapies[0]}`
+        img2.src = `${result.therapies[1]}`
+        img3.src = `${result.therapies[2]}`
         
-        pontosFortes.innerHTML = result.strengths.map(s => `
-            <li class="mb-2"><i class="fas fa-heart me-2"></i>${s}</li>
-        `).join('');
+      
     }
 
     // Calcular resultado final
@@ -238,30 +238,30 @@ document.addEventListener('DOMContentLoaded', function() {
         // Exemplo de lógica de resultados (ajuste conforme necessário)
         if (score <= 9) {
             return {
-                title: "Sessão de Clareza",
+                title: "Sessão de Clareza e Sabotadores",
                 description: "Você tem uma natureza introspectiva e analítica, preferindo processar suas emoções internamente.",
-                therapies: ["Aromaterapia", "Meditação Guiada", "Terapia com Cristais"],
+                therapies: ["../img/terapiasPesquisa/sabotadores1.jpg", "../img/terapiasPesquisa/sabotadores2.jpg"],
                 strengths: ["Introspecção", "Autoconhecimento", "Profundidade"]
             };
         } else if (score >= 10 && score <= 19) {
             return {
                 title: "Sessão de valores",
                 description: "Você tem uma desconexão com seus valores. Porém, você já nota isso e este é o primeiro passo, uma sessão de valores pode te ajudar a tomar decisões mais conscientes e viver com mais leveza.",
-                therapies: ["Massagem Terapêutica", "Reiki", "Terapia Floral"],
+                therapies: ["../img/terapiasPesquisa/valores1.jpg", "../img/terapiasPesquisa/valores2.webp"],
                 strengths: ["Empatia", "Intuição", "Capacidade de cura"]
             };
         } else if (score >= 20 && score <= 30) {
             return {
                 title: "Sessão de valores",
                 description: "Sua vida esta sendo fortemente guiada por pressões externas, crenças limitantes ou medos. No entando, notar essas adversidades é o primeiro passo para supera-las. Uma sessão de valores é essencial para resgatar sua autenticidade e voltar para o seu centro.",
-                therapies: ["Coaching", "Terapia Cognitivo-Comportamental", "Bioenergética"],
+                therapies: ["../img/terapiasPesquisa/sabotadores1.jpg", "../img/terapiasPesquisa/valores1.jpg"],
                 strengths: ["Liderança", "Determinação", "Praticidade"]
             };
         } else {
             return {
-                title: "O Expressivo",
-                description: "Você é criativo e se expressa livremente, trazendo energia e vitalidade para seu entorno.",
-                therapies: ["Arteterapia", "Dançaterapia", "Musicoterapia"],
+                title: "Sessão Grupal",
+                description: "Você é criativo e se expressa livremente, trazendo energia e vitalidade para seu entorno. Uma terapia em grupo pode te ajudar a se sentir mais a vontade tanto em compartilhar quanto em receber.",
+                therapies: ["../img/terapiasPesquisa/grupal1.jpg", "../img/terapiasPesquisa/valores1.jpg"],
                 strengths: ["Criatividade", "Comunicação", "Espontaneidade"]
             };
         }
