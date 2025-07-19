@@ -44,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 
-    <title>Alessandra Sarandi | Login</title>
+    <title>Leka Sarandy | Login</title>
 
 </head>
 
@@ -128,12 +128,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
 
                         <div class="input-group mb-3 d-flex justify-content-between">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="lembrar" name="lembrar">
-                                <label for="lembrar" class="form-check-label text-secondary">
-                                    <small> Lembrar de mim</small>
-                                </label>
-                            </div>
                             <div>
                                 <small>
                                     <a href="../pages/recuperarSenha.php">

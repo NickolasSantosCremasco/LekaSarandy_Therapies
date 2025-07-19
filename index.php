@@ -108,7 +108,6 @@
                     Pesquisa</a>
                 <i class="bi bi-arrow-right-circle-fill"></i>
                 <?php endif;?>
-
             </button>
         </div>
     </header>
@@ -397,7 +396,15 @@
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Exercícios
                                     práticos</li>
                             </ul>
-                            <a href="#" class="btn btn-warning   w-100 py-2">Saiba mais</a>
+
+
+
+                            <?php if(estaLogado()):?>
+                            <a href=" https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q"
+                                class="btn btn-warning   w-100 py-2">Saiba mais</a>
+                            <?php else : ?>
+                            <a href="src/pages/login.php" class="btn btn-warning   w-100 py-2">Saiba mais</a>
+                            <?php endif;?>
                         </div>
                     </div>
                 </div>
@@ -427,7 +434,12 @@
                                     entre
                                     sessões</li>
                             </ul>
-                            <a href="#" class="btn btn-warning w-100 py-2">Agendar agora</a>
+                            <?php if(estaLogado()) : ?>
+                            <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q"
+                                class="btn btn-warning w-100 py-2">Agendar agora</a>
+                            <?php else :?>
+                            <a href="src/pages/login.php" class="btn btn-warning w-100 py-2">Agendar agora</a>
+                            <?php endif?>
                         </div>
                     </div>
                 </div>
@@ -451,7 +463,13 @@
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Dinâmicas
                                     interativas</li>
                             </ul>
-                            <a href="#" class="btn btn-outline-warning w-100 py-2">Conhecer grupos</a>
+
+                            <?php if(estaLogado()) : ?>
+                            <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q"
+                                class="btn btn-outline-warning w-100 py-2">Conhecer grupos</a>
+                            <?php else :?>
+                            <a href="src/pages/login.php" class="btn btn-outline-warning w-100 py-2">Conhecer grupos</a>
+                            <?php endif?>
                         </div>
                     </div>
                 </div>
