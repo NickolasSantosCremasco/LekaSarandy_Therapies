@@ -1,5 +1,8 @@
+const { act } = require("react");
+
 document.addEventListener('DOMContentLoaded', function() {
     // Elementos da Interface
+    const startContainer = document.querySelector('.startContainer')
     const startQuizBtn = document.querySelector('#comecarTeste');
     const introSection = document.querySelector('.intro-section');
     const quizSection = document.querySelector('#sessaoPesquisa');
@@ -15,12 +18,202 @@ document.addEventListener('DOMContentLoaded', function() {
     const profileTitle = document.querySelector('#profileTitle');
     const profileDescription = document.querySelector('.profilDescription');
     const pontosFortes = document.querySelector('#pontosFortes');
-    const img1 = document.querySelector('#img1')
-    const img2 = document.querySelector('#img2')
-    const img3 = document.querySelector('#img3')
+    const img1 = document.querySelector('#img1');
+    const img2 = document.querySelector('#img2');
+    const img3 = document.querySelector('#img3');
 
-    // Perguntas da pesquisa
-    const questions = [
+    
+    const questions1 = [
+        {
+            text: "Com que frequência sente que muitas vezes faz escolhas que vão contra o que você realmente acredita?",
+            options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3] // Pontuação para cada opção
+        },
+        {
+            text: "Com que frequência você costuma dizer 'sim' para agradar, mesmo quando gostaria de dizer 'não'?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se pega vivendo no automático e não buscando o seu propósito?",
+               options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Quantas vezes você sente que esta vivendo o que os outros querem de você e não o que você quer?",
+             options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se sente culpada quando prioriza seu bem-estar?",
+               options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você sente que está se traindo ao manter um relacionamento ou trabalho?",
+               options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Você geralmente tem clareza sobre o que é inegociável para você?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se sente perdido(a) em momentos de decisão importantes?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se compara com os outros e sente que não é bom(a) o suficiente?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+      
+        
+    ];
+
+    const questions2 = [
+        {
+            text: "Com que frequência sente que muitas vezes faz escolhas que vão contra o que você realmente acredita?",
+            options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3] // Pontuação para cada opção
+        },
+        {
+            text: "Com que frequência você costuma dizer 'sim' para agradar, mesmo quando gostaria de dizer 'não'?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se pega vivendo no automático e não buscando o seu propósito?",
+               options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Quantas vezes você sente que esta vivendo o que os outros querem de você e não o que você quer?",
+             options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se sente culpada quando prioriza seu bem-estar?",
+               options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você sente que está se traindo ao manter um relacionamento ou trabalho?",
+               options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Você geralmente tem clareza sobre o que é inegociável para você?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se sente perdido(a) em momentos de decisão importantes?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+        {
+            text: "Com que frequência você se compara com os outros e sente que não é bom(a) o suficiente?",
+              options: [
+                "Nunca",
+                "Raramente",
+                "Ás vezes",
+                "Sempre"
+            ],
+            scores: [0,1,2,3]
+        },
+      
+        
+    ];
+      
+    const questions3 = [
         {
             text: "Com que frequência sente que muitas vezes faz escolhas que vão contra o que você realmente acredita?",
             options: [
@@ -120,30 +313,79 @@ document.addEventListener('DOMContentLoaded', function() {
     let answers = [];
     let selectedOption = null;
     let totalScore = 0;
+    let activeQuestions = [];
 
-    // Iniciar a pesquisa
+ 
     startQuizBtn.addEventListener('click', function() {
         introSection.style.display = 'none';
-        quizSection.classList.remove('d-none');
-        loadQuestion(currentQuestion);
-    });
+        startQuizBtn.remove()
+        
+        const button1 = document.createElement('button');
+        button1.id = 'button1';
+        button1.className = 'btn btn-primary btn-lg col-10 col-sm-8 col-md-6 col-lg-3 mx-2 mb-3 start-btn';
+        button1.textContent = 'Terapia da Valores';
 
-    // Carregar pergunta
+        const button2 = document.createElement('button');
+        button2.id = 'button2';
+        button2.className = 'btn btn-primary btn-lg col-10 col-sm-8 col-md-6 col-lg-3 mx-2 mb-3 start-btn';
+        button2.textContent = 'Terapia de Sabotadores';
+
+        const button3 = document.createElement('button');
+        button3.id = 'button3';
+        button3.className = 'btn btn-primary btn-lg col-10 col-sm-8 col-md-6 col-lg-3 mx-2 mb-3 start-btn';
+        button3.textContent = 'Terapia de Grupo';
+
+         startContainer.appendChild(button1)
+        startContainer.appendChild(button2)
+        startContainer.appendChild(button3)
+
+        button1.style.marginRight = '10px'
+        button2.style.marginRight = '10px'
+    
+        button1.addEventListener('click', function() {
+            activeQuestions = questions1;
+             startSurvey();
+        })
+    
+        button2.addEventListener('click', function() {
+            activeQuestions = questions2;
+             startSurvey();
+        })
+    
+        button3.addEventListener('click', function() {
+            activeQuestions = questions3;
+            startSurvey();
+        })
+    })
+   
+    function startSurvey () {
+        startContainer.innerHTML = '';
+        startContainer.classList.add('d-none');
+        introSection.style.display = 'none';
+
+        quizSection.classList.remove('d-none');
+        currentQuestion = 0
+        answers = [];
+        totalScore = 0
+        selectedOption = null
+        loadQuestion(currentQuestion)
+    }
+   
     function loadQuestion(index) {
-        if (index >= questions.length) {
+        if (index >= activeQuestions.length) {
             showResults();
             return;
         }
         
-        const question = questions[index];
+        const question = activeQuestions[index];
         questionText.textContent = question.text;
         currentQuestionNum.textContent = index + 1;
-        progressText.textContent = `${index + 1}/${questions.length}`;
-        progressFill.style.width = `${((index + 1) / questions.length) * 100}%`;
+        progressText.textContent = `${index + 1}/${activeQuestions.length}`;
+        progressFill.style.width = `${((index + 1) / activeQuestions.length) * 100}%`;
 
         // Atualizar botões de navegação
         prevBtn.disabled = index === 0;
-        nextBtn.textContent = index === questions.length - 1 ? 'Ver Resultado' : 'Próxima';
+        nextBtn.textContent = index === activeQuestions.length - 1 ? 'Ver Resultado' : 'Próxima';
 
         // Carregar opções
         optionsContainer.innerHTML = '';
@@ -164,9 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Selecionar Opção
     function selectOption(optionBtn, optionIndex) {
-        // Remover Seleção Anterior
         const previouslySelected = optionsContainer.querySelector('.selected');
         if (previouslySelected) {
             previouslySelected.classList.remove('selected');
@@ -178,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
         answers[currentQuestion] = optionIndex;
         
         // Atualizar pontuação
-        totalScore += questions[currentQuestion].scores[optionIndex];
+        totalScore += questions1[currentQuestion].scores[optionIndex];
     }
 
     // Próxima Pergunta
@@ -188,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        if (currentQuestion < questions.length - 1) {
+        if (currentQuestion < questions1.length - 1) {
             currentQuestion++;
             selectedOption = answers[currentQuestion] !== undefined ? answers[currentQuestion] : null;
             loadQuestion(currentQuestion);
@@ -202,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentQuestion > 0) {
             // Subtrair a pontuação da pergunta atual
             if (answers[currentQuestion] !== undefined) {
-                totalScore -= questions[currentQuestion].scores[answers[currentQuestion]];
+                totalScore -= questions1[currentQuestion].scores[answers[currentQuestion]];
             }
             
             currentQuestion--;
@@ -211,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Mostrar Resultados
+
     function showResults() {
         quizSection.classList.add('d-none');
         resultSection.classList.remove('d-none');
@@ -232,10 +472,8 @@ document.addEventListener('DOMContentLoaded', function() {
       
     }
 
-    // Calcular resultado final
     function calculateResult(score) {
         
-        // Exemplo de lógica de resultados (ajuste conforme necessário)
         if (score <= 9) {
             return {
                 title: "Sessão de Clareza e Sabotadores",
@@ -267,7 +505,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Refazer Teste
     retakeTestBtn.addEventListener('click', function() {
         // Resetar todas as variáveis
         currentQuestion = 0;

@@ -28,7 +28,7 @@ require_once '../database/config.php';
 
     <!--Ícones-->
     <link rel="shortcut icon" href="../img/logoEmpresa.png" type="image/x-icon">
-    <title>Alessandra Sarandi | Descubra Seu Perfil</title>
+    <title>Leka Sarandi | Descubra Seu Perfil</title>
 
 </head>
 
@@ -79,7 +79,7 @@ require_once '../database/config.php';
 
     <!--Introdução-->
     <section class="intro-section therapeutic-bg">
-        <div class="container">
+        <div class="container startContainer">
             <div class="text-center mb-5">
                 <h1 class="search-title">Descubra o seu Perfil Terapêutico</h1>
                 <p class="highlight">Este teste personalizado irá revelar insights valiosos sobre sua personalidade e
@@ -89,6 +89,7 @@ require_once '../database/config.php';
                 <div>
                     <button id="comecarTeste" class="btn btn-primary start-btn">Começar a Jornada</button>
                 </div>
+
             </div>
         </div>
     </section>
