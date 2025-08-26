@@ -61,8 +61,8 @@ require_once '../database/config.php';
                     <!-- Mostra a imagem do usuário logado -->
                     <div class="d-flex align-items-center flex-column gap-2">
                         <a href="../pages/perfil.php" class="perfil">
-                            <img src="https://icon-library.com/images/generic-user-icon/generic-user-icon-9.jpg"
-                                class="border" alt="Usuário" style="width: 60px; height: 60px; border-radius: 50%;">
+                            <img src="../img/usuarioGenerico.jpg" class="border" alt="Usuário"
+                                style="width: 60px; height: 60px; border-radius: 50%;">
                         </a>
                         <span
                             class="fw-bold"><?php echo ucfirst(explode(' ', $_SESSION['usuario']['nome'])[0]) ?></span>

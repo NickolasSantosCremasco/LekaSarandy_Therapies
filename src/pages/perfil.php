@@ -124,8 +124,8 @@ if ($nivel == 2) {
                     <?php if(estaLogado()) : ?>
                     <!-- Mostra a imagem do usuário logado -->
                     <div class="d-flex align-items-center flex-column gap-2">
-                        <img src="https://icon-library.com/images/generic-user-icon/generic-user-icon-9.jpg"
-                            class="border" alt="Usuário" style="width: 60px; height: 60px; border-radius: 50%;">
+                        <img src="../img/usuarioGenerico.jpg" class="border" alt="Usuário"
+                            style="width: 60px; height: 60px; border-radius: 50%;">
                         <span
                             class="fw-bold"><?php echo ucfirst(explode(' ', $_SESSION['usuario']['nome'])[0]) ?></span>
                     </div>
@@ -142,8 +142,7 @@ if ($nivel == 2) {
     <!-- Header do Perfil -->
     <div class="profile-header py-5 mt-5 mb-4">
         <div class="container text-center">
-            <img src="https://icon-library.com/images/generic-user-icon/generic-user-icon-9.jpg" alt="Foto do perfil"
-                class="profile-pic rounded-circle mb-3">
+            <img src="../img/usuarioGenerico.jpg" alt="Foto do perfil" class="profile-pic rounded-circle mb-3">
             <h2 class="mb-1"><span
                     class="fw-bold"><?php echo ucfirst(explode(' ', $_SESSION['usuario']['nome'])[0]) ?></span></h2>
             <p class="mb-0">Membro desde
@@ -189,7 +188,7 @@ if ($nivel == 2) {
                             </div>
                         </form>
 
-                        <hr class="my-4">
+
 
                         <h6 class="mb-3">Alterar Senha</h6>
                         <form method="post" action="../database/mudarSenha.php">
@@ -544,128 +543,8 @@ if ($nivel == 2) {
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="../js/pesquisa.js"></script>
+    <script src="../js/perfil.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-    </script>
-    <script>
-    document.querySelectorAll('.btn-usuario').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const btnAgendarConsulta = document.getElementById('btnAgendarConsulta');
-            btnAgendarConsulta.classList.remove('d-none')
-            const usuarios = document.querySelector('.usuarios');
-            usuarios.classList.add('d-none');
-            const userId = this.getAttribute('data-id');
-            document.getElementById('usuarioSelecionadoId').value = userId;
-            fetch(`../database/getConsultas.php?id=${userId}`)
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.getElementById('consultasUsuario');
-                    let html = '';
-
-                    if (data.length > 0) {
-
-                        html +=
-                            `<div class="alert alert-info">Veja as Consultas a seguir!<i class="fas fa-arrow-left float-end" style="font-size:8pt; margin-top:8px;cursor:pointer;" id="voltar">Voltar</i></div>`;
-                        html += `<ul class="list-group">`;
-                        data.forEach(consulta => {
-                            html += `<li class="list-group-item">
-                            <strong>Data:</strong> ${consulta.data_hora}<br>
-                            <strong>Tipo de Terapia:</strong> ${consulta.tipo_terapia}<br>
-                            <strong>Local:</strong> ${consulta.local}<br>
-                            <strong>Status:</strong> ${consulta.status}
-                            <div class="mt-2">
-                               
-                                    <button class="btn btn-sm btn-outline-secondary"  onclick="remarcarConsulta(${consulta.id})">
-                                        <i class="fas fa-edit me-1"></i> Remarcar
-                                    </button>
-                                    <button class="btn btn-sm btn-outline-danger" onclick="cancelarConsulta(${consulta.id})">
-                                        <i class="fas fa-times me-1e"></i> Cancelar
-                                    </button>
-                                </div>
-                            </li>   
-                        `;
-                        });
-                        html += `</ul>`;
-                    } else {
-                        html =
-                            '<div class="alert alert-warning" id="avisoConsulta">Nenhuma Consulta Encontrada!<i class="fas fa-arrow-left float-end" style="font-size:8pt; margin-top:8px;cursor:pointer;" id="voltar">Voltar</i></div>';
-
-                    }
-
-                    container.innerHTML = html;
-                    container.classList.remove('d-none');
-
-                    setTimeout(() => {
-                        const voltar = document.querySelector("#voltar");
-                        const btnAgendarConsulta = document.getElementById(
-                            'btnAgendarConsulta');
-                        if (voltar) {
-                            voltar.addEventListener('click', () => {
-                                container.classList.add('d-none');
-                                usuarios.classList.remove('d-none')
-                                container.innerHTML = ''
-                                btnAgendarConsulta.classList.add('d-none')
-                            })
-                        }
-                    }, 0);
-                });
-        });
-    });
-
-
-    function agendarConsulta() {
-        document.querySelectorAll('.btn-usuario').forEach(btn => {
-            const usuarioId = btn.dataset.id;
-            document.getElementById('usuarioSelecionadoId').value = usuarioId;
-            const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
-            modal.show();
-
-        });
-    }
-
-    function atualizarStatus(id, status) {
-        fetch('../database/atualizarStatus.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `id=${id}&status=${status}`
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.sucesso) {
-                    alert('Status atualizado com sucesso!');
-                    location.reload(); //Atualiza Página
-                } else {
-                    alert('Erro: ' + (data.erro || 'Desconhecido'));
-                }
-            })
-            .catch(error => {
-                console.error('Erro na requisição:', error);
-                alert("Erro na requisição: " + error)
-            })
-    }
-
-    function cancelarConsulta(id) {
-        if (!confirm("Tem certeza que deseja cancelar esta consulta?")) return;
-        fetch('../database/cancelarConsulta.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `id=${id}`
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.sucesso) {
-                    alert('Consulta cancelada com sucesso.');
-                    location.reload();
-                } else {
-                    alert('Erro:' + (data.erro || 'Desconhecido'));
-                }
-            })
-            .catch(err => alert('Erro na requisição: ' + err));
-    }
     </script>
 </body>
 
