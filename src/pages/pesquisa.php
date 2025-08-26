@@ -106,7 +106,7 @@ require_once '../database/config.php';
                     <span id="progressText">1/20</span>
                 </div>
                 <div class="progress-bar">
-                    <div class="proress-fill" id="progressFill" style="width: 5%;"></div>
+                    <div class="progress-fill" id="progressFill" style="width: 5%;"></div>
                 </div>
             </div>
 
@@ -230,7 +230,7 @@ require_once '../database/config.php';
         </div>
     </footer>
     <script src="../js/pesquisa.js"></script>
-    <script src="./src/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 

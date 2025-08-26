@@ -169,14 +169,14 @@
         margin-top: 40px;
     }
     
-    #refazerTerapia {
+    #refazerTeste {
         color: var(--vinho);
         border-color: var(--vinho);
         border-radius: 30px;
         padding: 10px 25px;
     }
     
-    #refazerTerapia:hover {
+    #refazerTeste:hover {
         background-color: var(--vinho);
         color: white;
     }
