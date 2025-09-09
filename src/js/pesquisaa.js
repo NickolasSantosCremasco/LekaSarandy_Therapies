@@ -22,7 +22,7 @@
 
 
         const questions1 = [{
-                text: "Com que frequência sente que muitas vezes faz escolhas que vão contra o que você realmente acredita?",
+                text: "Com que frequência você sente que muitas vezes faz escolhas que vão contra o que você realmente acredita?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -52,7 +52,27 @@
                 scores: [0, 1, 2, 3]
             },
             {
-                text: "Quantas vezes você sente que esta vivendo o que os outros querem de você e não o que você quer?",
+                text: "Com que frequência você se sente em paz com suas decisões ou muitas vezes se arrepende depois?",
+                options: [
+                    "Nunca",
+                    "Raramente",
+                    "Ás vezes",
+                    "Sempre"
+                ],
+                scores: [0, 1, 2, 3]
+            },
+            {
+                text: "Com que frequência você se pega vivendo on automático",
+                options: [
+                    "Nunca",
+                    "Raramente",
+                    "Ás vezes",
+                    "Sempre"
+                ],
+                scores: [0, 1, 2, 3]
+            },
+            {
+                text: "Com que frequência você sente que está vivendo a vida que quer ou a vida que os outros esperam de você?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -72,17 +92,7 @@
                 scores: [0, 1, 2, 3]
             },
             {
-                text: "Com que frequência você sente que está se traindo ao manter um relacionamento ou trabalho?",
-                options: [
-                    "Nunca",
-                    "Raramente",
-                    "Ás vezes",
-                    "Sempre"
-                ],
-                scores: [0, 1, 2, 3]
-            },
-            {
-                text: "Você geralmente tem clareza sobre o que é inegociável para você?",
+                text: "Com que frequência você sentiu que estava se traindo ao manter um relacionamento ou trabalho?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -93,16 +103,6 @@
             },
             {
                 text: "Com que frequência você se sente perdido(a) em momentos de decisão importantes?",
-                options: [
-                    "Nunca",
-                    "Raramente",
-                    "Ás vezes",
-                    "Sempre"
-                ],
-                scores: [0, 1, 2, 3]
-            },
-            {
-                text: "Com que frequência você se compara com os outros e sente que não é bom(a) o suficiente?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -210,7 +210,7 @@
         ];
 
         const questions3 = [{
-                text: "Com que frequência sente que muitas vezes faz escolhas que vão contra o que você realmente acredita?",
+                text: "Com que frequência você sente que, por mais que se esforce, nunca é suficiente?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -220,7 +220,7 @@
                 scores: [0, 1, 2, 3] // Pontuação para cada opção
             },
             {
-                text: "Com que frequência você costuma dizer 'sim' para agradar, mesmo quando gostaria de dizer 'não'?",
+                text: "Com que frequência você medo de se posicionar ou dizer 'não' por receio de desagradar os outros?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -230,7 +230,7 @@
                 scores: [0, 1, 2, 3]
             },
             {
-                text: "Com que frequência você se pega vivendo no automático e não buscando o seu propósito?",
+                text: "Com que frequência você se sente culpado(a) ao cuidar de si mesmo ou priorizar suas necessidades?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -250,7 +250,7 @@
                 scores: [0, 1, 2, 3]
             },
             {
-                text: "Com que frequência você se sente culpada quando prioriza seu bem-estar?",
+                text: "Com que frequência você acha que sucesso ou prosperidade é algo que 'não é para você'?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -260,7 +260,7 @@
                 scores: [0, 1, 2, 3]
             },
             {
-                text: "Com que frequência você sente que está se traindo ao manter um relacionamento ou trabalho?",
+                text: "Com que frequência você costuma se sabotar ou adiar objetivos importantes sem entender o motivo?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -270,7 +270,7 @@
                 scores: [0, 1, 2, 3]
             },
             {
-                text: "Você geralmente tem clareza sobre o que é inegociável para você?",
+                text: "Com que frequência você sente que precisa ser 'perfeito(a)' para ser aceita ou amado(a)?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -280,7 +280,7 @@
                 scores: [0, 1, 2, 3]
             },
             {
-                text: "Com que frequência você se sente perdido(a) em momentos de decisão importantes?",
+                text: "Com que frequência você evita oportunidades por acreditar que não merece ou não é capaz?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -290,7 +290,7 @@
                 scores: [0, 1, 2, 3]
             },
             {
-                text: "Com que frequência você se compara com os outros e sente que não é bom(a) o suficiente?",
+                text: "Com que frequência você costuma internalizar críticas de forma exagerada, sentindo-se sempre culpado(a)?",
                 options: [
                     "Nunca",
                     "Raramente",
@@ -332,7 +332,7 @@
             button3.id = 'button3';
             button3.className =
                 'btn btn-primary btn-lg col-10 col-sm-8 col-md-6 col-lg-3 mx-2 mb-3 start-btn';
-            button3.textContent = 'Terapia de Grupo';
+            button3.textContent = 'Terapia de Crenças Limitantes';
 
             startContainer.appendChild(button1)
             startContainer.appendChild(button2)
