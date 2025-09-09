@@ -352,7 +352,7 @@
                 <!-- Coluna de imagem -->
                 <div class="col-lg-5">
                     <div class="position-relative d-block">
-                        <img src="src/img/LekaSarandy.webp" alt="Terapeuta" class="img-fluid rounded shadow-lg"
+                        <img src="src/img/LekaSarandy.jpeg" alt="Terapeuta" class="img-fluid rounded shadow-lg"
                             style="border: 8px solid white;">
                         <div class="position-absolute bottom-0 start-0 bg-white p-3 shadow"
                             style="transform: translate(-20%, 20%);">

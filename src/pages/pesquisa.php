@@ -229,7 +229,7 @@ require_once '../database/config.php';
             <p class="text-center small mb-0">&copy; 2025 Leka Sarandy. Todos os direitos reservados.</p>
         </div>
     </footer>
-    <script src="../js/pesquisa.js"></script>
+    <script src="../js/pesquisaa.js"></script>
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
