@@ -65,11 +65,17 @@
                             href="./index.php">Início</a>
                     </li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
-                            href="#minhaEmpresa">Propósito</a></li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#sobreMim">Sobre Mim</a>
+                            href="#minhaEmpresa">Propósito</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
-                            href="./src/pages/contato.php">Contato</a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link position-relative px-3 py-2" href="#sobreMim">Sobre Mim</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="#planos">Terapias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative px-3 py-2" href="./src/pages/contato.php">Contato</a>
+                    </li>
                 </ul>
                 <div class="d-flex">
                     <?php if(estaLogado()) : ?>
@@ -96,7 +102,8 @@
     <header class="hero d-flex align-items-center text-center">
         <div class="container">
             <h1 class="text-light fw-normal">Bem-vindo ao seu refúgio de Terapia</h1>
-            <p class="text-light">Descubra quem você realmente é. Sua transformação começa com um clique.
+            <p class="text-light">Descubra quem você realmente é. Faça a pesquisa e descubra qual plano melhor se
+                encaixa em você!!
             </p>
             <button class="btn bg-warning bg-gradient btn-lg mt-3" id="btnHeroSection">
                 <?php if(estaLogado()) : ?>
@@ -366,7 +373,7 @@
     </section>
     <!--Planos de Terapia-->
     <!-- Planos de Terapia -->
-    <section class="py-5" style="background-color: #f8f9fa;">
+    <section class="py-5" id="planos" style="background-color: #f8f9fa;">
         <div class="container">
             <!-- Título -->
             <div class="text-center mb-5">

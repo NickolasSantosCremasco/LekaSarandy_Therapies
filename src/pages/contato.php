@@ -48,6 +48,9 @@
                     </li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2" href="../../index.php">Sobre
                             Mim</a></li>
+                    <li class="nav-item"><a class="nav-link position-relative px-3 py-2"
+                            href="../../index.php">Terapias</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active"
                             href="./src/pages/contato.php">Contato</a></li>
                 </ul>
