@@ -188,8 +188,6 @@ if ($nivel == 2) {
                             </div>
                         </form>
 
-
-
                         <h6 class="mb-3">Alterar Senha</h6>
                         <form method="post" action="../database/mudarSenha.php">
                             <div class="mb-3">

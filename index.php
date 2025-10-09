@@ -1,6 +1,15 @@
 <?php
     require_once 'src/database/config.php';
     require_once 'src/database/auth.php';
+
+    $usuario_id = $_SESSION['usuario']['id'] ?? null;
+    
+    $stmt = $pdo->prepare('SELECT caminho_foto FROM usuarios WHERE id = :usuario_id');
+    $stmt->execute([
+        ':usuario_id' => $usuario_id
+    ]);
+
+    $caminho_foto = $stmt->fetchColumn(); 
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -82,7 +91,7 @@
                     <!-- Mostra a imagem do usuário logado -->
                     <div class="d-flex align-items-center flex-column gap-2">
                         <a href="src/pages/perfil.php" class="perfil">
-                            <img src="src/img/usuarioGenerico.jpg" class="border" alt="Usuário"
+                            <img src="' . htmlspecialchars($caminho_foto) . '" class="border" alt="Usuário"
                                 style="width: 60px; height: 60px; border-radius: 50%;">
                         </a>
                         <span
@@ -457,7 +466,7 @@
                         <img src="src/img/sessaoGrupal.png" class="card-img-top" alt="Grupo em sessão de terapia"
                             style="height: 200px; object-fit: cover; object-position: top;">
                         <div class="card-body text-center">
-                            <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão Grupal</h3>
+                            <h3 class="card-title mb-3" style="color: #7a2a3a;">Sessão de Crenças Limitantes</h3>
                             <p class="card-text mb-4">Experiência transformadora compartilhada em grupo para
                                 crescimento
                                 coletivo e apoio mútuo.</p>
