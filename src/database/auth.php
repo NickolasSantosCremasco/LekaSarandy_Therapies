@@ -2,13 +2,13 @@
 require_once 'config.php';
 
 //Registrar um novo usuário
-function registrarUsuario($nome, $email, $senha) {
+function registrarUsuario($nome, $email, $senha, $caminhoFoto = null) {
     global $pdo;
 
     //verifica se tem algum campo vazio
-    if (empty($nome) || empty($email) || empty($senha) ) {
+    if (empty($nome) || empty($email) || empty($senha)) {
         return ['sucesso' => false, 'message' => 'Todos os campos são obrigatórios.'];
-    };
+    }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return ['sucesso' => false, 'message' => 'Email inválido!'];
@@ -20,36 +20,38 @@ function registrarUsuario($nome, $email, $senha) {
     
     //Verifica se o email já existe
     $sql = 'SELECT id FROM usuarios WHERE email = :email';
-    $stmt = $pdo-> prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
-    if($stmt->rowCount() > 0) {
-        return ['sucesso' => false, 'message' => 'Email já cadastrado'];
-    };
+    if ($stmt->rowCount() > 0) {
+        return ['sucesso' => false, 'message' => 'Email já cadastrado.'];
+    }
 
     //Criptografia da Senha
     $senhaHash = password_hash($senha, PASSWORD_BCRYPT, ['cost' => 12]);
 
     //Inserção no banco
     try {
-        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)";
+        $sql = "INSERT INTO usuarios (nome, email, senha, caminho_foto) 
+                VALUES (:nome, :email, :senha, :caminho_foto)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
         $stmt->bindParam(':email', $email, PDO::PARAM_STR);
         $stmt->bindParam(':senha', $senhaHash, PDO::PARAM_STR);
-        
+        $stmt->bindParam(':caminho_foto', $caminhoFoto, PDO::PARAM_STR);
+
         $result = $stmt->execute();
         
         return [
             'sucesso' => $result,
-            'message'=> $result ? 'Registro Realizado com Sucesso' : 'Erro ao Registrar'
+            'message'=> $result ? 'Registro realizado com sucesso!' : 'Erro ao registrar usuário.'
         ];
     } catch (PDOException $e) {
-        return['sucesso' => false, 'message' => 'Erro no banco de dados: ' . $e->getMessage()];
+        return ['sucesso' => false, 'message' => 'Erro no banco de dados: ' . $e->getMessage()];
     }
-    
 }
+
 
 //Função para logar usuário
 function logarUsuario($email, $senha) {

@@ -4,7 +4,7 @@
 
     $usuario_id = $_SESSION['usuario']['id'] ?? null;
     
-    $stmt = $pdo->prepare('SELECT caminho_foto FROM usuarios WHERE id = :usuario_id');
+    $stmt = $pdo->prepare('SELECT caminho_foto FROM usuarios WHERE id = :usuario_id LIMIT 1');
     $stmt->execute([
         ':usuario_id' => $usuario_id
     ]);
@@ -91,8 +91,8 @@
                     <!-- Mostra a imagem do usuário logado -->
                     <div class="d-flex align-items-center flex-column gap-2">
                         <a href="src/pages/perfil.php" class="perfil">
-                            <img src="' . htmlspecialchars($caminho_foto) . '" class="border" alt="Usuário"
-                                style="width: 60px; height: 60px; border-radius: 50%;">
+                            <img src="<?php echo htmlspecialchars($caminho_foto ?: 'src/img/usuarioGenerico.jpg'); ?>"
+                                class="border" alt="Usuário" style="width: 60px; height: 60px; border-radius: 50%;">
                         </a>
                         <span
                             class="fw-bold"><?php echo ucfirst(explode(' ', $_SESSION['usuario']['nome'])[0]) ?></span>

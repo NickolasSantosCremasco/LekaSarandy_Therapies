@@ -13,6 +13,32 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $senha = $_POST['senha'] ?? '';
     $confirmar_senha = $_POST['confirmar_senha'] ?? '';
 
+    //Tratamento da Foto
+    $caminhoFoto = '';
+
+    if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+        $nomeArquivo = basename($_FILES['file']['name']);
+        $extensao = pathinfo($nomeArquivo, PATHINFO_EXTENSION);
+        $novoNome = uniqid('foto_', true) . '.' . $extensao;
+        $destino = 'src/uploads/' . $novoNome;
+
+        $pastaUploads = __DIR__ . '/../uploads/';
+        
+        if (!file_exists($pastaUploads)) {
+            mkdir($pastaUploads, 0777, true);
+        }
+
+        if (move_uploaded_file($_FILES['file']['tmp_name'], $pastaUploads . $novoNome)) {
+            $caminhoFoto = 'src/uploads/' . $novoNome; // caminho relativo visível no navegador
+        }
+
+        if ($_FILES['file']['size'] > 2 * 1024 * 1024) { // 2MB
+            $erro = "Arquivo muito grande. Tamanho máximo: 2MB.";
+        }
+
+     
+    }
+
     //validações
     if(empty($nome) ||empty($email) || empty($senha)) {
         $erro = "Todos os campos são obrigatórios!";
@@ -22,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erro = "A senha deve ter pelo menos 6 caracteres";
     } else {
         //Tenta registrar o usuário
-        $resultado = registrarUsuario($nome, $email, $senha);
+        $resultado = registrarUsuario($nome, $email, $senha, $caminhoFoto);
         
         if($resultado['sucesso']) {
             $sucesso = $resultado['message'];
@@ -122,7 +148,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
                     <!--Formulário-->
-                    <form action="cadastro.php" method="post">
+                    <form action="cadastro.php" method="post" enctype="multipart/form-data">
                         <div class="input-group mb-3">
                             <span class="input-group-text">
                                 <i class="bi bi-person-fill"></i>
@@ -151,16 +177,16 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <input type="password" name="confirmar_senha" id="confirmar_senha"
                                 class="form-control form-control-lg fs-6" placeholder="Confirmar Senha" required>
                         </div>
+                        <div class="input-group mb-3">
 
-                        <div class="input-group mb-3 d-flex justify-content-between">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="formCheck">
-                                <label for="formCheck" class="form-check-label text-secondary">
-                                    <small>Lembre-me</small>
-                                </label>
-                            </div>
+                            <span class="input-group-text">
+                                <i class="bi bi-card-image"></i>
+                            </span>
 
+                            <input type="file" name="file" id="file" class="form-control form-control-lg fs-6"
+                                placeholder="Foto de Perfil" required>
                         </div>
+
                         <button type="submit" class="btn btn-primary btn-lg w-100">Cadastre-se</button>
                     </form>
                     <div class="text-center">
