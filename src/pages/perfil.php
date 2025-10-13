@@ -67,9 +67,9 @@ if ($nivel == 2) {
                         <label for="tipoTerapia" class="form-label">Tipo de Terapia</label>
                         <select class="form-select" name="tipoTerapia" id="tipoTerapia" required>
                             <option value="">Selecione uma opção</option>
-                            <option value="Terapia Energética">Terapia Grupal</option>
-                            <option value="Massagem Terapêutica">Hipnose Terapêutica</option>
-                            <option value="Auriculoterapia">Sentimentos Sabotadores</option>
+                            <option value="Sessão Grupal">Sessão Grupal</option>
+                            <option value="Sessão de Valores">Sessão de Valores</option>
+                            <option value="Sessão de Sabotadores">Sessão de Sabotadores</option>
                             <!-- Adicione mais conforme necessário -->
                         </select>
                     </div>
@@ -228,18 +228,7 @@ if ($nivel == 2) {
 
                         </button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="historico-tab" data-bs-toggle="pill" data-bs-target="#historico"
-                            type="button">
-                            <i class="fas fa-history me-2"></i>Histórico
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="preferencias-tab" data-bs-toggle="pill"
-                            data-bs-target="#preferencias" type="button">
-                            <i class="fas fa-heart me-2"></i>Preferências
-                        </button>
-                    </li>
+
                 </ul>
 
                 <!-- Conteúdo das Abas -->
@@ -249,6 +238,11 @@ if ($nivel == 2) {
                         <div class="card profile-card mb-3">
                             <div class="card-body">
                                 <?php if($nivel == 2):?>
+                                <div class="mb-3">
+                                    <input type="text" id="pesquisarUsuario" class="form-control"
+                                        placeholder="Buscar usuário por nome...">
+                                </div>
+
                                 <h5 class="card-title mb-4">
                                     <i class="far fa-calendar-check me-2"></i>Agende a Consulta de um Usuário
                                 </h5>
@@ -367,122 +361,6 @@ if ($nivel == 2) {
                             </div>
                         </div>
                     </div>
-
-                    <!-- Aba de Histórico -->
-                    <div class="tab-pane fade" id="historico" role="tabpanel">
-                        <div class="card profile-card">
-                            <div class="card-body">
-                                <h5 class="card-title mb-4">
-                                    <i class="fas fa-history me-2"></i>Histórico de
-                                    Consultas
-                                </h5>
-
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Data</th>
-                                                <th>Terapia</th>
-                                                <th>Status</th>
-                                                <th>Ações</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>01/10/2023</td>
-                                                <td>Reiki</td>
-                                                <td><span class="badge bg-success">Concluída</span>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-sm btn-outline-vinho">
-                                                        <i class="fas fa-file-alt"></i>
-                                                        Detalhes
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>15/09/2023</td>
-                                                <td>Aromaterapia</td>
-                                                <td><span class="badge bg-success">Concluída</span>
-                                                </td>
-                                                <td>
-                                                    <button class="btn btn-sm btn-outline-vinho">
-                                                        <i class="fas fa-file-alt"></i>
-                                                        Detalhes
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Aba de Preferências -->
-                    <div class="tab-pane fade" id="preferencias" role="tabpanel">
-                        <div class="card profile-card">
-                            <div class="card-body">
-                                <h5 class="card-title mb-4">
-                                    <i class="fas fa-heart me-2"></i>Minhas Preferências
-                                </h5>
-
-                                <form>
-                                    <div class="mb-4">
-                                        <h6 class="mb-3">Terapias Favoritas</h6>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" type="checkbox" id="reiki" checked>
-                                                    <label class="form-check-label" for="reiki">Reiki</label>
-                                                </div>
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" type="checkbox" id="aromaterapia"
-                                                        checked>
-                                                    <label class="form-check-label"
-                                                        for="aromaterapia">Aromaterapia</label>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" type="checkbox" id="massagem">
-                                                    <label class="form-check-label" for="massagem">Massagem
-                                                        Terapêutica</label>
-                                                </div>
-                                                <div class="form-check mb-2">
-                                                    <input class="form-check-input" type="checkbox" id="cristais">
-                                                    <label class="form-check-label" for="cristais">Terapia com
-                                                        Cristais</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="mb-4">
-                                        <h6 class="mb-3">Preferências de Contato</h6>
-                                        <div class="form-check form-switch mb-2">
-                                            <input class="form-check-input" type="checkbox" id="notificacoes-email"
-                                                checked>
-                                            <label class="form-check-label" for="notificacoes-email">Receber
-                                                notificações por e-mail</label>
-                                        </div>
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" id="notificacoes-whatsapp">
-                                            <label class="form-check-label" for="notificacoes-whatsapp">Receber
-                                                lembretes por WhatsApp</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="d-grid gap-2">
-                                        <button type="submit" class="btn btn-vinho">
-                                            <i class="fas fa-save me-2"></i>Salvar
-                                            Preferências
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -492,7 +370,7 @@ if ($nivel == 2) {
     <footer class="bg-dark text-light pt-5 pb-3" id="Footer">
         <div class="container">
             <div class="row text-center text-md-start">
-                <!-- Logo / Nome -->
+
                 <div class="col-md-4 mb-4">
                     <img src="../img/logoEmpresa.png" class="mb-4" style="width: 50px; height: 50px; " alt="logo">
                     <h5 class="text-uppercase">Leka Sarandy</h5>

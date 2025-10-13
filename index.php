@@ -482,7 +482,7 @@
 
                             <?php if(estaLogado()) : ?>
                             <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q"
-                                class="btn btn-outline-warning w-100 py-2">Conhecer grupos</a>
+                                class="btn btn-warning w-100 py-2">Conheça Grupos</a>
                             <?php else :?>
                             <a href="src/pages/login.php" class="btn btn-outline-warning w-100 py-2">Conhecer grupos</a>
                             <?php endif?>

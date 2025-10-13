@@ -64,14 +64,19 @@
 
 
     function agendarConsulta() {
-        document.querySelectorAll('.btn-usuario').forEach(btn => {
-            const usuarioId = btn.dataset.id;
-            document.getElementById('usuarioSelecionadoId').value = usuarioId;
-            const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
-            modal.show();
+    // 🟢 CORRIGIDO: A função agora apenas lê o valor que já está no campo hidden.
+    const usuarioId = document.getElementById('usuarioSelecionadoId').value;
 
-        });
+    // Adiciona uma verificação para garantir que um usuário foi selecionado.
+    if (!usuarioId) {
+        alert("Erro: Nenhum usuário foi selecionado. Por favor, clique no card de um usuário antes de agendar.");
+        return;
     }
+
+    // Com o ID correto, abre o modal.
+    const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
+    modal.show();
+}
 
     function atualizarStatus(id, status) {
         fetch('../database/atualizarStatus.php', {
@@ -116,3 +121,7 @@
             })
             .catch(err => alert('Erro na requisição: ' + err));
     }
+
+    function remarcarConsulta(id) {
+    alert(`Funcionalidade de Remarcar Consulta ${id} não implementada.`);
+}
