@@ -332,7 +332,7 @@
             button3.id = 'button3';
             button3.className =
                 'btn btn-primary btn-lg col-10 col-sm-8 col-md-6 col-lg-3 mx-2 mb-3 start-btn';
-            button3.textContent = 'Terapia de Crenças Limitantes';
+            button3.textContent = ' Crenças Limitantes';
 
             startContainer.appendChild(button1)
             startContainer.appendChild(button2)
