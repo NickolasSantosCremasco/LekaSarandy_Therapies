@@ -26,6 +26,7 @@ if ($nivel == 2) {
 }
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -254,7 +255,7 @@ if ($nivel == 2) {
                                 <?php if($nivel == 2):?>
                                 <!-- Listagem de Usuários -->
                                 <div class="mb-4">
-                                    <div class="row g-3 usuarios">
+                                    <div class="row g-3 usuarios" id="listaUsuarios">
                                         <?php foreach ($usuarios as $usuario): ?>
                                         <?php if($usuario['nivel'] != 2):?>
                                         <div class="col-md-6 col-lg-4">
@@ -419,7 +420,7 @@ if ($nivel == 2) {
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="../js/perfil.js"></script>
+    <script src="../js/perfilll.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
     </script>
 </body>
