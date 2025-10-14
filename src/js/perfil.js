@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         inputBusca.addEventListener('input', async () => {
             const termo = inputBusca.value.trim();
             try {
-                const response = await fetch(`../database/buscarUsuarios.php?q=${encodeURIComponent(termo)}`);
+                const response = await fetch(`../database/buscarUsuario.php?q=${encodeURIComponent(termo)}`);
                 const data = await response.json();
 
                 if (data.sucesso) {
