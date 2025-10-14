@@ -15,12 +15,19 @@
         const retakeTestBtn = document.querySelector('#refazerTeste');
         const profileTitle = document.querySelector('#profileTitle');
         const profileDescription = document.querySelector('.profilDescription');
-        const pontosFortes = document.querySelector('#pontosFortes');
+
         const img1 = document.querySelector('#img1');
         const img2 = document.querySelector('#img2');
         const img3 = document.querySelector('#img3');
-        const cardTitle = document.querySelector('.card-title');
-        const cardText = document.querySelector('.card-text');
+
+        const cardTitle1 = document.querySelector('#cardTitle1');
+        const cardTitle2 = document.querySelector('#cardTitle2');
+
+        const cardText1 = document.querySelector('#cardText1');
+        const cardText2 = document.querySelector('#cardText2');
+
+        const cardContainer1 = document.querySelector('#card-container-1');
+        const cardContainer2 = document.querySelector('#card-container-2');
 
 
         const questions1 = [{
@@ -470,10 +477,24 @@
             profileTitle.textContent = result.title;
             profileDescription.textContent = result.description;
 
-            // Atualizar terapias recomendadas e pontos fortes
-            img1.src = `${result.therapies[0]}`
-            img2.src = `${result.therapies[1]}`
-            img3.src = `${result.therapies[2]}`
+            cardContainer1.style.display = 'none';
+            cardContainer2.style.display = 'none';
+
+            // Card 1
+            if (result.therapies[0]) {
+                img1.src = result.therapies[0].image;
+                cardTitle1.textContent = result.therapies[0].title;
+                cardText1.textContent = result.therapies[0].text;
+                cardContainer1.style.display = 'block'; // Mostra o card
+            }
+
+            // Card 2
+            if (result.therapies[1]) {
+                img2.src = result.therapies[1].image;
+                cardTitle2.textContent = result.therapies[1].title;
+                cardText2.textContent = result.therapies[1].text;
+                cardContainer2.style.display = 'block'; // Mostra o card
+            }
 
 
         }
@@ -484,7 +505,8 @@
                 return {
                     title: "Sessão de Clareza e Sabotadores",
                     description: "Você tem uma natureza introspectiva e analítica, preferindo processar suas emoções internamente.",
-                    therapies: ["../img/terapiasPesquisa/sabotadores1.jpg",
+                    therapies: [
+                        "../img/terapiasPesquisa/sabotadores1.jpg",
                         "../img/terapiasPesquisa/sabotadores2.jpg"
                     ],
                     strengths: ["Introspecção", "Autoconhecimento", "Profundidade"]
@@ -493,8 +515,17 @@
                 return {
                     title: "Sessão de valores",
                     description: "Você tem uma desconexão com seus valores. Porém, você já nota isso e este é o primeiro passo, uma sessão de valores pode te ajudar a tomar decisões mais conscientes e viver com mais leveza.",
-                    therapies: ["../img/terapiasPesquisa/valores1.jpg",
-                        "../img/terapiasPesquisa/valores2.webp"
+                    therapies: [
+                        {
+                            image: "../img/terapiasPesquisa/sabotadores1.jpg",
+                            title: "Análise de Sabotadores",
+                            text: "Identifique os padrões mentais que te impedem de alcançar seu potencial máximo e aprenda a enfraquecê-los."
+                        },
+                        {
+                            image: "../img/terapiasPesquisa/sabotadores2.jpg",
+                            title: "Sessão de Valores",
+                            text: "Organize seus pensamentos, defina prioridades e ganhe uma visão clara sobre seus próximos passos na vida."
+                        }
                     ],
                     strengths: ["Empatia", "Intuição", "Capacidade de cura"]
                 };
@@ -502,8 +533,17 @@
                 return {
                     title: "Sessão de valores",
                     description: "Sua vida esta sendo fortemente guiada por pressões externas, crenças limitantes ou medos. No entando, notar essas adversidades é o primeiro passo para supera-las. Uma sessão de valores é essencial para resgatar sua autenticidade e voltar para o seu centro.",
-                    therapies: ["../img/terapiasPesquisa/sabotadores1.jpg",
-                        "../img/terapiasPesquisa/valores1.jpg"
+                    therapies: [
+                        {
+                    image: "../img/terapiasPesquisa/valores1.jpg",
+                    title: "Mapeamento de Valores",
+                    text: "Descubra quais são os seus valores fundamentais e como eles podem guiar suas decisões para uma vida mais autêntica."
+                },
+                {
+                    image: "../img/terapiasPesquisa/valores2.webp",
+                    title: "Alinhamento Pessoal",
+                    text: "Aprenda a alinhar suas ações diárias com seus valores mais profundos, gerando mais satisfação e propósito."
+                }
                     ],
                     strengths: ["Liderança", "Determinação", "Praticidade"]
                 };
@@ -511,7 +551,18 @@
                 return {
                     title: "Sessão Grupal",
                     description: "Você é criativo e se expressa livremente, trazendo energia e vitalidade para seu entorno. Uma terapia em grupo pode te ajudar a se sentir mais a vontade tanto em compartilhar quanto em receber.",
-                    therapies: ["../img/terapiasPesquisa/grupal1.jpg", "../img/terapiasPesquisa/valores1.jpg"],
+                    therapies: [
+                        {
+                            image: "../img/terapiasPesquisa/sabotadores1.jpg",
+                            title: "Sessão em Grupo",
+                            text: "Encare as crenças que te seguram e reprograme sua mente juntamente de um grupo que visa seu melhor."
+                        },
+                        {
+                            image: "../img/terapiasPesquisa/valores1.jpg",
+                            title: "Sessão de Valores",
+                            text: "Reconecte-se com sua verdadeira essência através do entendimento profundo dos seus valores pessoais."
+                        }
+                    ],
                     strengths: ["Criatividade", "Comunicação", "Espontaneidade"]
                 };
             }

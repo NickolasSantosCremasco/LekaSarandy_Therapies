@@ -149,18 +149,16 @@ require_once '../database/config.php';
 
                     <div class="row">
                         <!--Card 1-->
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-6 mb-4" id="card-container-1">
                             <div class="card shadow h-100 position-relative">
                                 <span class="therapy-badge">Recomendado</span>
                                 <img src="" alt="terapia1" id="img1" class="card-img-top"
                                     style="height: 200px; object-fit: cover;">
                                 <div class="card-body">
-                                    <h5 class="card-title"></h5>
-                                    <p class="card-text"></p>
+                                    <h5 class="card-title" id="cardTitle1"></h5>
+                                    <p class="card-text" id="cardText1"></p>
                                     <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <span class="text-muted small">
-                                            <i class="fas fa-clock me-1"></i> 60 min
-                                        </span>
+                                        <span class="text-muted small"><i class="fas fa-clock me-1"></i> 60 min</span>
                                         <span class="text-primary fw-bold" style="cursor: pointer; font-size: 0.9rem;">
                                             Saber Mais <i class="fas fa-arrow-right ms-1"></i>
                                         </span>
@@ -170,18 +168,16 @@ require_once '../database/config.php';
                         </div>
 
                         <!--Card 2-->
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-6 mb-4" id="card-container-2">
                             <div class="card shadow h-100 position-relative">
-                                <span class="therapy-badge">Popular</span>
+                                <span class="therapy-badge">Recomendado</span>
                                 <img src="" alt="terapia2" id="img2" class="card-img-top"
                                     style="height: 200px; object-fit: cover;">
                                 <div class="card-body">
-                                    <h5 class="card-title"></h5>
-                                    <p class="card-text"></p>
+                                    <h5 class="card-title" id="cardTitle2"></h5>
+                                    <p class="card-text" id="cardText2"></p>
                                     <div class="d-flex justify-content-between align-items-center mt-3">
-                                        <span class="text-muted small">
-                                            <i class="fas fa-clock me-1"></i> 45 min
-                                        </span>
+                                        <span class="text-muted small"><i class="fas fa-clock me-1"></i> 60 min</span>
                                         <span class="text-primary fw-bold" style="cursor: pointer; font-size: 0.9rem;">
                                             Saber Mais <i class="fas fa-arrow-right ms-1"></i>
                                         </span>
@@ -189,60 +185,61 @@ require_once '../database/config.php';
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Benefícios Esperados -->
-                    <div class="alert alert-light border-0 shadow-sm mt-3"
-                        style="border-left: 4px solid #ffc107 !important;">
-                        <h6 class="fw-bold text-dark mb-2">
-                            <i class="fas fa-lightbulb text-warning me-2"></i>
-                            Benefícios Esperados
-                        </h6>
-                        <p class="mb-0 text-muted small">
-                            Com base no seu perfil, essas terapias podem ajudar a reduzir o estresse, melhorar o
-                            equilíbrio emocional e promover uma sensação geral de bem-estar.
-                        </p>
-                    </div>
-                </div>
 
-                <!-- Pontos Fortes -->
-                <div class="col-md-4 mb-4">
-                    <div class="strengths-container">
-                        <h4 class="mb-4 text-start text-primary fw-bold">Pontos Fortes</h4>
-                        <ul class="text-start list-unstyled fs-5">
-                            <li class="mb-2">
-                                <i class="fas fa-star text-warning me-2"></i>Empatia
-                            </li>
-                            <li class="mb-2">
-                                <i class="fas fa-star text-warning me-2"></i>Intuição
-                            </li>
-                            <li class="mb-2">
-                                <i class="fas fa-star text-warning me-2"></i>Capacidade de cura
-                            </li>
-                        </ul>
-
-                        <!-- Dica Personalizada -->
-                        <div class="mt-4 pt-3" style="border-top: 1px solid rgba(0,0,0,0.1);">
-                            <p class="small text-muted mb-0">
-                                <i class="fas fa-info-circle me-2"></i>
-                                <strong>Dica:</strong> Aproveite essas qualidades para potencializar os resultados das
-                                terapias.
+                        <!-- Benefícios Esperados -->
+                        <div class="alert alert-light border-0 shadow-sm mt-3"
+                            style="border-left: 4px solid #ffc107 !important;">
+                            <h6 class="fw-bold text-dark mb-2">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                Benefícios Esperados
+                            </h6>
+                            <p class="mb-0 text-muted small">
+                                Com base no seu perfil, essas terapias podem ajudar a reduzir o estresse, melhorar o
+                                equilíbrio emocional e promover uma sensação geral de bem-estar.
                             </p>
                         </div>
                     </div>
+
+                    <!-- Pontos Fortes -->
+                    <div class="col-md-4 mb-4">
+                        <div class="strengths-container">
+                            <h4 class="mb-4 text-start text-primary fw-bold">Pontos Fortes</h4>
+                            <ul class="text-start list-unstyled fs-5">
+                                <li class="mb-2">
+                                    <i class="fas fa-star text-warning me-2"></i>Empatia
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-star text-warning me-2"></i>Intuição
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-star text-warning me-2"></i>Capacidade de cura
+                                </li>
+                            </ul>
+
+                            <!-- Dica Personalizada -->
+                            <div class="mt-4 pt-3" style="border-top: 1px solid rgba(0,0,0,0.1);">
+                                <p class="small text-muted mb-0">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    <strong>Dica:</strong> Aproveite essas qualidades para potencializar os resultados
+                                    das
+                                    terapias.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="mt-4">
+                    <button class="btn-outline-primary mt-3" id="refazerTeste">
+                        <i class="fas fa-redo me-2"></i>Refazer Teste
+                    </button>
+                    <button class="btn-outline-primary mt-3" id="agendarTerapia">
+                        <i class="fas fa-calendar-check me-2"></i>Agendar Terapia
+                    </button>
                 </div>
             </div>
-
-            <!-- Botões de Ação -->
-            <div class="mt-4">
-                <button class="btn-outline-primary mt-3" id="refazerTeste">
-                    <i class="fas fa-redo me-2"></i>Refazer Teste
-                </button>
-                <button class="btn-outline-primary mt-3" id="agendarTerapia">
-                    <i class="fas fa-calendar-check me-2"></i>Agendar Terapia
-                </button>
-            </div>
-        </div>
     </section>
 
 
