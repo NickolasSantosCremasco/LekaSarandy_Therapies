@@ -19,6 +19,8 @@
         const img1 = document.querySelector('#img1');
         const img2 = document.querySelector('#img2');
         const img3 = document.querySelector('#img3');
+        const cardTitle = document.querySelector('.card-title');
+        const cardText = document.querySelector('.card-text');
 
 
         const questions1 = [{
@@ -320,19 +322,19 @@
             button1.id = 'button1';
             button1.className =
                 'btn btn-primary btn-lg col-10 col-sm-8 col-md-6 col-lg-3 mx-2 mb-3 start-btn';
-            button1.textContent = 'Terapia da Valores';
+            button1.textContent = 'Sessão de Valores';
 
             const button2 = document.createElement('button');
             button2.id = 'button2';
             button2.className =
                 'btn btn-primary btn-lg col-10 col-sm-8 col-md-6 col-lg-3 mx-2 mb-3 start-btn';
-            button2.textContent = 'Terapia de Sabotadores';
+            button2.textContent = 'Sessão de Sabotadores';
 
             const button3 = document.createElement('button');
             button3.id = 'button3';
             button3.className =
                 'btn btn-primary btn-lg col-10 col-sm-8 col-md-6 col-lg-3 mx-2 mb-3 start-btn';
-            button3.textContent = ' Crenças Limitantes';
+            button3.textContent = 'Crenças Limitantes';
 
             startContainer.appendChild(button1)
             startContainer.appendChild(button2)

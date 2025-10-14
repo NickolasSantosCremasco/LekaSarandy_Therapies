@@ -9,7 +9,7 @@ require_once '../database/config.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/pesquisa.css">
+    <link rel="stylesheet" href="../css/pesquisaa.css">
     <link rel="stylesheet" href="../css/global.css">
 
     <!-- Fontes do Site -->
@@ -131,55 +131,118 @@ require_once '../database/config.php';
     <!--Resultado-->
     <section class="container my-5 py-5 d-none" id="sessaoResultado">
         <div class="question-container text-center">
+            <!-- Cabeçalho do Resultado -->
             <h2 class="search-title mb-4">Seu Perfil Terapêutico</h2>
+
             <div class="mb-4">
-                <img src="../img/cadastrar.webp" alt="Resultado" class=" rounded-5 shadow"
-                    style="width: 100px; height: 100px;">
+                <img src="../img/cadastrar.webp" alt="Resultado" class="rounded-5 shadow"
+                    style="width: 120px; height: 120px;">
             </div>
+
             <h3 id="profileTitle" class="mb-3"></h3>
-            <p class="profilDescription text-muted mx-auto" class="mb-4"></p>
+            <p class="profilDescription text-muted mx-auto" style="max-width: 700px;"></p>
 
             <div class="row mt-5">
-                <div class="col-md--6 mb-4">
-                    <h4 class="mb-3">Terapias Recomendadas</h4>
+                <!-- Terapias Recomendadas -->
+                <div class="col-md-8 mb-4">
+                    <h4 class="mb-4">Terapias Recomendadas Para Você</h4>
+
                     <div class="row">
                         <!--Card 1-->
                         <div class="col-md-6 mb-4">
-                            <div class="card shadow h-100">
-                                <img src="" alt="terapia1" id="img1">
+                            <div class="card shadow h-100 position-relative">
+                                <span class="therapy-badge">Recomendado</span>
+                                <img src="" alt="terapia1" id="img1" class="card-img-top"
+                                    style="height: 200px; object-fit: cover;">
                                 <div class="card-body">
                                     <h5 class="card-title"></h5>
                                     <p class="card-text"></p>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="text-muted small">
+                                            <i class="fas fa-clock me-1"></i> 60 min
+                                        </span>
+                                        <span class="text-primary fw-bold" style="cursor: pointer; font-size: 0.9rem;">
+                                            Saber Mais <i class="fas fa-arrow-right ms-1"></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <!--Card 2-->
                         <div class="col-md-6 mb-4">
-                            <div class="card shadow h-100">
-                                <img src="" alt="terapia2" id="img2">
+                            <div class="card shadow h-100 position-relative">
+                                <span class="therapy-badge">Popular</span>
+                                <img src="" alt="terapia2" id="img2" class="card-img-top"
+                                    style="height: 200px; object-fit: cover;">
                                 <div class="card-body">
                                     <h5 class="card-title"></h5>
                                     <p class="card-text"></p>
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="text-muted small">
+                                            <i class="fas fa-clock me-1"></i> 45 min
+                                        </span>
+                                        <span class="text-primary fw-bold" style="cursor: pointer; font-size: 0.9rem;">
+                                            Saber Mais <i class="fas fa-arrow-right ms-1"></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                    <!-- Benefícios Esperados -->
+                    <div class="alert alert-light border-0 shadow-sm mt-3"
+                        style="border-left: 4px solid #ffc107 !important;">
+                        <h6 class="fw-bold text-dark mb-2">
+                            <i class="fas fa-lightbulb text-warning me-2"></i>
+                            Benefícios Esperados
+                        </h6>
+                        <p class="mb-0 text-muted small">
+                            Com base no seu perfil, essas terapias podem ajudar a reduzir o estresse, melhorar o
+                            equilíbrio emocional e promover uma sensação geral de bem-estar.
+                        </p>
                     </div>
                 </div>
+
                 <!-- Pontos Fortes -->
                 <div class="col-md-4 mb-4">
-                    <h4 class="mb-4 text-start text-primary fw-bold">Pontos Fortes</h4>
-                    <ul class="text-start list-unstyled fs-5">
-                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Empatia</li>
-                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Intuição</li>
-                        <li class="mb-2"><i class="fas fa-star text-warning me-2"></i>Capacidade de cura</li>
-                    </ul>
+                    <div class="strengths-container">
+                        <h4 class="mb-4 text-start text-primary fw-bold">Pontos Fortes</h4>
+                        <ul class="text-start list-unstyled fs-5">
+                            <li class="mb-2">
+                                <i class="fas fa-star text-warning me-2"></i>Empatia
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-star text-warning me-2"></i>Intuição
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-star text-warning me-2"></i>Capacidade de cura
+                            </li>
+                        </ul>
+
+                        <!-- Dica Personalizada -->
+                        <div class="mt-4 pt-3" style="border-top: 1px solid rgba(0,0,0,0.1);">
+                            <p class="small text-muted mb-0">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <strong>Dica:</strong> Aproveite essas qualidades para potencializar os resultados das
+                                terapias.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button class="btn-outline-primary mt-3" id="refazerTeste">Refazer Teste</button>
-            <button class="btn-outline-primary mt-3" id="agendarTerapia">Agendar Terapia</button>
-        </div>
 
+            <!-- Botões de Ação -->
+            <div class="mt-4">
+                <button class="btn-outline-primary mt-3" id="refazerTeste">
+                    <i class="fas fa-redo me-2"></i>Refazer Teste
+                </button>
+                <button class="btn-outline-primary mt-3" id="agendarTerapia">
+                    <i class="fas fa-calendar-check me-2"></i>Agendar Terapia
+                </button>
+            </div>
+        </div>
     </section>
 
 

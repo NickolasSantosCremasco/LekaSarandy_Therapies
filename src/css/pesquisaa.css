@@ -1,0 +1,602 @@
+  :root {
+      --vinho: #6d2c46;
+      --vinho-claro: #8d3d5b;
+      --vinho-suave: #a35875;
+      --bege: #f8f1e9;
+      --cinza-claro: #f5f5f5;
+            --text-color: #4A4453;
+  }
+    
+  body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bege);
+      color: #333;
+      padding-top: 80px;
+  }   
+    
+    .navbar {
+      background-color: white !important;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-link {
+      color: var(--vinho) !important;
+      font-weight: 500;
+    }
+    
+    .btn-warning {
+      background-color: var(--vinho);
+      color: white;
+      border: none;
+      transition: all 0.3s;
+    }
+    
+    .btn-warning:hover {
+      background-color: var(--vinho-claro);
+      color: white;
+    }
+
+    /* Pesquisa */
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--text-color);
+        background-color: var(--bege);
+        line-height: 1.6;
+    }
+    
+    .therapeutic-bg {
+        height: 100vh;
+        background: linear-gradient(135deg, var(--bege) 0%, var(--cinza-claro) 100%);
+    }
+    
+    .search-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 600;
+        color: var(--vinho);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .highlight {
+        color: var(--text-color);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+    }
+    
+    .btn-primary {
+        background-color: var(--vinho);
+        border-color: var(--vinho);
+        padding: 12px 30px;
+        font-weight: 500;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background-color: var(--vinho-claro);
+        border-color: var(--vinho-claro);
+        transform: translateY(-2px);
+        color: white;
+    }
+    
+    .question-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(109, 44, 70, 0.1);
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .question-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 100%;
+        background: linear-gradient(to bottom, var(--vinho), var(--vinho-suave));
+    }
+    
+    .question-number {
+        color: var(--vinho);
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    
+    .question-text {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 30px;
+        color: var(--vinho);
+        font-family: 'Playfair Display', serif;
+    }
+    
+    .options-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .option-btn {
+        background: white;
+        border: 2px solid #e8d6df;
+        padding: 15px 20px;
+        border-radius: 12px;
+        text-align: left;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+    
+    .option-btn:hover {
+        border-color: var(--vinho-suave);
+        transform: translateX(5px);
+    }
+    
+    .option-btn.selected {
+        border-color: var(--vinho);
+        background-color: rgba(109, 44, 70, 0.05);
+    }
+    
+    .option-btn .option-number {
+        background-color: var(--bege);
+        color: var(--vinho);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        font-weight: 600;
+        flex-shrink: 0;
+    }
+    
+    .option-btn.selected .option-number {
+        background-color: var(--vinho);
+        color: white;
+    }
+    
+    .navigation-btns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
+    
+    #refazerTeste {
+        color: var(--vinho);
+        border-color: var(--vinho);
+        border-radius: 30px;
+        padding: 10px 25px;
+    }
+    
+    #refazerTeste:hover {
+        background-color: var(--vinho);
+        color: white;
+    }
+
+    #agendarTerapia {
+        color: var(--vinho-suave);
+        border-color: var(--vinho-claro);
+        border-radius: 30px;
+        padding: 10px 25px;
+    }
+    
+    #agendarTerapia:hover {
+        background-color: var(--vinho);
+        color: white;
+    }
+    .progress-container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .progress-text {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+        color: var(--text-color);
+    }
+    
+    .progress-bar {
+        height: 8px;
+        background-color: #f0e0e6;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(to right, var(--vinho-suave), var(--vinho));
+        border-radius: 4px;
+        transition: width 0.5s ease;
+    }
+    
+    .floral-decoration {
+        position: absolute;
+        opacity: 0.1;
+        z-index: -1;
+    }
+    
+    .floral-1 {
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        transform: rotate(30deg);
+    }
+    
+    .floral-2 {
+        bottom: -30px;
+        left: -30px;
+        width: 150px;
+        transform: rotate(-15deg);
+    }
+    
+    .intro-section {
+        padding: 100px 0 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background-color: var(--bege);
+    }
+    
+    .intro-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('../img/floral-pattern.png') center/cover no-repeat;
+        opacity: 0.03;
+        z-index: -1;
+    }
+    
+    .start-btn {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .start-btn::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -60%;
+        width: 200%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(30deg);
+        transition: all 0.5s ease;
+    }
+    
+    .start-btn:hover::after {
+        left: 100%;
+    }
+    
+    @media (max-width: 768px) {
+        .question-container {
+            padding: 25px;
+            border-radius: 15px;
+        }
+        
+        .question-text {
+            font-size: 1.3rem;
+        }
+    }
+
+    
+    /* ========== VARIÁVEIS DE COR - PALETA ROXA ========== */
+:root {
+    --primary-purple: #5a3647;
+    --secondary-purple: #6d4557;
+    --light-purple: #8b6b7a;
+    --accent-purple: #9d8189;
+    --background-purple: #faf8f9;
+}
+
+/* ========== SEÇÃO DE RESULTADO - TERAPIAS RECOMENDADAS ========== */
+
+/* Container Principal do Resultado */
+#sessaoResultado .question-container {
+    background: linear-gradient(135deg, #ffffff 0%, var(--background-purple) 100%);
+    border-radius: 30px;
+    padding: 60px 40px;
+    box-shadow: 0 10px 40px rgba(90, 54, 71, 0.15);
+}
+
+/* Título do Perfil */
+.search-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    margin-bottom: 2rem;
+}
+
+/* Avatar/Imagem do Resultado */
+#sessaoResultado .rounded-5 {
+    width: 120px !important;
+    height: 120px !important;
+    border: 5px solid var(--light-purple);
+    box-shadow: 0 10px 30px rgba(90, 54, 71, 0.2);
+    transition: transform 0.3s ease;
+}
+
+#sessaoResultado .rounded-5:hover {
+    transform: scale(1.05);
+}
+
+/* Título do Perfil Individual */
+#profileTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-purple);
+    margin-bottom: 1rem;
+}
+
+/* Descrição do Perfil */
+.profilDescription {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #6c757d;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+/* ========== TERAPIAS RECOMENDADAS ========== */
+
+/* Título da Seção de Terapias */
+#sessaoResultado h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+#sessaoResultado h4::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-purple), var(--light-purple));
+    border-radius: 10px;
+}
+
+/* Cards de Terapias - Layout Melhorado */
+.therapy-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 3rem;
+}
+
+/* Card Individual de Terapia */
+#sessaoResultado .card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: white;
+    box-shadow: 0 5px 20px rgba(90, 54, 71, 0.1);
+}
+
+#sessaoResultado .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(90, 54, 71, 0.2);
+}
+
+/* Imagem do Card */
+#sessaoResultado .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+#sessaoResultado .card:hover img {
+    transform: scale(1.1);
+}
+
+/* Corpo do Card */
+#sessaoResultado .card-body {
+    padding: 25px;
+    background: white;
+}
+
+/* Título do Card */
+#sessaoResultado .card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    margin-bottom: 0.8rem;
+}
+
+/* Texto do Card */
+#sessaoResultado .card-text {
+    font-size: 0.95rem;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+/* Badge/Tag de Destaque (opcional) */
+.therapy-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, var(--secondary-purple), var(--primary-purple));
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(90, 54, 71, 0.3);
+    z-index: 10;
+}
+
+/* ========== PONTOS FORTES ========== */
+
+/* Container de Pontos Fortes */
+.strengths-container {
+    background: linear-gradient(135deg, #f5f2f4 0%, #ffffff 100%);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(90, 54, 71, 0.1);
+    border-left: 5px solid var(--secondary-purple);
+}
+
+/* Título dos Pontos Fortes */
+.strengths-container h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    margin-bottom: 1.5rem;
+}
+
+/* Lista de Pontos Fortes */
+.strengths-container ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.strengths-container li {
+    font-size: 1.1rem;
+    color: #495057;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(90, 54, 71, 0.1);
+    transition: all 0.3s ease;
+}
+
+.strengths-container li:last-child {
+    border-bottom: none;
+}
+
+.strengths-container li:hover {
+    padding-left: 10px;
+    color: var(--primary-purple);
+}
+
+.strengths-container li i {
+    font-size: 1.2rem;
+    margin-right: 12px;
+    color: var(--light-purple);
+}
+
+/* ========== BOTÕES DE AÇÃO ========== */
+
+/* Botões de Resultado */
+#sessaoResultado .btn-outline-primary,
+#sessaoResultado .btn-primary {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    margin: 0 10px;
+}
+
+#sessaoResultado .btn-outline-primary {
+    background: white;
+    color: var(--primary-purple);
+    border-color: var(--primary-purple);
+}
+
+#sessaoResultado .btn-outline-primary:hover {
+    background: var(--primary-purple);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(90, 54, 71, 0.3);
+}
+
+#sessaoResultado .btn-primary {
+    background: linear-gradient(135deg, var(--secondary-purple), var(--primary-purple));
+    color: white;
+    border: none;
+}
+
+#sessaoResultado .btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(90, 54, 71, 0.4);
+}
+
+/* ========== RESPONSIVIDADE ========== */
+
+@media (max-width: 768px) {
+    #sessaoResultado .question-container {
+        padding: 40px 20px;
+    }
+    
+    .search-title {
+        font-size: 2rem;
+    }
+    
+    #profileTitle {
+        font-size: 1.5rem;
+    }
+    
+    .therapy-cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    #sessaoResultado .btn-outline-primary,
+    #sessaoResultado .btn-primary {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .strengths-container {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    #sessaoResultado .card img {
+        height: 180px;
+    }
+    
+    #sessaoResultado h4 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========== ANIMAÇÕES ========== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#sessaoResultado .card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+#sessaoResultado .card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+#sessaoResultado .card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.strengths-container {
+    animation: fadeInUp 0.6s ease-out 0.3s backwards;
+}
