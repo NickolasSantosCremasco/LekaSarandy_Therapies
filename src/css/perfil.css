@@ -68,3 +68,163 @@
         position: absolute;
         z-index: -1;
     }
+
+        /* ========== CARDS DE USUÁRIOS - DASHBOARD ADMIN ========== */
+
+    /* Card Principal */
+    .btn-usuario {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+        border: 2px solid #5a3647 !important;
+        border-radius: 20px !important;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Efeito de hover */
+    .btn-usuario:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 45px rgba(90, 54, 71, 0.25) !important;
+        border-color: #6d4557 !important;
+        background: linear-gradient(135deg, #faf8f9 0%, #ffffff 100%) !important;
+    }
+
+    /* Pseudo-elemento para efeito de brilho no hover */
+    .btn-usuario::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .btn-usuario:hover::before {
+        left: 100%;
+    }
+
+    /* Card Body */
+    .btn-usuario .card-body {
+        padding: 20px !important;
+        background: transparent !important;
+    }
+
+    /* Ícone do usuário */
+    .btn-usuario .text-vinho {
+        color: #5a3647 !important;
+        transition: all 0.3s ease;
+        text-shadow: 0 2px 8px rgba(90, 54, 71, 0.15);
+    }
+
+    .btn-usuario:hover .text-vinho {
+        color: #6d4557 !important;
+        transform: scale(1.15);
+        text-shadow: 0 4px 12px rgba(90, 54, 71, 0.25);
+    }
+
+    /* Nome do usuário */
+    .btn-usuario h6 {
+        color: #2c3e50 !important;
+        font-weight: 700 !important;
+        font-size: 1.1rem !important;
+        letter-spacing: 0.3px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-usuario:hover h6 {
+        color: #5a3647 !important;
+    }
+
+    /* Container flexível */
+    .btn-usuario .flex-shrink-0 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, rgba(90, 54, 71, 0.1), rgba(109, 69, 87, 0.1));
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-usuario:hover .flex-shrink-0 {
+        background: linear-gradient(135deg, rgba(90, 54, 71, 0.2), rgba(109, 69, 87, 0.2));
+        transform: rotate(5deg);
+    }
+
+    /* Texto em destaque */
+    .btn-usuario .text-dark {
+        color: #2c3e50 !important;
+    }
+
+    .btn-usuario:hover .text-dark {
+        color: #5a3647 !important;
+    }
+
+    /* ========== EFEITOS ADICIONAIS ========== */
+
+    /* Classe de transição */
+    .transition {
+        transition: all 0.3s ease;
+    }
+
+    /* Hover shadow */
+    .hover-shadow:hover {
+        box-shadow: 0 15px 45px rgba(90, 54, 71, 0.25) !important;
+    }
+
+    /* ========== RESPONSIVIDADE ========== */
+
+    @media (max-width: 768px) {
+        .btn-usuario {
+            border-radius: 15px !important;
+        }
+
+        .btn-usuario .card-body {
+            padding: 15px !important;
+        }
+
+        .btn-usuario h6 {
+            font-size: 1rem !important;
+        }
+
+        .btn-usuario .fa-2x {
+            font-size: 1.5rem !important;
+        }
+    }
+
+    /* ========== ANIMAÇÃO DE ENTRADA ========== */
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .btn-usuario {
+        animation: slideUp 0.5s ease-out;
+    }
+
+    .col-md-6:nth-child(1) .btn-usuario {
+        animation-delay: 0.1s;
+    }
+
+    .col-md-6:nth-child(2) .btn-usuario {
+        animation-delay: 0.2s;
+    }
+
+    .col-md-6:nth-child(3) .btn-usuario {
+        animation-delay: 0.3s;
+    }
+
+    .col-md-6:nth-child(4) .btn-usuario {
+        animation-delay: 0.4s;
+    }
