@@ -484,7 +484,7 @@
                             <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q"
                                 class="btn btn-warning w-100 py-2">Conheça Grupos</a>
                             <?php else :?>
-                            <a href="src/pages/login.php" class="btn btn-outline-warning w-100 py-2">Conhecer grupos</a>
+                            <a href="src/pages/login.php" class="btn btn-warning w-100 py-2">Conhecer grupos</a>
                             <?php endif?>
                         </div>
                     </div>
@@ -528,7 +528,7 @@
                             style="background-color: rgba(109, 44, 70, 0.1); border-left: 3px solid #6d2c46;">
                             <i class="bi bi-lightbulb me-2" style="color: #6d2c46;"></i>
                             <strong>Dica Profissional:</strong> Combine esses Serviços com sua terapia regular para
-                            resultados mais profundos. Além de que irá receber um desconto de 20% no valor final
+                            resultados mais profundos.
                         </div>
                     </div>
                     <div class="mt-4 text-center">
@@ -559,8 +559,7 @@
                                 desenvolvimento emocional e autoconhecimento.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="badge bg-wine-light text-wine rounded-pill px-3">Toda Quinta</span>
-                                <a href="#" class="text-wine text-decoration-none small">Saiba mais <i
-                                        class="bi bi-arrow-right"></i></a>
+
                             </div>
                         </div>
                     </div>
@@ -580,8 +579,7 @@
                                 armazenadas no subconsciente.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="badge bg-wine-light text-wine rounded-pill px-3">Sessões</span>
-                                <a href="#" class="text-wine text-decoration-none small">Saiba mais <i
-                                        class="bi bi-arrow-right"></i></a>
+
                             </div>
                         </div>
                     </div>
@@ -728,7 +726,7 @@
                     <div class="d-flex justify-content-center justify-content-md-start gap-2">
                         <a href="https://www.instagram.com/lekasarandy/" target="_blank" class="text-light"><i
                                 class="bi bi-instagram fs-5"></i></a>
-                        <a href="#" target="_blank" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
+
                         <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank" class="text-light"><i
                                 class="bi bi-whatsapp fs-5"></i></a>
                     </div>

@@ -18,8 +18,65 @@ function agendarConsulta() {
 }
 
 function remarcarConsulta(id) {
-    alert(`Funcionalidade de Remarcar Consulta ${id} não implementada.`);
+    // 1. Busca os dados da consulta via AJAX
+    fetch(`../database/getConsultaDetalhes.php?id=${consultaId}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.sucesso) {
+                const consulta = data.consulta;
+
+                // 2. Preenche os campos do modal de remarcação
+                document.getElementById('remarcarConsultaId').value = consulta.id;
+                document.getElementById('remarcarTipoTerapia').value = consulta.tipo_terapia;
+                
+                // Formata a data para o input datetime-local (YYYY-MM-DDTHH:MM)
+                const dataFormatada = consulta.data_hora.replace(' ', 'T');
+                document.getElementById('remarcarDataHora').value = dataFormatada;
+                
+                document.getElementById('remarcarLocal').value = consulta.local;
+
+                // 3. Abre o modal de remarcação
+                const modal = new bootstrap.Modal(document.getElementById('modalRemarcarConsulta'));
+                modal.show();
+            } else {
+                alert('Erro: ' + data.erro);
+            }
+        })
+        .catch(error => console.error('Erro ao buscar detalhes da consulta:', error));
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ... seu código existente do DOMContentLoaded ...
+
+    // Listener para o formulário de REMARCAÇÃO
+    const formRemarcar = document.getElementById('formRemarcar');
+    if (formRemarcar) {
+        formRemarcar.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new URLSearchParams(new FormData(this));
+
+            fetch('../database/remarcarConsulta.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const modalElement = document.getElementById('modalRemarcarConsulta');
+                const modal = bootstrap.Modal.getInstance(modalElement);
+
+                if (data.sucesso) {
+                    alert(data.mensagem);
+                    modal.hide();
+                    location.reload();
+                } else {
+                    alert('Falha ao reagendar: ' + data.erro);
+                }
+            })
+            .catch(error => console.error('Erro de rede:', error));
+        });
+    }
+});
 
 function atualizarStatus(id, status) {
     fetch('../database/atualizarStatus.php', {

@@ -83,12 +83,58 @@ if ($nivel == 2) {
                         <select class="form-select" name="local" id="local" required>
                             <option value="">Selecione</option>
                             <option value="Online (Google Meet)">Online (Google Meet)</option>
-                            <option value="Studio Leka Sarandy">Online (Zoom)</option>
+                            <option value="Online (Zoom)">Online (Zoom)</option>
                         </select>
                     </div>
                     <input type="hidden" name="usuario_id" id="usuarioSelecionadoId">
                     <button type="submit" class="btn btn-vinho w-100">
                         <i class="fas fa-check me-1"></i> Confirmar Agendamento
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Remarcar Consulta -->
+<div class="modal fade" id="modalRemarcarConsulta" tabindex="-1" aria-labelledby="modalRemarcarLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-4">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalRemarcarLabel"><i class="fas fa-edit me-2"></i>Remarcar Consulta</h5>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formRemarcar" method="post" action="../database/remarcarConsultas.php">
+                    <input type="hidden" name="consulta_id" id="remarcarConsultaId">
+                    <div class="mb-3">
+                        <label for="remarcarTipoTerapia" class="form-label">Tipo de Terapia</label>
+                        <select class="form-select" name="remarcarTipoTerapia" id="remarcarTipoTerapia" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="Sessão Grupal">Sessão Grupal</option>
+                            <option value="Sessão de Valores">Sessão de Valores</option>
+                            <option value="Sessão de Sabotadores">Sessão de Sabotadores</option>
+                            <!-- Adicione mais conforme necessário -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="remarcarDataHora" class="form-label">Data e Hora</label>
+                        <input type="datetime-local" class="form-control" name="dataHora" id="remarcarDataHora"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="remarcarLocal" class="form-label">Local</label>
+                        <select class="form-select" name="local" id="remarcarLocal" required>
+                            <option value="">Selecione</option>
+                            <option value="Online (Google Meet)">Online (Google Meet)</option>
+                            <option value="Online (Zoom)">Online (Zoom)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-vinho w-100">
+                        <i class="fas fa-check me-1"></i> Confirmar Reagendamento
                     </button>
                 </form>
             </div>
@@ -310,7 +356,8 @@ if ($nivel == 2) {
                                                         <i class="fas fa-edit me-1"></i>
                                                         Marcar como Concluida
                                                     </button>
-                                                    <button class="btn btn-sm btn-outline-secondary">
+                                                    <button class="btn btn-sm btn-outline-secondary"
+                                                        id="btnRemarcarConsulta" onclick="remarcarConsulta()">
                                                         <i class="fas fa-edit me-1"></i> Remarcar
                                                     </button>
                                                     <button class="btn btn-sm btn-outline-danger">
@@ -406,7 +453,7 @@ if ($nivel == 2) {
                     <div class="d-flex justify-content-center justify-content-md-start gap-3">
                         <a href="https://www.instagram.com/lekasarandy/" target="_blank" class="text-light"><i
                                 class="bi bi-instagram fs-5"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
+
                         <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank" class="text-light"><i
                                 class="bi bi-whatsapp fs-5"></i></a>
                     </div>

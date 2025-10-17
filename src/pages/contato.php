@@ -236,7 +236,7 @@
                     <div class="d-flex justify-content-center justify-content-md-start gap-3">
                         <a href="https://www.instagram.com/lekasarandy/" target="_blank" class="text-light"><i
                                 class="bi bi-instagram fs-5"></i></a>
-                        <a href="#" class="text-light"><i class="bi bi-facebook fs-5"></i></a>
+
                         <a href="https://chat.whatsapp.com/ILgzaTnw2gn579HP5Vin2q" target="_blank" class="text-light"><i
                                 class="bi bi-whatsapp fs-5"></i></a>
                     </div>
