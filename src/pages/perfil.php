@@ -107,16 +107,15 @@ if ($nivel == 2) {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
             <div class="modal-body">
-                <form id="formRemarcar" method="post" action="../database/remarcarConsultas.php">
+                <form id="formRemarcar" method="post" action="../database/remarcarConsulta.php">
                     <input type="hidden" name="consulta_id" id="remarcarConsultaId">
                     <div class="mb-3">
                         <label for="remarcarTipoTerapia" class="form-label">Tipo de Terapia</label>
-                        <select class="form-select" name="remarcarTipoTerapia" id="remarcarTipoTerapia" required>
+                        <select class="form-select" name="tipoTerapia" id="remarcarTipoTerapia" required>
                             <option value="">Selecione uma opção</option>
                             <option value="Sessão Grupal">Sessão Grupal</option>
                             <option value="Sessão de Valores">Sessão de Valores</option>
                             <option value="Sessão de Sabotadores">Sessão de Sabotadores</option>
-                            <!-- Adicione mais conforme necessário -->
                         </select>
                     </div>
                     <div class="mb-3">

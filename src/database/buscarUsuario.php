@@ -26,10 +26,8 @@ try {
 
     // 2. Segunda condição: Se houver um termo de busca...
     if ($termo !== '') {
-        // 🟢 USA placeholders nomeados DIFERENTES
         $whereConditions[] = "(nome LIKE :nome_termo OR email LIKE :email_termo)";
         
-        // 🟢 ADICIONA AMBOS os parâmetros ao array
         $searchTermLike = "%{$termo}%";
         $params[':nome_termo'] = $searchTermLike;
         $params[':email_termo'] = $searchTermLike; 
@@ -52,20 +50,16 @@ try {
     echo json_encode(['sucesso' => true, 'usuarios' => $usuarios]);
 
 } catch (PDOException $e) {
-    error_log("Erro PDO: " . $e->getMessage()); // Log do erro
     http_response_code(500);
     echo json_encode([
         'sucesso' => false, 
         'mensagem' => 'Erro ao consultar o banco de dados.',
-        'erro' => $e->getMessage() // Apenas para desenvolvimento
     ]);
 } catch (Exception $e) {
-    error_log("Erro geral: " . $e->getMessage()); // Log do erro
     http_response_code(500);
     echo json_encode([
         'sucesso' => false, 
         'mensagem' => 'Erro interno do servidor.',
-        'erro' => $e->getMessage() // Apenas para desenvolvimento
     ]);
 }
 ?>
