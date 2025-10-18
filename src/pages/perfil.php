@@ -467,7 +467,7 @@ if ($nivel == 2) {
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="../js/perfil.js"></script>
+    <script src="../js/perfill.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
     </script>
 </body>

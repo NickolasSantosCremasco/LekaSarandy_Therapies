@@ -3,39 +3,32 @@
 // ===================================================================
 
 function agendarConsulta() {
-    // 🟢 CORRIGIDO: A função agora apenas lê o valor que já está no campo hidden.
     const usuarioId = document.getElementById('usuarioSelecionadoId').value;
 
-    // Adiciona uma verificação para garantir que um usuário foi selecionado.
     if (!usuarioId) {
         alert("Erro: Nenhum usuário foi selecionado. Por favor, clique no card de um usuário antes de agendar.");
         return;
     }
 
-    // Com o ID correto, abre o modal.
     const modal = new bootstrap.Modal(document.getElementById('modalAgendarConsulta'));
     modal.show();
 }
 
-function remarcarConsulta(id) {
-    // 1. Busca os dados da consulta via AJAX
+function remarcarConsulta(consultaId) { // CORRIGIDO: parâmetro correto
     fetch(`../database/getConsultaDetalhes.php?id=${consultaId}`)
         .then(response => response.json())
         .then(data => {
             if (data.sucesso) {
                 const consulta = data.consulta;
 
-                // 2. Preenche os campos do modal de remarcação
                 document.getElementById('remarcarConsultaId').value = consulta.id;
                 document.getElementById('remarcarTipoTerapia').value = consulta.tipo_terapia;
                 
-                // Formata a data para o input datetime-local (YYYY-MM-DDTHH:MM)
                 const dataFormatada = consulta.data_hora.replace(' ', 'T');
                 document.getElementById('remarcarDataHora').value = dataFormatada;
                 
                 document.getElementById('remarcarLocal').value = consulta.local;
 
-                // 3. Abre o modal de remarcação
                 const modal = new bootstrap.Modal(document.getElementById('modalRemarcarConsulta'));
                 modal.show();
             } else {
@@ -43,79 +36,6 @@ function remarcarConsulta(id) {
             }
         })
         .catch(error => console.error('Erro ao buscar detalhes da consulta:', error));
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    // ... seu código existente do DOMContentLoaded ...
-
-    // Listener para o formulário de REMARCAÇÃO
-    const formRemarcar = document.getElementById('formRemarcar');
-    if (formRemarcar) {
-        formRemarcar.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new URLSearchParams(new FormData(this));
-
-            fetch('../database/remarcarConsulta.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                const modalElement = document.getElementById('modalRemarcarConsulta');
-                const modal = bootstrap.Modal.getInstance(modalElement);
-
-                if (data.sucesso) {
-                    alert(data.mensagem);
-                    modal.hide();
-                    location.reload();
-                } else {
-                    alert('Falha ao reagendar: ' + data.erro);
-                }
-            })
-            .catch(error => console.error('Erro de rede:', error));
-        });
-    }
-});
-
-function atualizarStatus(id, status) {
-    fetch('../database/atualizarStatus.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `id=${id}&status=${status}`
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.sucesso) {
-                alert('Status atualizado com sucesso!');
-                location.reload(); 
-            } else {
-                alert('Erro: ' + (data.erro || 'Desconhecido'));
-            }
-        })
-        .catch(error => {
-            console.error('Erro na requisição:', error);
-            alert("Erro na requisição: " + error);
-        });
-}
-
-function cancelarConsulta(id) {
-    if (!confirm("Tem certeza que deseja cancelar esta consulta?")) return;
-    fetch('../database/cancelarConsulta.php', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: `id=${id}`
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.sucesso) {
-                alert('Consulta cancelada com sucesso.');
-                location.reload();
-            } else {
-                alert('Erro:' + (data.erro || 'Desconhecido'));
-            }
-        })
-        .catch(err => alert('Erro na requisição: ' + err));
 }
 
 // ===================================================================
@@ -127,7 +47,6 @@ function buscarConsultas(userId) {
     const usuarios = document.querySelector('.usuarios');
     const container = document.getElementById('consultasUsuario');
     
-    // Esconde a lista de usuários e mostra o botão Agendar
     btnAgendarConsulta.classList.remove('d-none');
     usuarios.classList.add('d-none');
     document.getElementById('usuarioSelecionadoId').value = userId;
@@ -186,9 +105,22 @@ function buscarConsultas(userId) {
 function aplicarListenersUsuario() {
     document.querySelectorAll('.btn-usuario').forEach(btn => {
         btn.onclick = function() {
-             buscarConsultas(this.getAttribute('data-id'));
+            buscarConsultas(this.getAttribute('data-id'));
         };
     });
+}
+
+// Função para debounce (evitar muitas requisições)
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -198,14 +130,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const listaUsuarios = document.getElementById('listaUsuarios');
 
     if (inputBusca) {
-        inputBusca.addEventListener('input', async () => {
-            const termo = inputBusca.value.trim();
+        // Usar debounce para evitar muitas requisições
+        const buscarUsuariosDebounced = debounce(async (termo) => {
             try {
-                const response = await fetch(`../database/buscarUsuario.php?q=${encodeURIComponent(termo)}`);
+                const response = await fetch(`../database/buscarUsuario.php?termo=${encodeURIComponent(termo)}`);
+                
+                if (!response.ok) {
+                    throw new Error(`Erro HTTP: ${response.status}`);
+                }
+                
                 const data = await response.json();
 
                 if (data.sucesso) {
-                    listaUsuarios.innerHTML = (data.usuarios.length === 0) ? '<p class="text-center text-muted">Nenhum usuário encontrado.</p>' : '';
+                    listaUsuarios.innerHTML = (data.usuarios.length === 0) ? 
+                        '<p class="text-center text-muted">Nenhum usuário encontrado.</p>' : '';
                     
                     data.usuarios.forEach(usuario => {
                         const colDiv = document.createElement('div');
@@ -220,7 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         listaUsuarios.appendChild(colDiv);
                     });
 
-                    // Re-aplica os listeners de clique aos novos cards criados
                     aplicarListenersUsuario();
 
                 } else {
@@ -230,6 +167,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Erro na requisição AJAX de busca:', error);
                 listaUsuarios.innerHTML = '<p class="alert alert-danger">Erro ao comunicar com o servidor.</p>';
             }
+        }, 300); // 300ms de delay
+
+        inputBusca.addEventListener('input', (e) => {
+            const termo = e.target.value.trim();
+            if (termo.length === 0 || termo.length >= 2) { // Só busca com 2+ caracteres
+                buscarUsuariosDebounced(termo);
+            }
         });
     }
 });
+
+// Adicione estas funções se ainda não existirem
+function atualizarStatus(id, status) {
+    fetch('../database/atualizarStatus.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `id=${id}&status=${status}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.sucesso) {
+                alert('Status atualizado com sucesso!');
+                location.reload(); 
+            } else {
+                alert('Erro: ' + (data.erro || 'Desconhecido'));
+            }
+        })
+        .catch(error => {
+            console.error('Erro na requisição:', error);
+            alert("Erro na requisição: " + error);
+        });
+}
+
+function cancelarConsulta(id) {
+    if (!confirm("Tem certeza que deseja cancelar esta consulta?")) return;
+    fetch('../database/cancelarConsulta.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `id=${id}`
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.sucesso) {
+                alert('Consulta cancelada com sucesso.');
+                location.reload();
+            } else {
+                alert('Erro:' + (data.erro || 'Desconhecido'));
+            }
+        })
+        .catch(err => alert('Erro na requisição: ' + err));
+}
