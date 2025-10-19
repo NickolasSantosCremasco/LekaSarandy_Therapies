@@ -1,6 +1,20 @@
 <?php
-    require_once '../database/config.php';
-    require_once '../database/auth.php';
+// 🟢 1. ADICIONAR ESTE BLOCO PHP NO TOPO
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once '../database/config.php';
+require_once '../database/auth.php';
+
+// --- LÓGICA PARA EXIBIR MENSAGENS ---
+$message = '';
+$message_class = '';
+if (isset($_GET['status']) && isset($_GET['msg'])) {
+    $message = htmlspecialchars($_GET['msg']);
+    $message_class = ($_GET['status'] == 'sucesso') ? 'alert-success' : 'alert-danger';
+}
+// --- FIM DA LÓGICA ---
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -10,7 +24,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leka Sarandy | Contato</title>
 
-    <!-- CSS -->
     <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/contato.css">
@@ -18,7 +31,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="../img/logoEmpresa.png" type="image/x-icon">
 
-    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
@@ -27,7 +39,6 @@
 </head>
 
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm" id="Navbar">
         <div class="container">
             <a class="navbar-brand text-dark logo" style="display: flex; align-items: center; gap: 10px;"
@@ -52,11 +63,10 @@
                             href="../../index.php">Terapias</a>
                     </li>
                     <li class="nav-item"><a class="nav-link position-relative px-3 py-2 active"
-                            href="./src/pages/contato.php">Contato</a></li>
+                            href="contato.php">Contato</a></li>
                 </ul>
                 <div class="d-flex">
                     <?php if(estaLogado()) : ?>
-                    <!-- Mostra a imagem do usuário logado -->
                     <div class="d-flex align-items-center flex-column gap-2">
                         <img src="https://icon-library.com/images/generic-user-icon/generic-user-icon-9.jpg"
                             class="border" alt="Usuário" style="width: 60px; height: 60px; border-radius: 50%;">
@@ -73,12 +83,10 @@
         </div>
     </nav>
 
-    <!-- Seção Contato -->
     <section class="py-5" style="background-color: var(--bege);">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <!-- Cabeçalho com efeito visual calmante -->
                     <div class="text-center mb-5" data-aos="fade-up">
                         <h2 class="display-5 fw-bold mb-3" style="color: var(--vinho);">Entre em Contato</h2>
                         <div class="divider mx-auto mb-4"
@@ -89,39 +97,46 @@
                         </p>
                     </div>
 
-                    <!-- Cartão principal com formulário e informações -->
                     <div class="card border-0 shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
                         <div class="row g-0">
-                            <!-- Formulário -->
                             <div class="col-lg-7 p-4 p-md-5" style="background-color: white;">
                                 <h3 class="mb-4" style="color: var(--vinho);">Envie sua mensagem</h3>
+
+                                <?php if (!empty($message)): ?>
+                                <div class="alert <?php echo $message_class; ?> alert-dismissible fade show"
+                                    role="alert">
+                                    <?php echo $message; ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
+                                <?php endif; ?>
                                 <form action="../database/enviarEmail.php" method="POST">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nome</label>
                                         <input type="text" class="form-control" id="name"
                                             placeholder="Seu nome completo"
                                             style="background-color: var(--cinza-claro); border: none; padding: 12px;"
-                                            required>
+                                            required name="name">
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">E-mail</label>
                                         <input type="email" class="form-control" id="email" placeholder="seu@email.com"
                                             style="background-color: var(--cinza-claro); border: none; padding: 12px;"
-                                            required>
+                                            required name="email">
                                     </div>
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Telefone (opcional)</label>
                                         <input type="tel" class="form-control phone-mask" id="phone"
                                             placeholder="(XX) XXXXX-XXXX"
                                             style="background-color: var(--cinza-claro); border: none; padding: 12px;"
-                                            required>
+                                            name="phone">
                                     </div>
                                     <div class="mb-4">
                                         <label for="message" class="form-label">Como posso te ajudar?</label>
                                         <textarea class="form-control" id="message" rows="4"
                                             placeholder="Conte-me sobre suas expectativas ou dúvidas..."
                                             style="background-color: var(--cinza-claro); border: none; padding: 12px;"
-                                            required></textarea>
+                                            required name="message"></textarea>
                                     </div>
                                     <button type="submit" class="btn w-100 py-3"
                                         style="background-color: var(--vinho); color: white; font-weight: 500;">Enviar
@@ -129,13 +144,11 @@
                                 </form>
                             </div>
 
-                            <!-- Informações de contato -->
                             <div class="col-lg-5 d-flex flex-column"
                                 style="background-color: var(--vinho); color: white;">
                                 <div class="p-4 p-md-5 my-auto">
                                     <h3 class="mb-4">Outras formas de contato</h3>
 
-                                    <!-- Item WhatsApp -->
                                     <div class="d-flex mb-4 ">
                                         <div class="me-4">
                                             <div class="rounded-circle d-flex align-items-center justify-content-center"
@@ -152,7 +165,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- Item Localização -->
                                     <div class="d-flex">
                                         <div class="me-4">
                                             <div class="rounded-circle d-flex align-items-center justify-content-center"
@@ -168,7 +180,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Rodapé do card -->
                                 <div class="mt-auto p-3 text-center" style="background-color: rgba(0,0,0,0.1);">
                                     <p class="mb-0 small">"O primeiro passo para a cura é a coragem de pedir ajuda."</p>
                                 </div>
@@ -176,7 +187,6 @@
                         </div>
                     </div>
 
-                    <!-- Seção de Agendamento -->
                     <div class="card border-0 shadow-sm mt-4"
                         style="background-color: var(--vinho-claro); color: white;" data-aos="fade-up"
                         data-aos-delay="150">
@@ -201,11 +211,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-dark text-light pt-5 pb-3" id="Footer">
         <div class="container">
             <div class="row text-center text-md-start">
-                <!-- Logo / Nome -->
                 <div class="col-md-4 mb-4">
                     <img src="../img/logoEmpresa.png" class="mb-4" style="width: 50px; height: 50px; " alt="logo">
                     <h5 class="text-uppercase">Leka Sarandy</h5>
@@ -214,7 +222,6 @@
                     </p>
                 </div>
 
-                <!-- Links úteis -->
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Navegação</h6>
                     <ul class="list-unstyled">
@@ -223,11 +230,10 @@
                         </li>
                         <li class="mb-2"><a href="../../index.php" class="text-light text-decoration-none">Sobre Mim</a>
                         </li>
-                        <li><a href="./contato.php" class="text-light text-decoration-none">Contato</a></li>
+                        <li><a href="contato.php" class="text-light text-decoration-none">Contato</a></li>
                     </ul>
                 </div>
 
-                <!-- Contato / Redes Sociais -->
                 <div class="col-md-4 mb-4">
                     <h6 class="text-uppercase">Fale Conosco</h6>
                     <p class="mb-1"><i class="bi bi-envelope"></i> infolekaeducativa@gmail.com
@@ -248,11 +254,9 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Masks -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <script src="../js/masks.js"></script>
