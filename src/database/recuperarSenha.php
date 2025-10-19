@@ -72,6 +72,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $link = "{$protocol}{$host}{$path}/resetSenha.php?token=" . $token;
 
     $mail = new PHPMailer(true);
+    $mail->SMTPOptions = array(
+    'ssl' => array(
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+        'allow_self_signed' => true
+    )
+);
     try {
         // 🟢 CORREÇÃO: Usando variáveis de ambiente para credenciais
         $mail->isSMTP();
@@ -105,8 +112,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
         
     } catch (Exception $e) {
-        header("Location: " . $_SERVER['PHP_SELF'] . "?status=erro&msg=" . urlencode("Erro ao enviar e-mail. Tente novamente mais tarde."));
-        exit;
+         // DEBUG: Mostra o erro detalhado do PHPMailer
+    echo "Erro detalhado do PHPMailer: " . $mail->ErrorInfo;
+    echo "<br><br>Mensagem da Exceção: " . $e->getMessage();
+    exit; // Pare o script aqui para podermos ler o erro
     }
 }
 ?>
