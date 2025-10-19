@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Usar debounce para evitar muitas requisições
         const buscarUsuariosDebounced = debounce(async (termo) => {
             try {
-                const response = await fetch(`../database/buscarUsuario.php?termo=${encodeURIComponent(termo)}`);
+                const response = await fetch(`../database/buscarUsuario.php?q=${encodeURIComponent(termo)}`);
                 
                 if (!response.ok) {
                     throw new Error(`Erro HTTP: ${response.status}`);

@@ -405,7 +405,7 @@
                                 seu
                                 potencial e bem-estar emocional.</p>
                             <ul class="list-unstyled text-start mb-4">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>6 sessões
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Sessões
                                     individuais</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Diagnóstico
                                     completo</li>
@@ -471,8 +471,8 @@
                                 crescimento
                                 coletivo e apoio mútuo.</p>
                             <ul class="list-unstyled text-start mb-4">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>8
-                                    encontros
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>
+                                    Encontros
                                     mensais</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i>Temas
                                     específicos</li>

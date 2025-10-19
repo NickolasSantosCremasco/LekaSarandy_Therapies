@@ -158,11 +158,13 @@ if ($nivel == 2) {
                     <li class="nav-item"><a class="nav-link position-relative text-black px-3 py-2 active"
                             href="../../index.php">Início</a></li>
                     <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
-                            href="../../index.php">Minha
-                            Empresa</a></li>
+                            href="../../index.php">Propósito</a></li>
                     <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
                             href="../../index.php">Sobre
                             Mim</a></li>
+                    <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
+                            href="../../index.php">Terapias</a></li>
+
                     <li class="nav-item"><a class="nav-link  position-relative text-black px-3 py-2"
                             href="../pages/contato.php">Contato</a></li>
                 </ul>
@@ -466,7 +468,7 @@ if ($nivel == 2) {
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="../js/perfill.js"></script>
+    <script src="../js/perfil.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
     </script>
 </body>
